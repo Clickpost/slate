@@ -110,7 +110,7 @@
       <div id="toc">
       </div>
         <ul class="toc-footer">
-            <li><a href='#'>Sign Up for a Developer Key</a></li>
+            <li><!--a href='#'>Sign Up for a Developer Key</a--></li>
             <li><a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a></li>
         </ul>
     </div>
@@ -127,85 +127,11 @@
 <li><strong>Recommendation Engine</strong>: Recommend list of Courier Partners in priority order</li>
 </ol>
 
-<p>We have language bindings in Shell, Ruby, PHP and Python!</p>
+<!--We have language bindings in Shell, Ruby, PHP and Python!-->
 
 <p>You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
 
-<h5 id="available-apis">Available APIs</h5>
-
-<table><thead>
-<tr>
-<th>Features</th>
-<th>Fedex</th>
-<th>Aramex</th>
-<th>Ecom</th>
-<th>Delhivery</th>
-<th>Bluedart</th>
-<th>XpressBees</th>
-<th>NuvoEx</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>courier partner ID</td>
-<td>1</td>
-<td>2</td>
-<td>3</td>
-<td>4</td>
-<td>5</td>
-<td>6</td>
-<td>7</td>
-</tr>
-<tr>
-<td>Create Order</td>
-<td>✓</td>
-<td>✓</td>
-<td>✓</td>
-<td>✓</td>
-<td>✓</td>
-<td>✓</td>
-<td>✓</td>
-</tr>
-<tr>
-<td>Cancel Order</td>
-<td>✓</td>
-<td>NA</td>
-<td>✓</td>
-<td>✓</td>
-<td>✗</td>
-<td>✗</td>
-<td>✗</td>
-</tr>
-<tr>
-<td>Pickup Request</td>
-<td>✓</td>
-<td>NA</td>
-<td>NA</td>
-<td>✓</td>
-<td>✓</td>
-<td>NA</td>
-<td>NA</td>
-</tr>
-<tr>
-<td>Reverse Pickup (RVP)</td>
-<td>NA</td>
-<td>✗</td>
-<td>✗</td>
-<td>✗</td>
-<td>NA</td>
-<td>NA</td>
-<td>✓</td>
-</tr>
-</tbody></table>
-
-<p>✓ : API available in ClickPost</p>
-
-<p>✗ : API Not available in ClickPost</p>
-
-<p>NA: The courier partner does not support/provide the API</p>
-
-          <h1 id="order-api">Order API</h1>
-
-<h2 id="create-order-api">Create Order API</h2>
+          <h1 id="shipment-manifestation-awb-generation-api">Shipment Manifestation / AWB Generation API</h1>
 
 <blockquote>
 <p>URL to hit:</p>
@@ -638,44 +564,6 @@ Nagar, New Delhi"</span><span class="p">,</span><span class="w">
 </tr>
 </tbody></table>
 
-<h4 id="courier-partner-id">Courier Partner ID</h4>
-
-<table><thead>
-<tr>
-<th>Courier Partner ID</th>
-<th>Courier Partner name</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>1</td>
-<td>Fedex SO</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Aramex</td>
-</tr>
-<tr>
-<td>3</td>
-<td>Ecom Express</td>
-</tr>
-<tr>
-<td>4</td>
-<td>Delhivery</td>
-</tr>
-<tr>
-<td>5</td>
-<td>Bluedart</td>
-</tr>
-<tr>
-<td>6</td>
-<td>XpressBees</td>
-</tr>
-<tr>
-<td>7</td>
-<td>Nuvoex</td>
-</tr>
-</tbody></table>
-
 <h3 id="response-explanation">Response Explanation:</h3>
 
 <p>Response Object has two parts:</p>
@@ -703,53 +591,6 @@ Additional fields for Bluedart:</li>
 <li>DestinationLocation: 3 digit destination location code needed by Bluedart on shipping label</li>
 <li>DestinationArea: 3 digit destination area code needed by Bluedart on shipping label</li>
 </ol></li>
-</ol>
-
-<h2 id="cancel-order-api">Cancel Order API</h2>
-
-<blockquote>
-<p>URL to hit:</p>
-</blockquote>
-<pre class="highlight plaintext"><code>https://www.clickpost.in/api/v1/cancel-order/?username=test&amp;key=42d42a34-ae09-4693- b20c-ae2624&amp;awb=782715732348
-
-Headers: {'Content-type': 'application/json'}
-
-(Username/key needs to be replaced with the username/key provided to you) Response:
-</code></pre>
-<blockquote>
-<p><strong>Example: POST Body</strong> (Cancel Order)</p>
-</blockquote>
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
-</span><span class="nt">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8159:Shipment Delete was requested for a tracking
-number already in a deleted state."</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>Cancel API allows you to cancel a shipment for which the order has been created.</p>
-
-<p>The API is a HTTP GET request to: https://www.clickpost.in/api/v1/cancel-order/ where output is json</p>
-
-<p>Listed below are the parameters:</p>
-
-<h4 id="url-parameters">URL parameters:</h4>
-
-<ol>
-<li>username: User name provided to you.</li>
-<li>key: API key provided to you.</li>
-<li>waybill: waybill, which needs to be cancelled</li>
-</ol>
-
-<h3 id="response-explanation">Response Explanation:</h3>
-
-<p>Response will have <code class="prettyprint">meta</code> tag which explains about the status of the shipment:</p>
-
-<ol>
-<li>message: <code class="prettyprint">SUCCESS</code> in case the Shipment is deleted successfully, else the error message provided by courier partner.</li>
-<li>success: true if order is deleted successfully, else false</li>
-<li>status: 200 if API works fine, 400 in case of bad request</li>
 </ol>
 
 <h2 id="create-pickup-request">Create Pickup Request</h2>
@@ -922,56 +763,6 @@ You must replace Username/key with the username/key provided to you.
 <hr>
 
           <h1 id="track-order">Track Order</h1>
-
-<p>To track any shipment, client needs to register for tracking service on Clickpost server 1st.</p>
-
-<table><thead>
-<tr>
-<th>Courier Partner</th>
-<th style="text-align: center">courier_partner_id</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Fedex</td>
-<td style="text-align: center">1</td>
-</tr>
-<tr>
-<td>Aramex</td>
-<td style="text-align: center">2</td>
-</tr>
-<tr>
-<td>EcomExpress</td>
-<td style="text-align: center">3</td>
-</tr>
-<tr>
-<td>Delhivery</td>
-<td style="text-align: center">4</td>
-</tr>
-<tr>
-<td>Bluedart</td>
-<td style="text-align: center">5</td>
-</tr>
-<tr>
-<td>XpressBees</td>
-<td style="text-align: center">6</td>
-</tr>
-<tr>
-<td>NuvoEx</td>
-<td style="text-align: center">7</td>
-</tr>
-<tr>
-<td>InnovEx</td>
-<td style="text-align: center">10</td>
-</tr>
-<tr>
-<td>ShadowFax</td>
-<td style="text-align: center">11</td>
-</tr>
-<tr>
-<td>OnlineExpress</td>
-<td style="text-align: center">12</td>
-</tr>
-</tbody></table>
 
 <h2 id="register-for-tracking-service">Register for Tracking Service</h2>
 
@@ -1331,11 +1122,11 @@ Headers: {'Content-type': 'application/json'}
 <p><strong>Payload</strong></p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
-</span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"When forward shipment is accepted by end customer and POD is received"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"When forward shipment is accepted by end customer and POD is received"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delivered"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XYZABC"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bengaluru_Koramangala_Dc (Karnataka)"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-07-12T17:12:36.710Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-07-12T17:12:36.710"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
   </span><span class="nt">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delivered"</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -1347,7 +1138,7 @@ Headers: {'Content-type': 'application/json'}
 <li>status: status of the shipment at that time</li>
 <li>remarks: remark given by courier partner</li>
 <li>location: location of shipment at the time of the scan</li>
-<li>timestamp: date/time in ISO format when the scan was done</li>
+<li>timestamp: date/time in IST format when the scan was done</li>
 <li>clickpost_status_code: clickpost generated status code for particular status. Clickpost has mapped various statuses of different courier companies into few status codes, which helps customers understand and take action on statuses in preemptive manner. (Explained on next page)</li>
 <li>clickpost_status_description: description of clickpost_status_code (Specified on next page)</li>
 </ol>
@@ -1470,6 +1261,222 @@ Headers: {'Content-type': 'application/json'}
 
 <hr>
 
+          <h1 id="cancel-shipment-api">Cancel Shipment API</h1>
+
+<blockquote>
+<p>URL to hit:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>https://www.clickpost.in/api/v1/cancel-order/?username=test&amp;key=42d42a34-ae09-4693- b20c-ae2624&amp;awb=782715732348
+
+Headers: {'Content-type': 'application/json'}
+
+(Username/key needs to be replaced with the username/key provided to you) Response:
+</code></pre>
+<blockquote>
+<p><strong>Example: POST Body</strong> (Cancel Order)</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8159:Shipment Delete was requested for a tracking
+number already in a deleted state."</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">400</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Cancel API allows you to cancel a shipment for which the order has been created.</p>
+
+<p>The API is a HTTP GET request to: https://www.clickpost.in/api/v1/cancel-order/ where output is json</p>
+
+<p>Listed below are the parameters:</p>
+
+<h4 id="url-parameters">URL parameters:</h4>
+
+<ol>
+<li>username: User name provided to you.</li>
+<li>key: API key provided to you.</li>
+<li>waybill: waybill, which needs to be cancelled</li>
+</ol>
+
+<h3 id="response-explanation">Response Explanation:</h3>
+
+<p>Response will have <code class="prettyprint">meta</code> tag which explains about the status of the shipment:</p>
+
+<ol>
+<li>message: <code class="prettyprint">SUCCESS</code> in case the Shipment is deleted successfully, else the error message provided by courier partner.</li>
+<li>success: true if order is deleted successfully, else false</li>
+<li>status: 200 if API works fine, 400 in case of bad request</li>
+</ol>
+
+          <h1 id="pincode-serviceability-api">Pincode Serviceability API</h1>
+
+<blockquote>
+<p>URL to hit</p>
+</blockquote>
+<pre class="highlight plaintext"><code>https://www.clickpost.in/api/v1/serviceability_api/?username=test&amp;key=42d42a34-ae09-4693-%20b20c-ae2624
+
+(username and key needs to be replaced with the key provided to you)
+</code></pre>
+<blockquote>
+<p><strong>Example(POST Body)</strong></p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"pickup_pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110017"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"drop_pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110019"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"optional"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"breadth"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"length"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"invoice_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">1245</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p><strong>Response</strong></p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUCCESS"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"serviceable"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nt">"PREPAID"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"COD"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nt">"expected_sla"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"comitted_sla"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>It’s a POST request as follows</p>
+
+<p>URL:
+<code class="prettyprint">https://www.clickpost.in/api/v1/serviceability_api/</code>`</p>
+
+<p>Headers: {&lsquo;Content-type&rsquo;: &#39;application/json&rsquo;}</p>
+
+<h4 id="url-parameters">URL Parameters:</h4>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>key</td>
+<td>character</td>
+<td>API key provided to you</td>
+</tr>
+<tr>
+<td>username</td>
+<td>character</td>
+<td>username provided to you</td>
+</tr>
+</tbody></table>
+
+<h4 id="post-parameters">POST Parameters:</h4>
+
+<p>Format: JSON</p>
+
+<h3 id="compulsory-fields">Compulsory Fields</h3>
+
+<p>Payload is a list of json objects each of which have following fields:</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>pickup_pincode</td>
+<td>integer</td>
+<td>pincode of pickup address</td>
+</tr>
+<tr>
+<td>drop_pincode</td>
+<td>integer</td>
+<td>pincode of drop address</td>
+</tr>
+</tbody></table>
+
+<h3 id="optional-fields">Optional Fields</h3>
+
+<!--In case you want the serviceability logic to show pricing as a parameter as well, please pass the following fields in the API. -->
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>invoice_value</td>
+<td>double</td>
+<td>invoice value of the shipment</td>
+</tr>
+<tr>
+<td>order_type</td>
+<td>character</td>
+<td>COD/PREPAID</td>
+</tr>
+</tbody></table>
+
+<!--
+weight | integer | weight of the shipment
+length | integer | length of the shipment
+breadth | integer | breadth of the shipment
+height | integer | height of the shipment
+-->
+
+<h3 id="response-explanation">Response explanation:</h3>
+
+<p>Response object has two parts:</p>
+
+<ol>
+<li>meta: stores information about the API, success or failure
+
+<ul>
+<li>success: true/false, tells whether the order was created or not</li>
+<li>message: SUCCESS in case order was created successfully, else returns error message.</li>
+<li>status:
+
+<ol>
+<li>200 if the order is created successfully,</li>
+<li>400 if there is a bad request encountered: errors will be present in “message”</li>
+</ol></li>
+</ul></li>
+<li>result: 
+
+<ul>
+<li>serviceable: JSON object which stores following two fields:
+
+<ul>
+<li>COD: Values: true: if the pincode is COD serviceable else false</li>
+<li>PREPAID: Values: true: if the pincode is COD serviceable else false</li>
+</ul></li>
+<li>expected_sla: average expected SLA (in days) for the shipment as recommended by Clickpost, if dispatched today. (integer field)</li>
+<li>commited_sla: average commited SLA by courier partner for the shipment if dispatched today. (integer field)</li>
+</ul></li>
+</ol>
+
+<aside class="warning">
+You must replace username / key with username / key provided to you.
+</aside>
+
+<hr>
+
           <h1 id="recommendation-api">Recommendation API</h1>
 
 <blockquote>
@@ -1479,56 +1486,6 @@ Headers: {'Content-type': 'application/json'}
 
 (key needs to be replaced with the key provided to you)
 </code></pre>
-<h4 id="courier-partners">Courier Partners</h4>
-
-<table><thead>
-<tr>
-<th>Courier Partner</th>
-<th style="text-align: center">courier_partner_id</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>Fedex</td>
-<td style="text-align: center">1</td>
-</tr>
-<tr>
-<td>Aramex</td>
-<td style="text-align: center">2</td>
-</tr>
-<tr>
-<td>EcomExpress</td>
-<td style="text-align: center">3</td>
-</tr>
-<tr>
-<td>Delhivery</td>
-<td style="text-align: center">4</td>
-</tr>
-<tr>
-<td>Bluedart</td>
-<td style="text-align: center">5</td>
-</tr>
-<tr>
-<td>XpressBees</td>
-<td style="text-align: center">6</td>
-</tr>
-<tr>
-<td>NuvoEx</td>
-<td style="text-align: center">7</td>
-</tr>
-<tr>
-<td>InnovEx</td>
-<td style="text-align: center">10</td>
-</tr>
-<tr>
-<td>ShadowFax</td>
-<td style="text-align: center">11</td>
-</tr>
-<tr>
-<td>OnlineExpress</td>
-<td style="text-align: center">12</td>
-</tr>
-</tbody></table>
-
 <blockquote>
 <p><strong>Example(POST Body)</strong></p>
 </blockquote>
