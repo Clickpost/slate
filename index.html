@@ -831,29 +831,62 @@ Headers: {'Content-type': 'application/json'}
 <blockquote>
 <p>It’s a POST request. The URL:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>https://www.clickpost.in/api/v1/tracking/awb-register/
+<pre class="highlight plaintext"><code>https://www.clickpost.in/api/v2/tracking/awb-register/
 Headers: {'Content-type': 'application/json'}
 </code></pre>
 <blockquote>
 <p><strong>Example</strong></p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
-     </span><span class="nt">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="s2">"P76933624"</span><span class="p">,</span><span class="w">
-     </span><span class="nt">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2e9b19ac-8e1f-41ac-a35b-4cd23f41"</span><span class="p">,</span><span class="w">
-     </span><span class="nt">"cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="w">
+    </span><span class="nt">"waybill"</span><span class="p">:</span><span class="s2">"ABCDRESDEFGHIJKL1257679"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"cp_id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"key"</span><span class="p">:</span><span class="s2">"42d42a34-ae09-4693-b20c-ae26249d7614"</span><span class="p">,</span><span class="w">
+
+    </span><span class="nt">"consumer_details"</span><span class="p">:{</span><span class="w">
+        </span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"Prashant Gupta"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"phone"</span><span class="p">:</span><span class="s2">"8080808080"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"email"</span><span class="p">:</span><span class="s2">"support@clickpost.in"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"shipment_info"</span><span class="p">:{</span><span class="w">
+       </span><span class="nt">"item"</span><span class="p">:</span><span class="s2">"Shirt"</span><span class="p">,</span><span class="w">
+       </span><span class="nt">"order_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COD"</span><span class="p">,</span><span class="w">
+       </span><span class="nt">"invoice_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+       </span><span class="nt">"reference_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123XYZ"</span><span class="p">,</span><span class="w">
+       </span><span class="nt">"length"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+       </span><span class="nt">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+       </span><span class="nt">"weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+       </span><span class="nt">"breadth"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+       </span><span class="nt">"drop_pin_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110016"</span><span class="p">,</span><span class="w">
+       </span><span class="nt">"pickup_pin_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110017"</span><span class="p">,</span><span class="w">
+       </span><span class="nt">"delivery_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FORWARD"</span><span class="p">,</span><span class="w">
+       </span><span class="nt">"cod_amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">1000.10</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
+
 </span></code></pre>
 <blockquote>
 <p><strong>Response</strong></p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
-     </span><span class="nt">"tracking_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">20370</span><span class="p">,</span><span class="w">
-     </span><span class="nt">"status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-     </span><span class="nt">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-     </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUCCESS"</span><span class="w">
+    </span><span class="nt">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUCCESS"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"consumer_details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nt">"shipment_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nt">"tracking_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1188264</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <h3 id="fields-explanation">Fields Explanation</h3>
+
+<h4 id="compulsory">Compulsory:</h4>
 
 <table><thead>
 <tr>
@@ -876,6 +909,105 @@ Headers: {'Content-type': 'application/json'}
 <td>cp_id (required)</td>
 <td>integer</td>
 <td>courier_partner_id as specified on page 1 of this documentation</td>
+</tr>
+</tbody></table>
+
+<h4 id="optional">Optional:</h4>
+
+<h5 id="consumer_details-optional-in-case-you-to-send-notifications-to-your-customers-via-mail-sms-please-pass-information-in-this-object">consumer_details(optional): In case you to send notifications to your customers via mail / sms, please pass information in this object:</h5>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>character (250 chars)</td>
+<td>end customer name, who will receive the shipment, this will be used to personalize the SMS / email sent to the customer</td>
+</tr>
+<tr>
+<td>phone_number</td>
+<td>10/11 characters</td>
+<td>customer phone number on which SMS is to be sent.</td>
+</tr>
+<tr>
+<td>email</td>
+<td>character (150 chars)</td>
+<td>Email address of the customer, on which email is to be sent.</td>
+</tr>
+</tbody></table>
+
+<h5 id="shipment_info-optional-shipment-information-for-rich-analytics-on-your-data">shipment_info (optional): shipment information for rich analytics on your data:</h5>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>item</td>
+<td>character (500 chars)</td>
+<td>name of item sent to the customer</td>
+</tr>
+<tr>
+<td>order_type</td>
+<td>character</td>
+<td>either COD or PREPAID</td>
+</tr>
+<tr>
+<td>invoice_value</td>
+<td>float</td>
+<td>shipment invoice value</td>
+</tr>
+<tr>
+<td>reference_number</td>
+<td>character (len: 100)</td>
+<td>order_id or reference number to be shared with end customer</td>
+</tr>
+<tr>
+<td>length</td>
+<td>integer</td>
+<td>in cm</td>
+</tr>
+<tr>
+<td>breadth</td>
+<td>integer</td>
+<td>in cm</td>
+</tr>
+<tr>
+<td>height</td>
+<td>integer</td>
+<td>in cm</td>
+</tr>
+<tr>
+<td>weight</td>
+<td>integer</td>
+<td>in grams</td>
+</tr>
+<tr>
+<td>drop_pincode</td>
+<td>character</td>
+<td>6 digit pincode of drop location</td>
+</tr>
+<tr>
+<td>pickup_pincode</td>
+<td>character</td>
+<td>6 digit pincode of pickup location</td>
+</tr>
+<tr>
+<td>delivery_type</td>
+<td>character</td>
+<td>either FORWARD / RVP</td>
+</tr>
+<tr>
+<td>cod_amount</td>
+<td>float field</td>
+<td>COD value to be collected from customer, float field</td>
 </tr>
 </tbody></table>
 
