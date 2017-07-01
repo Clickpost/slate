@@ -133,6 +133,8 @@
 
           <h1 id="shipment-manifestation-awb-generation-api">Shipment Manifestation / AWB Generation API</h1>
 
+<h2 id="order-creation-v1-api">Order Creation V1 API</h2>
+
 <blockquote>
 <p>URL to hit:</p>
 </blockquote>
@@ -589,7 +591,20 @@ Additional fields for Bluedart:</li>
 </ol></li>
 </ol>
 
-<h2 id="create-pickup-request">Create Pickup Request</h2>
+<p><strong>Important Points</strong>:</p>
+
+<ol>
+<li>waybills and links provided in the example can be used to check the API using test credentials</li>
+<li>Test credentials provided to you may throw error for some Courier Partners since they point to their testing servers, which might be down or nonfunctional at times. For better testing, we would suggest you to share your production credentials for the corresponding courier partner and then try the APIs.</li>
+</ol>
+
+<aside class="warning">
+You must replace Username/key with the username/key provided to you.
+</aside>
+
+<hr>
+
+          <h1 id="pickup-request-api">Pickup Request API</h1>
 
 <blockquote>
 <p>URL to hit:</p>
@@ -742,19 +757,6 @@ Headers: {'Content-type': 'application/json'}
 </ol>
 
 <p>Result tag will be present in request only if the meta tag contains <code class="prettyprint">success</code> : true.</p>
-
-<p><strong>Important Points</strong>:</p>
-
-<ol>
-<li>waybills and links provided in the example can be used to check the API using test credentials</li>
-<li>Test credentials provided to you may throw error for some Courier Partners since they point to their testing servers, which might be down or nonfunctional at times. For better testing, we would suggest you to share your production credentials for the corresponding courier partner and then try the APIs.</li>
-</ol>
-
-<aside class="warning">
-You must replace Username/key with the username/key provided to you.
-</aside>
-
-<hr>
 
           <h1 id="track-order">Track Order</h1>
 
@@ -1820,57 +1822,229 @@ You must replace key with key provided to you.
 
 <aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files&hellip;just save them to the `includes` folder and add them to the top of your `index.md`&rsquo;s frontmatter. Files are included in the order listed.</aside>
 
-<p>The Kittn API uses the following error codes:</p>
+<p>The Clickpost API uses the following error codes:</p>
 
 <table><thead>
 <tr>
-<th>Error Code</th>
+<th>Server Response Code</th>
 <th>Meaning</th>
 </tr>
 </thead><tbody>
 <tr>
+<td>200</td>
+<td>Success</td>
+</tr>
+<tr>
 <td>400</td>
-<td>Bad Request &ndash; Your request sucks</td>
+<td>Bad Request</td>
 </tr>
 <tr>
 <td>401</td>
-<td>Unauthorized &ndash; Your API key is wrong</td>
+<td>Unauthorized</td>
 </tr>
 <tr>
 <td>403</td>
-<td>Forbidden &ndash; The kitten requested is hidden for administrators only</td>
+<td>Forbidden</td>
 </tr>
 <tr>
 <td>404</td>
-<td>Not Found &ndash; The specified kitten could not be found</td>
+<td>Not Found</td>
 </tr>
 <tr>
 <td>405</td>
-<td>Method Not Allowed &ndash; You tried to access a kitten with an invalid method</td>
+<td>Method Not Allowed</td>
 </tr>
 <tr>
 <td>406</td>
-<td>Not Acceptable &ndash; You requested a format that isn&rsquo;t json</td>
-</tr>
-<tr>
-<td>410</td>
-<td>Gone &ndash; The kitten requested has been removed from our servers</td>
-</tr>
-<tr>
-<td>418</td>
-<td>I&rsquo;m a teapot</td>
+<td>Not Acceptable</td>
 </tr>
 <tr>
 <td>429</td>
-<td>Too Many Requests &ndash; You&rsquo;re requesting too many kittens! Slow down!</td>
+<td>Too Many Requests</td>
 </tr>
 <tr>
 <td>500</td>
-<td>Internal Server Error &ndash; We had a problem with our server. Try again later.</td>
+<td>Internal Server Error</td>
 </tr>
 <tr>
 <td>503</td>
-<td>Service Unavailable &ndash; We&rsquo;re temporarially offline for maintanance. Please try again later.</td>
+<td>Service Unavailable</td>
+</tr>
+<tr>
+<td>504</td>
+<td>Server unable to serve the request, please retry</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Clickpost Service Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>301</td>
+<td>Authentication Failed: Invalid Token or API Key</td>
+</tr>
+<tr>
+<td>302</td>
+<td>Invalid Courier Partner Id with Field cp_id</td>
+</tr>
+<tr>
+<td>303</td>
+<td>waybill already registered</td>
+</tr>
+<tr>
+<td>304</td>
+<td>Already Registered For Service</td>
+</tr>
+<tr>
+<td>306</td>
+<td>You are not Registered To Use this service, Please Register</td>
+</tr>
+<tr>
+<td>316</td>
+<td>You Dont Have Credentials For The Courier Partner</td>
+</tr>
+<tr>
+<td>320</td>
+<td>This service is not subscribed by you</td>
+</tr>
+<tr>
+<td>324</td>
+<td>You Are Using Invalid Credential For Courier Partner, Please Update</td>
+</tr>
+<tr>
+<td>325</td>
+<td>Status You Are Trying to update is invalid for our systems, Contact to tech@pyck.in</td>
+</tr>
+<tr>
+<td>326</td>
+<td>Invalid Tracking Id</td>
+</tr>
+<tr>
+<td>328</td>
+<td>Invalid POST data</td>
+</tr>
+<tr>
+<td>330</td>
+<td>waybill does not exist</td>
+</tr>
+<tr>
+<td>351</td>
+<td>NO ACCOUNT EXIST</td>
+</tr>
+<tr>
+<td>352</td>
+<td>Multiple Account exist</td>
+</tr>
+<tr>
+<td>353</td>
+<td>INACTIVE ACCOUNT</td>
+</tr>
+<tr>
+<td>354</td>
+<td>UNHANDLED CP ERROR</td>
+</tr>
+<tr>
+<td>355</td>
+<td>Vendor code not found</td>
+</tr>
+<tr>
+<td>422</td>
+<td>Invalid Entity</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Order Creation Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>307</td>
+<td>You have entered invalid Order Type</td>
+</tr>
+<tr>
+<td>308</td>
+<td>You have entered invalid Order priority</td>
+</tr>
+<tr>
+<td>309</td>
+<td>Invalid Delivery Type</td>
+</tr>
+<tr>
+<td>310</td>
+<td>RVP reason is missing</td>
+</tr>
+<tr>
+<td>311</td>
+<td>Invalid Courier Partner For RVP</td>
+</tr>
+<tr>
+<td>312</td>
+<td>Items Data is missing from order details</td>
+</tr>
+<tr>
+<td>313</td>
+<td>Invalid Format of items for Order data</td>
+</tr>
+<tr>
+<td>314</td>
+<td>Invalid Format Of Order Data</td>
+</tr>
+<tr>
+<td>315</td>
+<td>Invalid Cod Value</td>
+</tr>
+<tr>
+<td>319</td>
+<td>Error In Order Placing To Courier Partner</td>
+</tr>
+<tr>
+<td>321</td>
+<td>Awb Number Does not exist in system for courier partner</td>
+</tr>
+<tr>
+<td>322</td>
+<td>Internal Server Error In Courier Partners Server, Try Again</td>
+</tr>
+<tr>
+<td>323</td>
+<td>You have Already placed this order</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Clickpost Webhook Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>305</td>
+<td>Webhook already Registered for the user</td>
+</tr>
+<tr>
+<td>327</td>
+<td>Webhook not registered for the user</td>
+</tr>
+</tbody></table>
+
+<table><thead>
+<tr>
+<th>Order Cancellation Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>600</td>
+<td>ORDER ALREADY CANCELLED</td>
+</tr>
+<tr>
+<td>350</td>
+<td>Order Cancellation Error</td>
 </tr>
 </tbody></table>
 
