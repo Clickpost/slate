@@ -270,6 +270,58 @@ Nagar, New Delhi"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"delivery_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RVP"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
+<blockquote>
+<p><strong>Example:</strong> POST Body: (Reverse Pickup with QC detail (Only for NuvoEx Rvp): RVP Shipment):</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"courier_partner"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"founders@clickpost.in"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"pickup_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Deepanshu"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"pickup_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8080808080"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"pickup_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B-220/2, 1st Floor, Right Door, Savitri Nagar,
+    New Delhi"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"pickup_pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110017"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"pickup_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"pickup_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"pickup_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IN"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"drop_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rahul"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"drop_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8080808080"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"drop_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L-19B, third Floor Malviya Nagar, New Delhi"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"drop_pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110017"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"drop_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"drop_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"drop_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IN"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"order_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PREPAID"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"cod_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"tin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"120349483"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"invoice_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INV-4/3"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"invoice_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"invoice_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-12-27"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> 
+    </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"item1"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XYZ1"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="s2">",
+    "</span><span class="err">qc_type</span><span class="s2">" : "</span><span class="err">doorstep</span><span class="s2">",
+    "</span><span class="err">cat</span><span class="s2">": "</span><span class="err">electronics</span><span class="s2">",
+    "</span><span class="err">sub_cat</span><span class="s2">": "</span><span class="err">tv</span><span class="s2">",
+    "</span><span class="err">serial_number</span><span class="s2">": "</span><span class="mi">987654321</span><span class="s2">",
+    "</span><span class="err">image_urls</span><span class="s2">":[
+        "</span><span class="err">https://assetscdn.paytm.com/images/catalog/view_item/</span><span class="mi">114560</span><span class="err">/</span><span class="mi">1494268990652</span><span class="err">.jpg</span><span class="s2">",
+        "</span><span class="err">https://assetscdn.paytm.com/images/catalog/view_item/</span><span class="mi">116303</span><span class="err">/</span><span class="mi">1493891914950</span><span class="err">.jpg</span><span class="s2">"
+      ]
+    }
+    ],    
+    "</span><span class="err">height</span><span class="s2">": 10,
+    "</span><span class="err">length</span><span class="s2">": 10,
+    "</span><span class="err">breadth</span><span class="s2">": 10,
+    "</span><span class="err">weight</span><span class="s2">": 100,
+    "</span><span class="err">reference_number</span><span class="s2">": "</span><span class="err">sok</span><span class="mi">56</span><span class="err">sjkaphf</span><span class="s2">",
+    "</span><span class="err">pickup_time</span><span class="s2">": "</span><span class="mi">2016-10-01</span><span class="err">T</span><span class="mi">12</span><span class="err">:</span><span class="mi">00</span><span class="err">:</span><span class="mi">00</span><span class="err">Z</span><span class="s2">",
+    "</span><span class="err">rvp_reason</span><span class="s2">": "</span><span class="err">Not</span><span class="w"> </span><span class="err">Interested</span><span class="s2">",
+    "</span><span class="err">delivery_type</span><span class="s2">": "</span><span class="err">RVP"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <p>The create order API allows uploading the package details (manifest information) into the courier partner’s system and returns a label generated by them. You can create single order; errors/warnings will be highlighted in the response.</p>
 
 <p>Please note, in case of any validation failure - order will not get created. Please wait for 8 seconds before you reject a rest-request for latency.</p>
