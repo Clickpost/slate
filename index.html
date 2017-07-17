@@ -274,7 +274,7 @@ Nagar, New Delhi"</span><span class="p">,</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<p><strong>Example:</strong> POST Body: (Reverse Pickup with QC detail (Only for NuvoEx Rvp): RVP Shipment):</p>
+<p><strong>Example:</strong> POST Body: (Reverse Pickup with QC detail RVP Shipment[Only for NuvoEx]):</p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
     </span><span class="nt">"courier_partner"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
@@ -580,7 +580,7 @@ Nagar, New Delhi"</span><span class="p">,</span><span class="w">
 </tbody></table>
 
 <p>List of courier partners is present at:
-http://track.clickpost.in/courier_partner</p>
+<a href="http://track.clickpost.in/courier_partner" target="_blank">http://track.clickpost.in/courier_partner</a></p>
 
 <h5 id="compulsory-fields-for-rvp-order-creation"><strong>Compulsory fields for RVP order creation:</strong></h5>
 
@@ -823,10 +823,10 @@ Headers: {'Content-type': 'application/json'}
         </span><span class="nt">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nt">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"consumer_details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"consumer_details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
         </span><span class="p">},</span><span class="w">
-        </span><span class="nt">"shipment_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"shipment_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="nt">"tracking_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1188264</span><span class="w">
@@ -974,57 +974,69 @@ Headers: {'Content-type': 'application/json'}
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
     </span><span class="nt">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"messsage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUCCESS"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUCCESS"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nt">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"506610002236"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nt">"scans"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-                </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OrderPlaced"</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OrderPlaced"</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"None"</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-04-12T07:37:22.113Z"</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OrderPlaced"</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-            </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Picked up and Booking processed"</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Picked up and Booking processed"</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SOUTH DELHI, DELHI"</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-10-27 22:15:13+00:00"</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PickedUp"</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
-            </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"In Transit to"</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"In Transit to"</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI, DELHI"</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-10-27 22:18:57+00:00"</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"InTransit"</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
-            </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Out For Delivery"</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Out For Delivery"</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MUMBAI, MUMBAI"</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-10-31 13:29:24+00:00"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"3515341"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nt">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delivered"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delivered Via @DS/BLRDMR/1718/000020 on @04-04-2017"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"D"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DOMLUR, BANGALORE"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-04 14:56:16"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
                 </span><span class="nt">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OutForDelivery"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Out For Delivery"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"O"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DOMLUR, BANGALORE"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-04 10:29:41"</span><span class="p">,</span><span class="w">
                 </span><span class="nt">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="w">
-            </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delivered"</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delivered on 03 Nov 16 - Signed by sign"</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MUMBAI, MUMBAI"</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-03 08:10:56+00:00"</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delivered"</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
-            </span><span class="p">}],</span><span class="w">
-            </span><span class="nt">"latest_status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delivered"</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delivered on 03 Nov 16 - Signed by sign"</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MUMBAI, MUMBAI"</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-11-03T08:10:56Z"</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delivered"</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nt">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FailedDelivery"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delivery Failed on  03 Apr 17 Reason:- @CID - RECEIVER REQUESTED DELIVERY ON ANOTHER DATE"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"N"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DOMLUR, BANGALORE"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-03 16:10:36"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nt">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OutForDelivery"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Out For Delivery"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"O"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DOMLUR, BANGALORE"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-04-03 11:15:00"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nt">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"InTransit"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Arrived"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"T"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DOMLUR, BANGALORE"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-31 10:08:17"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nt">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OrderPlaced"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order Process"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"U"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI HUB1, NEW DELHI"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-30 00:39:04"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nt">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PickedUp"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Picked up and Booking processed"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"P"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI HUB1, NEW DELHI"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-03-29 00:00:00"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
             </span><span class="p">}</span><span class="w">
-        </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -1111,14 +1123,17 @@ status. Clickpost has mapped various statuses of different courier companies int
 
 <h3 id="register-for-webhooks">Register for Webhooks:</h3>
 
+<p>It&rsquo;s a POST request. (PUT in case you want to update existing webhook url) 
+<code class="prettyprint">https://www.clickpost.in/api/v1/tracking/register-webhook/</code></p>
+
 <blockquote>
-<p>It&rsquo;s a POST request. The URL</p>
+<p><strong>Webhook Registration URL</strong></p>
 </blockquote>
 <pre class="highlight plaintext"><code>URL: https://www.clickpost.in/api/v1/tracking/register-webhook/
 Headers: {'Content-type': 'application/json'}
 </code></pre>
 <blockquote>
-<p><strong>Example</strong></p>
+<p><strong>Webhook Registration Example</strong></p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
      </span><span class="nt">"service_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
@@ -1135,7 +1150,7 @@ Headers: {'Content-type': 'application/json'}
 </ol>
 
 <blockquote>
-<p><strong>Response</strong></p>
+<p><strong>Webhook Registration Response</strong></p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
      </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUCCESS"</span><span class="p">,</span><span class="w">
@@ -1186,15 +1201,15 @@ Headers: {'Content-type': 'application/json'}
 <p>Every time courier partner updates tracking of the shipment, We will post data to your server using the url you registered while registering for webhooks.</p>
 
 <blockquote>
-<p><strong>Header</strong></p>
+<p><strong>Webhook Payload Header</strong></p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
-     </span><span class="nt">"Content-Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json"</span><span class="p">,</span><span class="w">
-     </span><span class="nt">"webhook_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"webhook_key_given_during_webhooks_register"</span><span class="w">
+    </span><span class="nt">"Content-Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"webhook_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"webhook_key_given_during_webhooks_register"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
-<p><strong>Payload</strong></p>
+<p><strong>Webhook Payload</strong></p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"When forward shipment is accepted by end customer and POD is received"</span><span class="p">,</span><span class="w">
@@ -1214,125 +1229,30 @@ Headers: {'Content-type': 'application/json'}
 <li>remarks: remark given by courier partner</li>
 <li>location: location of shipment at the time of the scan</li>
 <li>timestamp: date/time in IST format when the scan was done</li>
-<li>clickpost_status_code: clickpost generated status code for particular status. Clickpost has mapped various statuses of different courier companies into few status codes, which helps customers understand and take action on statuses in preemptive manner. (Explained on next page)</li>
+<li>clickpost_status_code: clickpost generated status code for particular status. Clickpost has mapped various statuses of different courier companies into few status codes, which helps customers understand and take action on statuses in preemptive manner. (Explained in next section)</li>
 <li>clickpost_status_description: description of clickpost_status_code (Specified on next page)</li>
 </ol>
 
-<h4 id="uber-status-mapping">Uber Status Mapping</h4>
+<blockquote>
+<p><strong>Test Webhook URL</strong></p>
+</blockquote>
+<pre class="highlight plaintext"><code>https://www.clickpost.in/api/v1/test_webhook?key=&lt;YOUR_API_KEY&gt;
+</code></pre>
+<blockquote>
+<p><strong>Test Webhook Payload</strong></p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"test_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://test.clickpost.in/"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<h3 id="testing-webhook">Testing Webhook:</h3>
 
-<table><thead>
-<tr>
-<th>clickpost_status_id</th>
-<th>clickpost_status_description</th>
-<th>Meaning</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>1</td>
-<td>ORDER_PLACED</td>
-<td>&lsquo;Order Has Been Placed&rsquo;</td>
-</tr>
-<tr>
-<td>2</td>
-<td>PICKUP_PENDING</td>
-<td>&#39;Pickup Pending&rsquo;</td>
-</tr>
-<tr>
-<td>3</td>
-<td>PICKUP_CANCELLED</td>
-<td>&#39;Pickup Cancelled&rsquo;</td>
-</tr>
-<tr>
-<td>4</td>
-<td>PICKED_UP</td>
-<td>&#39;Pickup Has Been Done&rsquo;</td>
-</tr>
-<tr>
-<td>5</td>
-<td>INTRANSIT</td>
-<td>&#39;In Transit&rsquo;</td>
-</tr>
-<tr>
-<td>6</td>
-<td>OUT_FOR_DELIVERY</td>
-<td>&#39;Shipment Out For Delivery&rsquo;</td>
-</tr>
-<tr>
-<td>7</td>
-<td>NOT_SERVICEABLE</td>
-<td>&#39;Area For Delivery Is Not Servicable&rsquo;</td>
-</tr>
-<tr>
-<td>8</td>
-<td>DELIVERED</td>
-<td>&#39;Shipment Delivered&rsquo;</td>
-</tr>
-<tr>
-<td>9</td>
-<td>FAILED_DELIVERY</td>
-<td>&#39;Delivery Failed&rsquo;</td>
-</tr>
-<tr>
-<td>10</td>
-<td>CANCELLED_ORDER</td>
-<td>&#39;Order Has Been Cancelled&rsquo;</td>
-</tr>
-<tr>
-<td>11</td>
-<td>RTO_REQUESTED</td>
-<td>&#39;Rto For Shipment has been Requested&rsquo;</td>
-</tr>
-<tr>
-<td>12</td>
-<td>RTO</td>
-<td>&#39;Marked As Return&rsquo;</td>
-</tr>
-<tr>
-<td>13</td>
-<td>RTO_OUT_FOR_DELIVERY</td>
-<td>&#39;Shipment Is Out For Delivery For RTO&rsquo;</td>
-</tr>
-<tr>
-<td>14</td>
-<td>RTO_DELIVERED</td>
-<td>&#39;Rto Delivered&rsquo;</td>
-</tr>
-<tr>
-<td>15</td>
-<td>RTO_FAILED</td>
-<td>&#39;Rto Failed&rsquo;</td>
-</tr>
-<tr>
-<td>16</td>
-<td>LOST</td>
-<td>&#39;Shipment is Lost&rsquo;</td>
-</tr>
-<tr>
-<td>17</td>
-<td>DAMAGED</td>
-<td>&#39;Shipment is damaged&rsquo;</td>
-</tr>
-<tr>
-<td>18</td>
-<td>SHIPMENT_DELAYED</td>
-<td>&#39;Shipment Is Delayed Or Misroute&rsquo;</td>
-</tr>
-<tr>
-<td>19</td>
-<td>CONTACT_CUSTOMER_CARE</td>
-<td>&#39;Contact To The Customer Care&rsquo;</td>
-</tr>
-<tr>
-<td>20</td>
-<td>SHIPMENT_HELD</td>
-<td>&#39;Shipment Is being held&rsquo;</td>
-</tr>
-<tr>
-<td>21</td>
-<td>RTO_INTRANSIT</td>
-<td>&#39;Shipment Return On The Way&rsquo;</td>
-</tr>
-</tbody></table>
+<p>You can test the webhooks by making a POST request on the following URL:
+<code class="prettyprint">https://www.clickpost.in/api/v1/test_webhook?key=&lt;YOUR_API_KEY&gt;</code></p>
+
+<p>Where test_url is your server URL where you want to test the webhook data.</p>
+
+<p>This will send sample payload as mentioned above with Headers on the server mentioned in test_url.</p>
 
 <hr>
 
@@ -1341,7 +1261,7 @@ Headers: {'Content-type': 'application/json'}
 <blockquote>
 <p>URL to hit:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>https://www.clickpost.in/api/v1/cancel-order/?username=test&amp;key=42d42a34-ae09-4693- b20c-ae2624&amp;awb=782715732348
+<pre class="highlight plaintext"><code>https://www.clickpost.in/api/v1/cancel-order/?username=test&amp;key=42d42a34-ae09-4693- b20c-ae2624&amp;awb=782715732348&amp;cp_id=8
 
 Headers: {'Content-type': 'application/json'}
 
@@ -1371,6 +1291,7 @@ number already in a deleted state."</span><span class="p">,</span><span class="w
 <li>username: User name provided to you.</li>
 <li>key: API key provided to you.</li>
 <li>waybill: waybill, which needs to be cancelled</li>
+<li>cp_id: Courier Partner ID of the courier from which shipment was dispatched. List: <a href="http://track.clickpost.in/courier_partner" target="_blank">http://track.clickpost.in/courier_partner</a></li>
 </ol>
 
 <h3 id="response-explanation">Response Explanation:</h3>
@@ -1842,7 +1763,7 @@ Headers: {'Content-type': 'application/json'}
 <tr>
 <td>courier_partner</td>
 <td>integer</td>
-<td>ID of courier partner for which the pickup request needs to be placed. List at : http://track.clickpost.in/courier_partner</td>
+<td>ID of courier partner for which the pickup request needs to be placed. List at : <a href="http://track.clickpost.in/courier_partner" target="_blank">http://track.clickpost.in/courier_partner</a></td>
 </tr>
 <tr>
 <td>items</td>
@@ -1897,7 +1818,8 @@ Headers: {'Content-type': 'application/json'}
   </span><span class="p">},</span><span class="w">
   </span><span class="nt">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELKL"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"confirmation_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6"</span><span class="w"> </span><span class="p">}</span><span class="w">
+    </span><span class="nt">"confirmation_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6"</span><span class="w"> 
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <h3 id="response-explanation">Response Explanation:</h3>
@@ -1918,6 +1840,144 @@ Headers: {'Content-type': 'application/json'}
 </ol>
 
 <p>Result tag will be present in request only if the meta tag contains <code class="prettyprint">success</code> : true.</p>
+
+          <h1 id="tracking-status-codes">Tracking Status Codes</h1>
+
+<table><thead>
+<tr>
+<th>clickpost_status_code</th>
+<th>clickpost_status_description</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>1</td>
+<td>ORDER_PLACED</td>
+<td>&lsquo;Order Has Been Placed / Manifested on Courier Partner&rsquo;</td>
+</tr>
+<tr>
+<td>2</td>
+<td>PICKUP_PENDING</td>
+<td>&#39;Pickup Pending&rsquo;</td>
+</tr>
+<tr>
+<td>3</td>
+<td>PICKUP_CANCELLED</td>
+<td>&#39;Pickup Cancelled&rsquo;</td>
+</tr>
+<tr>
+<td>4</td>
+<td>PICKED_UP</td>
+<td>&#39;Pickup Has Been Done&rsquo;</td>
+</tr>
+<tr>
+<td>5</td>
+<td>INTRANSIT</td>
+<td>&#39;In Transit&rsquo;</td>
+</tr>
+<tr>
+<td>6</td>
+<td>OUT_FOR_DELIVERY</td>
+<td>&#39;Shipment Out For Delivery&rsquo;</td>
+</tr>
+<tr>
+<td>7</td>
+<td>NOT_SERVICEABLE</td>
+<td>&#39;Area For Delivery Is Not Servicable&rsquo;</td>
+</tr>
+<tr>
+<td>8</td>
+<td>DELIVERED</td>
+<td>&#39;Shipment Delivered&rsquo;</td>
+</tr>
+<tr>
+<td>9</td>
+<td>FAILED_DELIVERY</td>
+<td>&#39;Delivery Failed&rsquo;</td>
+</tr>
+<tr>
+<td>10</td>
+<td>CANCELLED_ORDER</td>
+<td>&#39;Order Has Been Cancelled&rsquo;</td>
+</tr>
+<tr>
+<td>11</td>
+<td>RTO_REQUESTED</td>
+<td>&#39;Rto For Shipment has been Requested&rsquo;</td>
+</tr>
+<tr>
+<td>12</td>
+<td>RTO</td>
+<td>&#39;Marked As Return&rsquo;</td>
+</tr>
+<tr>
+<td>13</td>
+<td>RTO_OUT_FOR_DELIVERY</td>
+<td>&#39;Shipment Is Out For Delivery For RTO&rsquo;</td>
+</tr>
+<tr>
+<td>14</td>
+<td>RTO_DELIVERED</td>
+<td>&#39;RTO Delivered&rsquo;</td>
+</tr>
+<tr>
+<td>15</td>
+<td>RTO_FAILED</td>
+<td>&#39;RTO Failed&rsquo;</td>
+</tr>
+<tr>
+<td>16</td>
+<td>LOST</td>
+<td>&#39;Shipment is Lost&rsquo;</td>
+</tr>
+<tr>
+<td>17</td>
+<td>DAMAGED</td>
+<td>&#39;Shipment is damaged&rsquo;</td>
+</tr>
+<tr>
+<td>18</td>
+<td>SHIPMENT_DELAYED</td>
+<td>&#39;Shipment Is Delayed Or Misroute&rsquo;</td>
+</tr>
+<tr>
+<td>19</td>
+<td>CONTACT_CUSTOMER_CARE</td>
+<td>&#39;Contact To The Customer Care&rsquo;</td>
+</tr>
+<tr>
+<td>20</td>
+<td>SHIPMENT_HELD</td>
+<td>&#39;Shipment Is being held&rsquo;</td>
+</tr>
+<tr>
+<td>21</td>
+<td>RTO_INTRANSIT</td>
+<td>&#39;RTO In Transit&rsquo;</td>
+</tr>
+<tr>
+<td>25</td>
+<td>OUT_FOR_PICKUP</td>
+<td>&#39;Shipment Out For Pickup&rsquo; (Important in Marketplace / RVP pickups)</td>
+</tr>
+<tr>
+<td>26</td>
+<td>RTO_CONTACT_CUSTOMER_CARE</td>
+<td>&#39;RTO Contact Customer Care&rsquo;</td>
+</tr>
+<tr>
+<td>27</td>
+<td>RTO_SHIPMENT_DELAY</td>
+<td>&#39;RTO Shipment Delayed&rsquo;</td>
+</tr>
+<tr>
+<td>28</td>
+<td>Awb Registered</td>
+<td>&#39;AWB registered on Clickpost&rsquo;</td>
+</tr>
+</tbody></table>
+
+<p>It is strongly recommended to use the clickpost_status_code to apply any logic on unified statuses.</p>
 
           <h1 id="error-codes">Error Codes</h1>
 
