@@ -1212,13 +1212,135 @@ Headers: {'Content-type': 'application/json'}
 <p><strong>Webhook Payload</strong></p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"When forward shipment is accepted by end customer and POD is received"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delivered"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"When forward shipment is not accepted by end customer"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Failed Delivery"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XYZABC"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bengaluru_Koramangala_Dc (Karnataka)"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-07-12T17:12:36.710"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delivered"</span><span class="w">
+  </span><span class="nt">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FailedDelivery"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+
+  </span><span class="nt">"additional"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+
+    </span><span class="nt">"ndr_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"ndr_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Customer Unavailable"</span><span class="p">,</span><span class="w">
+
+    </span><span class="nt">"dsqc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"breadth"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"expected_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"receiver"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GGN HUB"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"weight"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"package_price"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"consignee"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GGN HUB"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"pincode"</span><span class="p">:</span><span class="w"> </span><span class="mi">1177</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"creation_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-27T00:01:00"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"qc_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"sign_img"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media-nuvo.s3.amazonaws.com/AWB/images/SBL35560229_na_SIG__pid_8901110.png?Signature=1JOmLgoBraoGVIr%2BBP0vW7FOQ0s%3D&amp;Expires=1532682077&amp;AWSAccessKeyId=AKIAJKYQRPL5EOZJMFFQ12"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"phone_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"customer_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Prashant Gupta"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"on_update"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-07-27T14:30:42.747"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Surat"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"pickupdate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"07/27/2017 5:01 p.m."</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"invoice_no"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"order_id_barcode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://media-nuvo.s3.amazonaws.com/Barcode/AWB/100790852-640.png?Signature=6eNY0BlHttRLh%2BXQ%2Fbky%2F9IW%2BG8%3D&amp;Expires=1532599621&amp;AWSAccessKeyId=AKIAJKYQRPL5EOZJMFFQ12"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"expected_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"area"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"destination"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delhi NCR"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"qr_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1012547131"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"priority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"N"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"volumetric_weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"crp_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"ptm_otp"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"phone_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9099118426"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"package_sku"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bag Created"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"REV"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"reason_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"vendor"</span><span class="p">:</span><span class="w"> </span><span class="mi">509427</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Floral Chloey Cold Shoulder Top,Sky Errand Dress"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100790852-640"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"pod_link"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"barcode"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"is_active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"client_weight"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"image_urls"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"origin_branch"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"last_update_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"07/27/2017 6:48 p.m."</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"remarks"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Reverse Pickup"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"qty"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"awb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"35560229"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"product_img"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://media-nuvo.s3.amazonaws.com/AWB/images/SBL35560229_IN1634MTODREBLU-518-16_SHI_pid_4108613.png?Signature=1o9Om%2FwaOxf7V8jv1GbntJfcPGc%3D&amp;Expires=1532682080&amp;AWSAccessKeyId=AKIAJKYQRPL5EOZJMFFQ12"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"qc_details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"image_data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"IN1634MTODREBLU-518-16"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"https://media-nuvo.s3.amazonaws.com/AWB/images/SBL35560229_IN1634MTODREBLU-518-16_SHI_pid_6674516.png?Signature=XOOeGFhosPDeu4tUhmFl%2FmWbqSE%3D&amp;Expires=1532682079&amp;AWSAccessKeyId=AKIAJKYQRPL5EOZJMFFQ12"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"https://media-nuvo.s3.amazonaws.com/AWB/images/SBL35560229_IN1634MTODREBLU-518-16_SHI_pid_4108613.png?Signature=1o9Om%2FwaOxf7V8jv1GbntJfcPGc%3D&amp;Expires=1532682080&amp;AWSAccessKeyId=AKIAJKYQRPL5EOZJMFFQ12"</span><span class="w">
+          </span><span class="p">],</span><span class="w">
+          </span><span class="nt">"IN1702MTOTOPFLR-195-16"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"https://media-nuvo.s3.amazonaws.com/AWB/images/SBL35560229_IN1702MTOTOPFLR-195-16_SHI_pid_5099882.png?Signature=hxRLaVodTvkg0AubXB4V5a10F3o%3D&amp;Expires=1532682078&amp;AWSAccessKeyId=AKIAJKYQRPL5EOZJMFFQ12"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"https://media-nuvo.s3.amazonaws.com/AWB/images/SBL35560229_IN1702MTOTOPFLR-195-16_SHI_pid_8242019.png?Signature=c7j1j1MblBFwGU8J2rHE8R%2B%2BWts%3D&amp;Expires=1532682079&amp;AWSAccessKeyId=AKIAJKYQRPL5EOZJMFFQ12"</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nt">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+            </span><span class="nt">"item"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IN1634MTODREBLU-518-16"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"config"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+                </span><span class="nt">"answer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yes"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Is the SKU code matching?"</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="p">{</span><span class="w">
+                </span><span class="nt">"answer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yes"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Is MRP tag Available?"</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="p">{</span><span class="w">
+                </span><span class="nt">"answer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Is the item defective/Damage?"</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="p">{</span><span class="w">
+                </span><span class="nt">"answer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yes"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Are the product images matching"</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"item"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IN1702MTOTOPFLR-195-16"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"config"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+                </span><span class="nt">"answer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yes"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Is the SKU code matching?"</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="p">{</span><span class="w">
+                </span><span class="nt">"answer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yes"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Is MRP tag Available?"</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="p">{</span><span class="w">
+                </span><span class="nt">"answer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"no"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Is the item defective/Damage?"</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="p">{</span><span class="w">
+                </span><span class="nt">"answer"</span><span class="p">:</span><span class="w"> </span><span class="s2">"yes"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"question"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Are the product images matching"</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nt">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"qc_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pass"</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="nt">"reason_for_return"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Customer initiated reverse pickup."</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"dto_center"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"destination_branch"</span><span class="p">:</span><span class="w"> </span><span class="mi">43</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"qc_result"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"height"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"qc_fail_reason"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+      </span><span class="nt">"length"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"qc_type_new"</span><span class="p">:</span><span class="w"> </span><span class="s2">"doorstep"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"address_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Prashant , 7-D arnav-B building,  city light road , Surat , Gujarat, IN"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"address_2"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"slot"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"package_value"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"delivery_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <h3 id="payload-explanation">Payload Explanation:</h3>
