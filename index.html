@@ -1229,6 +1229,31 @@ Headers: {'Content-type': 'application/json'}
 <blockquote>
 <p><strong>Webhook Payload</strong></p>
 </blockquote>
+<pre class="highlight json"><code><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="nt">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="s2">"P0109276342"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OutForDelivery"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"O"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VASAI, MUMBAI"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-02T13:23:02Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Out For Delivery"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"additional"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"latest_status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VASAI, MUMBAI"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"O"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OutForDelivery"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-02T13:23:02Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Out For Delivery"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p><strong>NDR(Non delivery report) details in Webhook, send when the status_code = 9 (Failed Delivery)</strong></p>
+</blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"When forward shipment is not accepted by end customer"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Failed Delivery"</span><span class="p">,</span><span class="w">
@@ -1240,10 +1265,40 @@ Headers: {'Content-type': 'application/json'}
   </span><span class="nt">"cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
 
   </span><span class="nt">"additional"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-
+    </span><span class="nt">"latest_status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bengaluru_Koramangala_Dc (Karnataka)"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"When forward shipment is not accepted by end customer"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FailedDelivery"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-07-12T17:12:36.710"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Failed Delivery"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
     </span><span class="nt">"ndr_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"ndr_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Customer Unavailable"</span><span class="p">,</span><span class="w">
-
+    </span><span class="nt">"ndr_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Customer Unavailable"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p><strong>NuvoEx Doorstep QC check webhook</strong></p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Shipment picked up"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Picked up"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XYZABC"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bengaluru_Koramangala_Dc (Karnataka)"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-07-12T17:12:36.710"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PickedUp"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"additional"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"latest_status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Shipment picked up"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Picked up"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bengaluru_Koramangala_Dc (Karnataka)"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-07-12T17:12:36.710"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PickedUp"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
     </span><span class="nt">"dsqc"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
       </span><span class="nt">"breadth"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
       </span><span class="nt">"expected_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -1360,6 +1415,7 @@ Headers: {'Content-type': 'application/json'}
     </span><span class="p">}</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
+
 </span></code></pre>
 <h3 id="payload-explanation">Payload Explanation:</h3>
 
@@ -1373,6 +1429,26 @@ Headers: {'Content-type': 'application/json'}
 <li>clickpost_status_description: description of clickpost_status_code (Specified on next page)</li>
 </ol>
 
+<h3 id="important-notes-and-special-data-in-webhooks-examples-are-present-on-the-right">Important Notes and special data in Webhooks (Examples are present on the right):</h3>
+
+<ol>
+<li>Webhooks do not guarantee the order of data send to Client servers. 
+latest_status indicates the latest status for the shipment at the time when the webhook is sent. This is sent with all webhooks</li>
+<li>In case of NuvoEx Reverse Pickup: doorstep Quality Check order, additional has dsqc object at the time of pickup cancelled (clickpost_status_code = 10) and pickedup (clickpost_status_code = 4)</li>
+<li>In case of Failed Delivery, Clickpost unified NDR status code and NDR status description is sent in additional</li>
+</ol>
+
+<hr>
+
+<h3 id="testing-webhook">Testing Webhook:</h3>
+
+<p>You can test the webhooks by making a POST request on the following URL:
+<code class="prettyprint">https://www.clickpost.in/api/v1/test_webhook?key=&lt;YOUR_API_KEY&gt;</code></p>
+
+<p>Where test_url is your server URL where you want to test the webhook data.</p>
+
+<p>This will send sample payload as mentioned above with Headers on the server mentioned in test_url.</p>
+
 <blockquote>
 <p><strong>Test Webhook URL</strong></p>
 </blockquote>
@@ -1385,15 +1461,6 @@ Headers: {'Content-type': 'application/json'}
   </span><span class="nt">"test_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://test.clickpost.in/"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<h3 id="testing-webhook">Testing Webhook:</h3>
-
-<p>You can test the webhooks by making a POST request on the following URL:
-<code class="prettyprint">https://www.clickpost.in/api/v1/test_webhook?key=&lt;YOUR_API_KEY&gt;</code></p>
-
-<p>Where test_url is your server URL where you want to test the webhook data.</p>
-
-<p>This will send sample payload as mentioned above with Headers on the server mentioned in test_url.</p>
-
 <hr>
 
           <h1 id="cancel-shipment-api">Cancel Shipment API</h1>
