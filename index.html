@@ -1449,6 +1449,10 @@ latest_status indicates the latest status for the shipment at the time when the 
 </tr>
 </thead><tbody>
 <tr>
+<td>0</td>
+<td>&ldquo;Unknown Exception&rdquo;</td>
+</tr>
+<tr>
 <td>1</td>
 <td>&ldquo;Customer Unavailable&rdquo;</td>
 </tr>
@@ -1480,18 +1484,33 @@ latest_status indicates the latest status for the shipment at the time when the 
 <td>8</td>
 <td>&ldquo;Out Of Delivery Area&rdquo;</td>
 </tr>
+<tr>
+<td>9</td>
+<td>&ldquo;Order Already Cancelled&rdquo;</td>
+</tr>
+<tr>
+<td>10</td>
+<td>&ldquo;Self Collect&rdquo;</td>
+</tr>
+<tr>
+<td>11</td>
+<td>&ldquo;Shipment Seized By Customer&rdquo;</td>
+</tr>
 </tbody></table>
+
+<p><em>Clickpost recommends that the mapping of NDR be done strictly on ndr_status_code and not on ndr_status_description</em></p>
 
 <hr>
 
 <h3 id="testing-webhook">Testing Webhook:</h3>
 
-<p>You can test the webhooks by making a POST request on the following URL:
-<code class="prettyprint">https://www.clickpost.in/api/v1/test_webhook?key=&lt;YOUR_API_KEY&gt;</code></p>
+<p>You can test the webhooks by making a POST request on the following URL:</p>
+
+<p><code class="prettyprint">https://www.clickpost.in/api/v1/test_webhook?key=&lt;YOUR_API_KEY&gt;</code></p>
 
 <p>Where test_url is your server URL where you want to test the webhook data.</p>
 
-<p>This will send sample payload as mentioned above with Headers on the server mentioned in test_url.</p>
+<p>This will send sample payload as specified in test_data with Headers on the server mentioned in test_url.</p>
 
 <blockquote>
 <p><strong>Test Webhook URL</strong></p>
