@@ -127,6 +127,7 @@
 <li><strong>Cancellation API</strong>: Cancel shipment manifested on Courier Partner for faster returns and higher inventory availability</li>
 <li><strong>Recommendation Engine</strong>: Recommend list of Courier Partners in priority order</li>
 <li><strong>Serviceability API</strong>: Check pincode serviceability</li>
+<li><strong>Expected Date of Delivery API</strong>: Check predictive sla time range for any shipment</li>
 <li><strong>Pickup Request API</strong>: Recommend list of Courier Partners in priority order</li>
 </ol>
 
@@ -230,11 +231,11 @@ Nagar, New Delhi"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"return_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nt">"pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110019"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Deepanshu"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Clickpost"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IN"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"phone"</span><span class="p">:</span><span class="w"> </span><span class="mi">8080808080</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Address top floor kalkaji NewDelhi "</span><span class="w">
+        </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Address, Test Location, Test Landmark New Delhi"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nt">"tin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"120349483"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"invoice_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-12-27"</span><span class="p">,</span><span class="w">
@@ -426,6 +427,11 @@ Nagar, New Delhi"</span><span class="p">,</span><span class="w">
 <td>character</td>
 <td>pickup country name, maximum length 100 characters i. email: email id to be sent to courier partner for this shipment</td>
 </tr>
+<tr>
+<td>vendor_code</td>
+<td>character</td>
+<td>(optional) vendor code of pickup location. If this field is not provided, Clickpost will generate vendor code for the pickup location</td>
+</tr>
 </tbody></table>
 
 <h5 id="drop-information">Drop Information</h5>
@@ -471,6 +477,62 @@ Nagar, New Delhi"</span><span class="p">,</span><span class="w">
 <td>drop_country</td>
 <td>character</td>
 <td>drop country name, maximum length 200 characters</td>
+</tr>
+<tr>
+<td>drop_email</td>
+<td>character</td>
+<td>(optional) email of the customer</td>
+</tr>
+</tbody></table>
+
+<h5 id="return-information">Return Information</h5>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>character</td>
+<td>maximum length of 100 characters</td>
+</tr>
+<tr>
+<td>address</td>
+<td>character</td>
+<td>maximum length of 500 characters</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>integer</td>
+<td>10/11 digit phone number</td>
+</tr>
+<tr>
+<td>pincode</td>
+<td>integer</td>
+<td>6 digit pincode</td>
+</tr>
+<tr>
+<td>city</td>
+<td>character</td>
+<td>drop city name, maximum length 200 characters</td>
+</tr>
+<tr>
+<td>state</td>
+<td>character</td>
+<td>drop state name, maximum length 200 characters</td>
+</tr>
+<tr>
+<td>country</td>
+<td>character</td>
+<td>drop country name, maximum length 200 characters</td>
+</tr>
+<tr>
+<td>email</td>
+<td>character</td>
+<td>(optional) email of the customer</td>
 </tr>
 </tbody></table>
 
@@ -652,22 +714,6 @@ Nagar, New Delhi"</span><span class="p">,</span><span class="w">
 </tr>
 </tbody></table>
 
-<h5 id="optional-field-for-xpressbees-vendor_code-for-multiple-location-pickups">Optional field for XpressBees (vendor_code for multiple location pickups):</h5>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>vendor_code</td>
-<td>character</td>
-<td>In case you have multiple locations for pickup, please pass vendor_code of corresponding location in create-order from where the shipment needs to be picked up</td>
-</tr>
-</tbody></table>
-
 <h5 id="optional-field-for-bluedart-critical-time-defined-delivery-service">Optional field for Bluedart (Critical / Time defined delivery service):</h5>
 
 <table><thead>
@@ -684,9 +730,11 @@ Nagar, New Delhi"</span><span class="p">,</span><span class="w">
 </tr>
 </tbody></table>
 
-<p>C: Critical Shipment 
-T: Time defined delivery on or before 10:30 
-N: Time defined delivery on or before 12</p>
+<ol>
+<li>C: Critical Shipment </li>
+<li>T: Time defined delivery on or before 10:30 </li>
+<li>N: Time defined delivery on or before 12</li>
+</ol>
 
 <h3 id="response-explanation">Response Explanation:</h3>
 
@@ -1438,8 +1486,6 @@ latest_status indicates the latest status for the shipment at the time when the 
 <li>In case of Failed Delivery, Clickpost unified NDR status code and NDR status description is sent in additional</li>
 </ol>
 
-<hr>
-
 <h3 id="ndr-status-codes">NDR Status Codes</h3>
 
 <table><thead>
@@ -1502,7 +1548,7 @@ latest_status indicates the latest status for the shipment at the time when the 
 
 <hr>
 
-<h3 id="testing-webhook">Testing Webhook:</h3>
+<h2 id="testing-webhook">Testing Webhook:</h2>
 
 <p>You can test the webhooks by making a POST request on the following URL:</p>
 
@@ -1832,7 +1878,8 @@ You must replace key with key provided to you.
             </span><span class="nt">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
             </span><span class="nt">"length"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
             </span><span class="nt">"weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"invoice_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">1245</span><span class="w">
+            </span><span class="nt">"invoice_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">1245</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">]</span><span class="w">
@@ -1858,6 +1905,8 @@ You must replace key with key provided to you.
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
+<p>Serviceability api checks if pickup and drop pincodes are serviceabile or not. It accepts the shipment dimension fields as additional parameters. Courier company id can be passed to check the serviceability for a specific courier company.</p>
+
 <p>It’s a POST request as follows</p>
 
 <p>URL:
@@ -1934,14 +1983,32 @@ You must replace key with key provided to you.
 <td>character</td>
 <td>COD/PREPAID</td>
 </tr>
+<tr>
+<td>weight</td>
+<td>integer</td>
+<td>weight of the shipment</td>
+</tr>
+<tr>
+<td>length</td>
+<td>integer</td>
+<td>length of the shipment</td>
+</tr>
+<tr>
+<td>breadth</td>
+<td>integer</td>
+<td>breadth of the shipment</td>
+</tr>
+<tr>
+<td>height</td>
+<td>integer</td>
+<td>height of the shipment</td>
+</tr>
+<tr>
+<td>cp_id</td>
+<td>integer</td>
+<td>clickpost courier comapny id</td>
+</tr>
 </tbody></table>
-
-<!--
-weight | integer | weight of the shipment
-length | integer | length of the shipment
-breadth | integer | breadth of the shipment
-height | integer | height of the shipment
--->
 
 <h3 id="response-explanation">Response explanation:</h3>
 
@@ -1952,7 +2019,7 @@ height | integer | height of the shipment
 
 <ul>
 <li>success: true/false, tells whether the order was created or not</li>
-<li>message: SUCCESS in case order was created successfully, else returns error message.</li>
+<li>message: SUCCESS in case request was successfully processed by clickpost, else returns error message.</li>
 <li>status:
 
 <ol>
@@ -1971,6 +2038,218 @@ height | integer | height of the shipment
 </ul></li>
 <li>expected_sla: average expected SLA (in days) for the shipment as recommended by Clickpost, if dispatched today. (integer field)</li>
 <li>commited_sla: average commited SLA by courier partner for the shipment if dispatched today. (integer field)</li>
+</ul></li>
+</ol>
+
+<aside class="warning">
+You must replace username / key with username / key provided to you.
+</aside>
+
+<hr>
+
+          <h1 id="expected-date-of-delivery-api">Expected Date of Delivery API</h1>
+
+<blockquote>
+<p>URL to hit</p>
+</blockquote>
+<pre class="highlight plaintext"><code>https://www.clickpost.in//api/v1/predicted_sla_api/?username=test&amp;key=42d42a34-ae09-4693-%20b20c-ae2624
+
+(username and key needs to be replaced with the key provided to you)
+</code></pre>
+<blockquote>
+<p><strong>Example(POST Body with courier partner provided)</strong></p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"pickup_pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"600040"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"drop_pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"421504"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"optional"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"cp_id"</span><span class="w"> </span><span class="p">:</span><span class="mi">5</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p><strong>Response</strong></p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUCCESS"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"predicted_sla_min"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"min_sla_cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"predicted_sla_max"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"all_map"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nt">"5"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="mi">1</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p><strong>Example(POST Body across all courier partners)</strong></p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"pickup_pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"600040"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"drop_pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"421504"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p><strong>Response</strong></p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUCCESS"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"predicted_sla_min"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"min_sla_cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"predicted_sla_max"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"all_map"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nt">"3"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="mi">3</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="nt">"4"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                    </span><span class="mi">6</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="nt">"5"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="mi">1</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="nt">"6"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="mi">1</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="nt">"14"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="mi">3</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="nt">"15"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="mi">1</span><span class="w">
+                </span><span class="p">],</span><span class="w">
+                </span><span class="nt">"1001"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="mi">1</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>The expected date of delivery api computes the minimum/maximum time range, any shipment can take between the pickup and drop pincode using our predictive/machine learning algorithms. By default it computes the range for all courier companies available and gives the courier comapny id which might deliver the shipment fastest. Optional courier comapny id can be passed to see the range for a specific courier comapny; errors/warnings will be highlighted in the response.</p>
+
+<p>It’s a POST request as follows</p>
+
+<p>URL:
+<code class="prettyprint">https://www.clickpost.in/api/v1/predicted_sla_api/</code>`</p>
+
+<p>Headers: {&lsquo;Content-type&rsquo;: &#39;application/json&rsquo;}</p>
+
+<h4 id="url-parameters">URL Parameters:</h4>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>key</td>
+<td>character</td>
+<td>API key provided to you</td>
+</tr>
+<tr>
+<td>username</td>
+<td>character</td>
+<td>username provided to you</td>
+</tr>
+</tbody></table>
+
+<h4 id="post-parameters">POST Parameters:</h4>
+
+<p>Format: JSON</p>
+
+<h3 id="compulsory-fields">Compulsory Fields</h3>
+
+<p>Payload is a list of json objects each of which have following fields:</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>pickup_pincode</td>
+<td>integer</td>
+<td>pincode of pickup address</td>
+</tr>
+<tr>
+<td>drop_pincode</td>
+<td>integer</td>
+<td>pincode of drop address</td>
+</tr>
+</tbody></table>
+
+<h3 id="optional-fields">Optional Fields</h3>
+
+<!--In case you want the expected date of delivery api to show sla only for given courier company, please pass the following fields in the API. -->
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>cp_id</td>
+<td>integer</td>
+<td>clickpost courier company id</td>
+</tr>
+</tbody></table>
+
+<h3 id="response-explanation">Response explanation:</h3>
+
+<p>Response object has two parts:</p>
+
+<ol>
+<li>meta: stores information about the API, success or failure
+
+<ul>
+<li>success: true/false, tells whether the order was created or not</li>
+<li>message: SUCCESS in case request was successfully processed by clickpost, else returns error message.</li>
+<li>status:
+
+<ol>
+<li>200 if the request is processed successfully,</li>
+<li>400 if there is a bad request encountered: errors will be present in “message”</li>
+</ol></li>
+</ul></li>
+<li>result: 
+
+<ul>
+<li>predicted_sla_min: minimum predicted sla a shipment can take between the pin codes given</li>
+<li>predicted_sla_max: maximum predicted sla a shipment can take between the pin codes given</li>
+<li>min_sla_cp_id: courier company id for the smallest range of sla for shipment can take between the pin codes given<br></li>
+<li>all_map: conatins min, max values for all posible courier comapnies<br></li>
 </ul></li>
 </ol>
 
