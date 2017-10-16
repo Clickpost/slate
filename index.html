@@ -2151,12 +2151,12 @@ You must replace username / key with username / key provided to you.
     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>The expected date of delivery api computes the minimum/maximum time range, any shipment can take between the pickup and drop pincode using our predictive/machine learning algorithms. By default it computes the range for all courier companies available and gives the courier comapny id which might deliver the shipment fastest. Optional courier comapny id can be passed to see the range for a specific courier comapny; errors/warnings will be highlighted in the response.</p>
+<p>The expected date of delivery API computes the minimum/maximum time range, a shipment lifecycle may take between the pickup and drop pincode using our predictive machine learning algorithm. By default, it computes the range for all courier companies available and gives the courier partner id which might deliver the shipment fastest. Optional courier comapny id can be passed to see the range for a specific courier partner; errors/warnings will be highlighted in the response.</p>
 
 <p>It’s a POST request as follows</p>
 
 <p>URL:
-<code class="prettyprint">https://www.clickpost.in/api/v1/predicted_sla_api/</code>`</p>
+<code class="prettyprint">https://www.clickpost.in/api/v1/predicted_sla_api/</code></p>
 
 <p>Headers: {&lsquo;Content-type&rsquo;: &#39;application/json&rsquo;}</p>
 
@@ -2222,9 +2222,12 @@ You must replace username / key with username / key provided to you.
 <tr>
 <td>cp_id</td>
 <td>integer</td>
-<td>clickpost courier company id</td>
+<td>courier partner id</td>
 </tr>
 </tbody></table>
+
+<p>List of courier partners is present at:
+<a href="http://track.clickpost.in/courier_partner" target="_blank">http://track.clickpost.in/courier_partner</a></p>
 
 <h3 id="response-explanation">Response explanation:</h3>
 
@@ -2234,8 +2237,8 @@ You must replace username / key with username / key provided to you.
 <li>meta: stores information about the API, success or failure
 
 <ul>
-<li>success: true/false, tells whether the order was created or not</li>
-<li>message: SUCCESS in case request was successfully processed by clickpost, else returns error message.</li>
+<li>success: true/false, tells whether the request was processed successfully by Clickpost </li>
+<li>message: SUCCESS in case request was successfully processed by Clickpost, else returns error message.</li>
 <li>status:
 
 <ol>
@@ -2246,10 +2249,10 @@ You must replace username / key with username / key provided to you.
 <li>result: 
 
 <ul>
-<li>predicted_sla_min: minimum predicted sla a shipment can take between the pin codes given</li>
-<li>predicted_sla_max: maximum predicted sla a shipment can take between the pin codes given</li>
-<li>min_sla_cp_id: courier company id for the smallest range of sla for shipment can take between the pin codes given<br></li>
-<li>all_map: conatins min, max values for all posible courier comapnies<br></li>
+<li>predicted_sla_min: minimum sla in days predicted by Clickpost between the given pin codes</li>
+<li>predicted_sla_max: maximum sla in days predicted by Clickpost between the given pin codes</li>
+<li>min_sla_cp_id: courier partner id corresponding to the smallest sla of shipment between the pin codes given<br></li>
+<li>all_map: contains [min, max] values for all courier partners serviced by Clickpost</li>
 </ul></li>
 </ol>
 
