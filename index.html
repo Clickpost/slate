@@ -129,6 +129,7 @@
 <li><strong>Serviceability API</strong>: Check pincode serviceability</li>
 <li><strong>Expected Date of Delivery API</strong>: Check predictive sla time range for any shipment</li>
 <li><strong>Pickup Request API</strong>: Recommend list of Courier Partners in priority order</li>
+<li><strong>Customer Feedback API</strong>: Gives list of customer feedbacks submitted on tracking page by end user. </li>
 </ol>
 
 <!--We have language bindings in Shell, Ruby, PHP and Python!-->
@@ -3776,7 +3777,6 @@ You must replace key with key provided to you.
                 </span><span class="nt">"PREPAID"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
                 </span><span class="nt">"COD"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
             </span><span class="p">},</span><span class="w">
-            </span><span class="nt">"expected_sla"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
             </span><span class="nt">"comitted_sla"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">]</span><span class="w">
@@ -3913,8 +3913,7 @@ You must replace key with key provided to you.
 <li>COD: Values: true: if the pincode is COD serviceable else false</li>
 <li>PREPAID: Values: true: if the pincode is COD serviceable else false</li>
 </ul></li>
-<li>expected_sla: average expected SLA (in days) for the shipment as recommended by Clickpost, if dispatched today. (integer field)</li>
-<li>commited_sla: average commited SLA by courier partner for the shipment if dispatched today. (integer field)</li>
+<li>commited_sla: average commited SLA by courier partner (based on your contract with courier partner) for the shipment if dispatched today. (integer field)</li>
 </ul></li>
 </ol>
 
@@ -4293,6 +4292,136 @@ Headers: {'Content-type': 'application/json'}
 </ol>
 
 <p>Result tag will be present in request only if the meta tag contains <code class="prettyprint">success</code> : true.</p>
+
+          <h1 id="customer-feedback-api">Customer Feedback API</h1>
+
+<blockquote>
+<p>URL to hit</p>
+</blockquote>
+<pre class="highlight plaintext"><code>https://www.clickpost.in//api/v1/ndr_user_feedback/?username=test&amp;key=42d42a34-ae09-4693-%20b20c-ae2624&amp;start_date=1509529561&amp;end_date=1512121581
+
+(username and key needs to be replaced with the key provided to you)
+</code></pre>
+<blockquote>
+<p><strong>Example - GET Request</strong></p>
+</blockquote>
+<pre class="highlight plaintext"><code>https://www.clickpost.in//api/v1/ndr_user_feedback/?username=test&amp;key=42d42a34-ae09-4693-%20b20c-ae2624&amp;start_date=1509529561&amp;end_date=1512121581
+</code></pre>
+<blockquote>
+<p><strong>Response</strong></p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"comment"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"preferred_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10-12"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"preferred_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-27"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"landmark"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-27T10:09:51.913623Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"awb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"P0109709890"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"phone"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">}],</span><span class="w">
+    </span><span class="nt">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Success"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This api gives the list of feedback submitted through clickpost tracking page from start date to end date; errors/warnings will be highlighted in the response.</p>
+
+<p>It’s a GET request as follows</p>
+
+<p>URL:
+<code class="prettyprint">https://www.clickpost.in//api/v1/ndr_user_feedback/
+</code></p>
+
+<p>Headers: {&lsquo;Content-type&rsquo;: &#39;application/json&rsquo;}</p>
+
+<h4 id="url-parameters">URL Parameters:</h4>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>key</td>
+<td>character</td>
+<td>API key provided to you</td>
+</tr>
+<tr>
+<td>username</td>
+<td>character</td>
+<td>username provided to you</td>
+</tr>
+</tbody></table>
+
+<h4 id="get-parameters">GET Parameters:</h4>
+
+<p>Format: JSON</p>
+
+<h3 id="compulsory-fields">Compulsory Fields</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>start_date</td>
+<td>long</td>
+<td>UTC epoch start time</td>
+</tr>
+<tr>
+<td>start_date</td>
+<td>long</td>
+<td>UTC epoch end time</td>
+</tr>
+</tbody></table>
+
+<h3 id="response-explanation">Response explanation:</h3>
+
+<p>Response object has two parts:</p>
+
+<ol>
+<li>meta: stores information about the API, success or failure
+
+<ul>
+<li>success: true/false, tells whether the request was processed successfully by Clickpost </li>
+<li>message: SUCCESS in case request was successfully processed by Clickpost, else returns error message.</li>
+<li>status:
+
+<ol>
+<li>200 if the request is processed successfully,</li>
+<li>400 if there is a bad request encountered: errors will be present in “message”</li>
+</ol></li>
+</ul></li>
+<li>result: 
+
+<ul>
+<li>address: New Address change by end user</li>
+<li>comment: comment/description of change by end user</li>
+<li>preferred_time: Preferred time of delivery </li>
+<li>preferred_date: prefered date of delivery</li>
+<li>landmark: landmark for the address</li>
+<li>created_at: timestamp when the user made request for this change</li>
+<li>awb: awb number for which change is requested</li>
+<li>phone: new phone number for delivery<br></li>
+</ul></li>
+</ol>
+
+<aside class="warning">
+You must replace username / key with username / key provided to you.
+</aside>
+
+<hr>
 
           <h1 id="tracking-status-codes">Tracking Status Codes</h1>
 
