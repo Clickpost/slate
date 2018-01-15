@@ -4534,6 +4534,99 @@ You must replace username / key with username / key provided to you.
 
 <hr>
 
+          <ol>
+<li><p>Place widget script in your webpage.
+Note: It&rsquo;s better to move widget script from the top to as low in the page as possible.</p></li>
+<li><p>Place widget HTML code in your webpage.</p></li>
+</ol>
+
+<p>Tracking Page / Widget is designed to provide exhaustive tracking to end user. </p>
+
+<p>The widget/page has following features:</p>
+
+<ol>
+<li>End to end shipment tracking. Incase you want the tracking page to show Order Placed and Ready to Ship milestone as well, please pass order_date and ship_date in AWB-register API.</li>
+<li>Failed delivery feedback from customer: During a failed delivery by courier partner, customer can enter his input/concern over a form which will be shared with you as a report daily or same can be fetched via API (Customer Feedback API)</li>
+<li>In case you want customer to request a delivery preference any time before an attempt for delivery is made, please contact our team to enable the feature. Feedback of the same will be available as for point 2.</li>
+<li>Design language of the page is customisable as per your website theme. Our team can help you in designing the page.</li>
+</ol>
+
+<h2 id="tracking-widget-using-awb-number-and-courier-partner-id">Tracking widget using AWB number and Courier Partner ID</h2>
+
+<h3 id="fields-explanation">Fields Explanation:</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>Your Waybill number</td>
+</tr>
+<tr>
+<td>data-cpId</td>
+<td>string</td>
+<td>Your Courier Partner Id</td>
+</tr>
+<tr>
+<td>data-username</td>
+<td>string</td>
+<td>username provided to you</td>
+</tr>
+<tr>
+<td>data-key</td>
+<td>string</td>
+<td>Key provided to you</td>
+</tr>
+</tbody></table>
+<pre class="highlight plaintext"><code>&lt;div id="1234567890" class="tracking-widget" data-cpId="11" data-key="123-456-7890" data-username="xyz"&gt;&lt;/div&gt;
+
+&lt;script type="text/javascript" src="http://track.clickpost.in/clickpost-widget.js"&gt;&lt;/script&gt;
+</code></pre>
+<h2 id="tracking-widget-using-reference-number-order-id">Tracking widget using Reference Number (Order ID)</h2>
+
+<h3 id="fields-explanation">Fields Explanation:</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>Your order reference number</td>
+</tr>
+<tr>
+<td>data-username</td>
+<td>string</td>
+<td>username provided to you</td>
+</tr>
+<tr>
+<td>data-key</td>
+<td>string</td>
+<td>API Key provided to you</td>
+</tr>
+</tbody></table>
+<pre class="highlight plaintext"><code>&lt;div id="1234567890" class="tracking-widget" data-key="123-456-7890" data-username="xyz"&gt;&lt;/div&gt;
+
+&lt;script type="text/javascript" src="http://track.clickpost.in/clickpost-widget-1.0.1.js"&gt;&lt;/script&gt;
+</code></pre>
+<h2 id="tracking-widget-using-reference-number-order-id-with-customer-ndr-feedback-form">Tracking widget using Reference Number (Order ID) with Customer NDR Feedback Form</h2>
+
+<p>Widget with failed delivery form:</p>
+<pre class="highlight plaintext"><code>&lt;div id="1234567890" class="tracking-widget" data-key="123-456-7890" data-username="xyz"&gt;&lt;/div&gt;
+
+&lt;script type="text/javascript" src="http://track.clickpost.in/clickpost-widget-1.0.2.js"&gt;&lt;/script&gt;
+</code></pre>
+<p>Note: No need to add more than one script for multiple tracking widgets in a page.</p>
+
           <h1 id="tracking-status-codes">Tracking Status Codes</h1>
 
 <table><thead>
