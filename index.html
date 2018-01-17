@@ -4423,14 +4423,16 @@ Headers: {'Content-type': 'application/json'}
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
     </span><span class="nt">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-        </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"comment"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"preferred_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10-12"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"preferred_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-27"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"landmark"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-11-27T10:09:51.913623Z"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"awb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"P0109709890"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"phone"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+            </span><span class="nt">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-01-17T12:28:53.316389Z"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"awb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"C0100122291"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"preferred_time"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"landmark"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">28</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Awb Registered"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Please deliver the product on Saturday,Before that I won't be at my address"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"phone"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"preferred_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
     </span><span class="p">}],</span><span class="w">
     </span><span class="nt">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nt">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -4525,6 +4527,8 @@ Headers: {'Content-type': 'application/json'}
 <li>created_at: timestamp when the user made request for this change</li>
 <li>awb: awb number for which change is requested</li>
 <li>phone: new phone number for delivery<br></li>
+<li>clickpost_status_code: shipment status code when customer entered the feedback </li>
+<li>clickpost_status_description: shipment status description when customer entered the feedback</li>
 </ul></li>
 </ol>
 
