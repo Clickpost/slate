@@ -122,10 +122,10 @@
 <p>Welcome to the Clickpost API! You can use our API to access Clickpost API endpoints which can get information on our different APIs:</p>
 
 <ol>
+<li><strong>Recommendation Engine</strong>: Recommend list of Courier Partners in priority order</li>
 <li><strong>Manifestation API</strong>: Create order on Courier Partner and fetch AWB, Cancel orders and place pickup request</li>
 <li><strong>Track Shipment</strong>: Track your shipment using AWB and Courier Partner</li>
 <li><strong>Cancellation API</strong>: Cancel shipment manifested on Courier Partner for faster returns and higher inventory availability</li>
-<li><strong>Recommendation Engine</strong>: Recommend list of Courier Partners in priority order</li>
 <li><strong>Serviceability API</strong>: Check pincode serviceability</li>
 <li><strong>Expected Date of Delivery API</strong>: Check predictive sla time range for any shipment</li>
 <li><strong>Pickup Request API</strong>: Recommend list of Courier Partners in priority order</li>
@@ -135,6 +135,219 @@
 <!--We have language bindings in Shell, Ruby, PHP and Python!-->
 
 <p>You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.</p>
+
+          <h1 id="recommendation-api">Recommendation API</h1>
+
+<blockquote>
+<p>URL to hit</p>
+</blockquote>
+<pre class="highlight plaintext"><code>https://www.clickpost.in/api/v1/recommendation_api/?key=2e9b19ac-8e1f-41ac-a35b-4cd23f41ae17
+
+(key needs to be replaced with the key provided to you)
+</code></pre>
+<blockquote>
+<p><strong>Example(POST Body)</strong></p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">[{</span><span class="w">
+     </span><span class="nt">"pickup_pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110017"</span><span class="p">,</span><span class="w">
+     </span><span class="nt">"drop_pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110019"</span><span class="p">,</span><span class="w">
+     </span><span class="nt">"order_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PREPAID"</span><span class="p">,</span><span class="w">
+     </span><span class="nt">"reference_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+     </span><span class="nt">"item"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bottle"</span><span class="p">,</span><span class="w">
+     </span><span class="nt">"invoice_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">1245</span><span class="p">,</span><span class="w">
+     </span><span class="nt">"delivery_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FORWARD"</span><span class="p">,</span><span class="w">
+     </span><span class="nt">"weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+     </span><span class="nt">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+     </span><span class="nt">"length"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+     </span><span class="nt">"breadth"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+</span><span class="p">}]</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p><strong>Response</strong></p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"meta"</span><span class="p">:</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUCCESS"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+</span><span class="nt">"result"</span><span class="p">:</span><span class="w">
+    </span><span class="p">[{</span><span class="w">
+     </span><span class="nt">"pincode_serviceable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+     </span><span class="nt">"request_details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                            </span><span class="nt">"pickup_pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110017"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"reference_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"delivery_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FORWARD"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"order_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PREPAID"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"drop_pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110019"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"item"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bottle"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"invoice_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">1245</span><span class="w">
+                       </span><span class="p">},</span><span class="w">
+     </span><span class="nt">"form_tax_details"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+                            </span><span class="nt">"form_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"entry_tax"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+                       </span><span class="p">}],</span><span class="w">
+     </span><span class="nt">"preference_array"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+                            </span><span class="nt">"cp_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fedex"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"priority"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+                      </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+                            </span><span class="nt">"cp_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bluedart"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"priority"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+                      </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+                            </span><span class="nt">"cp_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EcomExpress"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"priority"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+                      </span><span class="p">}]</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>It’s a POST request as follows</p>
+
+<p>URL:
+<code class="prettyprint">https://www.clickpost.in/api/v1/recommendation_api/</code></p>
+
+<p>Headers: {&lsquo;Content-type&rsquo;: &#39;application/json&rsquo;}</p>
+
+<h4 id="url-parameters">URL Parameters:</h4>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>key</td>
+<td>character</td>
+<td>API key provided to you</td>
+</tr>
+</tbody></table>
+
+<h4 id="post-parameters">POST Parameters:</h4>
+
+<p>Format: JSON</p>
+
+<h3 id="compulsory-fields">Compulsory Fields</h3>
+
+<p>Payload is a list of json objects each of which have following fields:</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>pickup_pincode</td>
+<td>integer</td>
+<td>pincode of pickup address</td>
+</tr>
+<tr>
+<td>drop_pincode</td>
+<td>integer</td>
+<td>pincode of drop address</td>
+</tr>
+<tr>
+<td>order_type</td>
+<td>character</td>
+<td>COD/PREPAID</td>
+</tr>
+<tr>
+<td>reference_number</td>
+<td>character</td>
+<td>to identify each json object uniquely</td>
+</tr>
+<tr>
+<td>item</td>
+<td>character</td>
+<td>item that you wish to send</td>
+</tr>
+<tr>
+<td>invoice_value</td>
+<td>double</td>
+<td>invoice value of the shipment</td>
+</tr>
+<tr>
+<td>delivery_type</td>
+<td>character</td>
+<td>FORWARD/RVP</td>
+</tr>
+</tbody></table>
+
+<h3 id="optional-fields">Optional Fields</h3>
+
+<p>In case you want the recommendation logic to incorporate pricing as a parameter as well please pass the following fields in the API. If not passed, the pricing given by you in the system will not be entertained as a parameter.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>weight</td>
+<td>integer</td>
+<td>weight of the shipment</td>
+</tr>
+<tr>
+<td>length</td>
+<td>integer</td>
+<td>length of the shipment</td>
+</tr>
+<tr>
+<td>breadth</td>
+<td>integer</td>
+<td>breadth of the shipment</td>
+</tr>
+<tr>
+<td>height</td>
+<td>integer</td>
+<td>height of the shipment</td>
+</tr>
+</tbody></table>
+
+<h3 id="response-explanation">Response explanation:</h3>
+
+<p>Response object has two parts:</p>
+
+<ol>
+<li>meta: stores information about the API, success or failure
+
+<ul>
+<li>success: true/false, tells whether the order was created or not</li>
+<li>message: SUCCESS in case order was created successfully, else returns error message.</li>
+<li>status:
+
+<ol>
+<li>200 if the order is created successfully,</li>
+<li>400 if there is a bad request encountered: errors will be present in “message”</li>
+</ol></li>
+</ul></li>
+<li>result: It’s a list of multiple objects, each corresponding to the request json objects, with unique identifier: reference_number. For each json object in result, refer:
+
+<ul>
+<li>pincode_serviceable: this field will let you know whether the pincode is serviceable by any courier partner or not. Values: true: if the pincode is serviceable else false</li>
+<li>preference_array: it’s the list of eligible courier partners for the corresponding reference_number. It has following fields
+
+<ol>
+<li>cp_id: courier partner id as mentioned on page 1 of this document</li>
+<li>cp_name: name of the courier partner</li>
+<li>priority: priority</li>
+</ol></li>
+</ul></li>
+</ol>
+
+<aside class="warning">
+You must replace key with key provided to you.
+</aside>
+
+<hr>
 
           <h1 id="shipment-manifestation-awb-generation-api">Shipment Manifestation / AWB Generation API</h1>
 
@@ -2734,13 +2947,13 @@ You must replace Username/key with the username/key provided to you.
 <h2 id="register-for-tracking-service">Register for Tracking Service</h2>
 
 <blockquote>
-<p>It’s a POST request. The URL:</p>
+<p>POST request. URL:</p>
 </blockquote>
 <pre class="highlight plaintext"><code>https://www.clickpost.in/api/v1/register-service/
 Headers: {'Content-type': 'application/json'}
 </code></pre>
 <blockquote>
-<p><strong>Example</strong></p>
+<p><strong>Payload</strong></p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"key"</span><span class="p">:</span><span class="s2">"---Your Clickpost API KEY--"</span><span class="p">,</span><span class="w">
@@ -2802,13 +3015,13 @@ Headers: {'Content-type': 'application/json'}
 <h2 id="register-an-awb-for-tracking">Register an AWB for tracking</h2>
 
 <blockquote>
-<p>It’s a POST request. The URL:</p>
+<p>POST request. URL:</p>
 </blockquote>
 <pre class="highlight plaintext"><code>https://www.clickpost.in/api/v2/tracking/awb-register/
 Headers: {'Content-type': 'application/json'}
 </code></pre>
 <blockquote>
-<p><strong>Example</strong></p>
+<p><strong>Sample Payload</strong></p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABCDRESDEFGHIJKL1257679"</span><span class="p">,</span><span class="w">
@@ -3018,7 +3231,7 @@ Headers: {'Content-type': 'application/json'}
 <h2 id="tracking-awb-using-polling">Tracking AWB Using Polling</h2>
 
 <blockquote>
-<p><strong>Example</strong></p>
+<p><strong>URL</strong></p>
 </blockquote>
 <pre class="highlight plaintext"><code>https://www.clickpost.in/api/v2/track-order/?username=testuser&amp;key=2e9b19ac-8e1f- 41ac-a35b-4cd23f41ae17&amp;waybill=3515341&amp;cp_id=10
 
@@ -3633,219 +3846,6 @@ number already in a deleted state."</span><span class="p">,</span><span class="w
 <li>status: 200 if API works fine, 400 in case of bad request</li>
 </ol>
 
-          <h1 id="recommendation-api">Recommendation API</h1>
-
-<blockquote>
-<p>URL to hit</p>
-</blockquote>
-<pre class="highlight plaintext"><code>https://www.clickpost.in/api/v1/recommendation_api/?key=2e9b19ac-8e1f-41ac-a35b-4cd23f41ae17
-
-(key needs to be replaced with the key provided to you)
-</code></pre>
-<blockquote>
-<p><strong>Example(POST Body)</strong></p>
-</blockquote>
-<pre class="highlight json"><code><span class="p">[{</span><span class="w">
-     </span><span class="nt">"pickup_pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110017"</span><span class="p">,</span><span class="w">
-     </span><span class="nt">"drop_pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110019"</span><span class="p">,</span><span class="w">
-     </span><span class="nt">"order_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PREPAID"</span><span class="p">,</span><span class="w">
-     </span><span class="nt">"reference_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-     </span><span class="nt">"item"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bottle"</span><span class="p">,</span><span class="w">
-     </span><span class="nt">"invoice_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">1245</span><span class="p">,</span><span class="w">
-     </span><span class="nt">"delivery_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FORWARD"</span><span class="p">,</span><span class="w">
-     </span><span class="nt">"weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-     </span><span class="nt">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-     </span><span class="nt">"length"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-     </span><span class="nt">"breadth"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
-</span><span class="p">}]</span><span class="w">
-</span></code></pre>
-<blockquote>
-<p><strong>Response</strong></p>
-</blockquote>
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
-</span><span class="nt">"meta"</span><span class="p">:</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUCCESS"</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-</span><span class="nt">"result"</span><span class="p">:</span><span class="w">
-    </span><span class="p">[{</span><span class="w">
-     </span><span class="nt">"pincode_serviceable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-     </span><span class="nt">"request_details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="nt">"pickup_pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110017"</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"reference_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"delivery_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FORWARD"</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"order_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PREPAID"</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"drop_pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110019"</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"item"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bottle"</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"invoice_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">1245</span><span class="w">
-                       </span><span class="p">},</span><span class="w">
-     </span><span class="nt">"form_tax_details"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-                            </span><span class="nt">"form_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"entry_tax"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
-                       </span><span class="p">}],</span><span class="w">
-     </span><span class="nt">"preference_array"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-                            </span><span class="nt">"cp_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fedex"</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"priority"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-                      </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="nt">"cp_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bluedart"</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"priority"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
-                      </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="nt">"cp_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EcomExpress"</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"priority"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
-                      </span><span class="p">}]</span><span class="w">
-    </span><span class="p">}]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>It’s a POST request as follows</p>
-
-<p>URL:
-<code class="prettyprint">https://www.clickpost.in/api/v1/recommendation_api/</code>`</p>
-
-<p>Headers: {&lsquo;Content-type&rsquo;: &#39;application/json&rsquo;}</p>
-
-<h4 id="url-parameters">URL Parameters:</h4>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>key</td>
-<td>character</td>
-<td>API key provided to you</td>
-</tr>
-</tbody></table>
-
-<h4 id="post-parameters">POST Parameters:</h4>
-
-<p>Format: JSON</p>
-
-<h3 id="compulsory-fields">Compulsory Fields</h3>
-
-<p>Payload is a list of json objects each of which have following fields:</p>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>pickup_pincode</td>
-<td>integer</td>
-<td>pincode of pickup address</td>
-</tr>
-<tr>
-<td>drop_pincode</td>
-<td>integer</td>
-<td>pincode of drop address</td>
-</tr>
-<tr>
-<td>order_type</td>
-<td>character</td>
-<td>COD/PREPAID</td>
-</tr>
-<tr>
-<td>reference_number</td>
-<td>character</td>
-<td>to identify each json object uniquely</td>
-</tr>
-<tr>
-<td>item</td>
-<td>character</td>
-<td>item that you wish to send</td>
-</tr>
-<tr>
-<td>invoice_value</td>
-<td>double</td>
-<td>invoice value of the shipment</td>
-</tr>
-<tr>
-<td>delivery_type</td>
-<td>character</td>
-<td>FORWARD/RVP</td>
-</tr>
-</tbody></table>
-
-<h3 id="optional-fields">Optional Fields</h3>
-
-<p>In case you want the recommendation logic to incorporate pricing as a parameter as well please pass the following fields in the API. If not passed, the pricing given by you in the system will not be entertained as a parameter.</p>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>weight</td>
-<td>integer</td>
-<td>weight of the shipment</td>
-</tr>
-<tr>
-<td>length</td>
-<td>integer</td>
-<td>length of the shipment</td>
-</tr>
-<tr>
-<td>breadth</td>
-<td>integer</td>
-<td>breadth of the shipment</td>
-</tr>
-<tr>
-<td>height</td>
-<td>integer</td>
-<td>height of the shipment</td>
-</tr>
-</tbody></table>
-
-<h3 id="response-explanation">Response explanation:</h3>
-
-<p>Response object has two parts:</p>
-
-<ol>
-<li>meta: stores information about the API, success or failure
-
-<ul>
-<li>success: true/false, tells whether the order was created or not</li>
-<li>message: SUCCESS in case order was created successfully, else returns error message.</li>
-<li>status:
-
-<ol>
-<li>200 if the order is created successfully,</li>
-<li>400 if there is a bad request encountered: errors will be present in “message”</li>
-</ol></li>
-</ul></li>
-<li>result: It’s a list of multiple objects, each corresponding to the request json objects, with unique identifier: reference_number. For each json object in result, refer:
-
-<ul>
-<li>pincode_serviceable: this field will let you know whether the pincode is serviceable by any courier partner or not. Values: true: if the pincode is serviceable else false</li>
-<li>preference_array: it’s the list of eligible courier partners for the corresponding reference_number. It has following fields
-
-<ol>
-<li>cp_id: courier partner id as mentioned on page 1 of this document</li>
-<li>cp_name: name of the courier partner</li>
-<li>priority: priority</li>
-</ol></li>
-</ul></li>
-</ol>
-
-<aside class="warning">
-You must replace key with key provided to you.
-</aside>
-
-<hr>
-
           <h1 id="pincode-serviceability-api">Pincode Serviceability API</h1>
 
 <blockquote>
@@ -4404,6 +4404,107 @@ Headers: {'Content-type': 'application/json'}
 
 <p>Result tag will be present in request only if the meta tag contains <code class="prettyprint">success</code> : true.</p>
 
+          <h1 id="tracking-page-widget">Tracking Page / Widget</h1>
+
+<h3 id="to-integrate-with-your-website">To integrate with your website:</h3>
+
+<ol>
+<li>Place widget script in your webpage.</li>
+<li>Place widget HTML code in your webpage.</li>
+</ol>
+
+<p>Note: It&rsquo;s better to move widget script to as low in the web page as possible.</p>
+
+<p>Tracking Page / Widget is designed to provide exhaustive tracking to end user. </p>
+
+<p>The widget/page has following features:</p>
+
+<ol>
+<li>End to end shipment tracking. Incase you want the tracking page to show Order Placed and Ready to Ship milestone as well, please pass order_date and ship_date in AWB-register API.</li>
+<li>Failed delivery feedback from customer: During a failed delivery by courier partner, customer can enter his input/concern over a form which will be shared with you as a report daily or same can be fetched via API (Customer Feedback API)</li>
+<li>In case you want customer to request a delivery preference any time before an attempt for delivery is made, please contact our team to enable the feature. Feedback of the same will be available as for point 2.</li>
+<li>Design language of the page is customisable as per your website theme. Our team can help you in designing the page.</li>
+</ol>
+
+<h2 id="tracking-widget-using-awb-number-and-courier-partner-id">Tracking widget using AWB number and Courier Partner ID</h2>
+
+<h3 id="fields-explanation">Fields Explanation:</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>Your Waybill number</td>
+</tr>
+<tr>
+<td>data-cpId</td>
+<td>string</td>
+<td>Your Courier Partner Id</td>
+</tr>
+<tr>
+<td>data-username</td>
+<td>string</td>
+<td>username provided to you</td>
+</tr>
+<tr>
+<td>data-key</td>
+<td>string</td>
+<td>Key provided to you</td>
+</tr>
+</tbody></table>
+
+<p><code class="prettyprint">&lt;div id=&quot;1234567890&quot; class=&quot;tracking-widget&quot; data-cpId=&quot;11&quot; data-key=&quot;123-456-7890&quot; data-username=&quot;xyz&quot;&gt;&lt;/div&gt;</code></p>
+
+<p><code class="prettyprint">&lt;script type=&quot;text/javascript&quot; src=&quot;http://track.clickpost.in/clickpost-widget.js&quot;&gt;&lt;/script&gt;</code></p>
+
+<h2 id="tracking-widget-using-reference-number-order-id">Tracking widget using Reference Number (Order ID)</h2>
+
+<h3 id="fields-explanation">Fields Explanation:</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>string</td>
+<td>Your order reference number</td>
+</tr>
+<tr>
+<td>data-username</td>
+<td>string</td>
+<td>username provided to you</td>
+</tr>
+<tr>
+<td>data-key</td>
+<td>string</td>
+<td>API Key provided to you</td>
+</tr>
+</tbody></table>
+
+<p><code class="prettyprint">&lt;div id=&quot;1234567890&quot; class=&quot;tracking-widget&quot; data-key=&quot;123-456-7890&quot; data-username=&quot;xyz&quot;&gt;&lt;/div&gt;</code></p>
+
+<p><code class="prettyprint">&lt;script type=&quot;text/javascript&quot; src=&quot;http://track.clickpost.in/clickpost-widget-1.0.1.js&quot;&gt;&lt;/script&gt;</code></p>
+
+<h2 id="tracking-widget-using-reference-number-order-id-with-customer-ndr-feedback-form">Tracking widget using Reference Number (Order ID) with Customer NDR Feedback Form</h2>
+
+<p>Widget with failed delivery form:</p>
+
+<p><code class="prettyprint">&lt;div id=&quot;1234567890&quot; class=&quot;tracking-widget&quot; data-key=&quot;123-456-7890&quot; data-username=&quot;xyz&quot;&gt;&lt;/div&gt;</code></p>
+
+<p><code class="prettyprint">&lt;script type=&quot;text/javascript&quot; src=&quot;http://track.clickpost.in/clickpost-widget-1.0.2.js&quot;&gt;&lt;/script&gt;</code></p>
+
+<p>Note: No need to add more than one script for multiple tracking widgets in a page.</p>
+
           <h1 id="customer-feedback-api">Customer Feedback API</h1>
 
 <blockquote>
@@ -4537,99 +4638,6 @@ You must replace username / key with username / key provided to you.
 </aside>
 
 <hr>
-
-          <ol>
-<li><p>Place widget script in your webpage.
-Note: It&rsquo;s better to move widget script from the top to as low in the page as possible.</p></li>
-<li><p>Place widget HTML code in your webpage.</p></li>
-</ol>
-
-<p>Tracking Page / Widget is designed to provide exhaustive tracking to end user. </p>
-
-<p>The widget/page has following features:</p>
-
-<ol>
-<li>End to end shipment tracking. Incase you want the tracking page to show Order Placed and Ready to Ship milestone as well, please pass order_date and ship_date in AWB-register API.</li>
-<li>Failed delivery feedback from customer: During a failed delivery by courier partner, customer can enter his input/concern over a form which will be shared with you as a report daily or same can be fetched via API (Customer Feedback API)</li>
-<li>In case you want customer to request a delivery preference any time before an attempt for delivery is made, please contact our team to enable the feature. Feedback of the same will be available as for point 2.</li>
-<li>Design language of the page is customisable as per your website theme. Our team can help you in designing the page.</li>
-</ol>
-
-<h2 id="tracking-widget-using-awb-number-and-courier-partner-id">Tracking widget using AWB number and Courier Partner ID</h2>
-
-<h3 id="fields-explanation">Fields Explanation:</h3>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>id</td>
-<td>string</td>
-<td>Your Waybill number</td>
-</tr>
-<tr>
-<td>data-cpId</td>
-<td>string</td>
-<td>Your Courier Partner Id</td>
-</tr>
-<tr>
-<td>data-username</td>
-<td>string</td>
-<td>username provided to you</td>
-</tr>
-<tr>
-<td>data-key</td>
-<td>string</td>
-<td>Key provided to you</td>
-</tr>
-</tbody></table>
-<pre class="highlight plaintext"><code>&lt;div id="1234567890" class="tracking-widget" data-cpId="11" data-key="123-456-7890" data-username="xyz"&gt;&lt;/div&gt;
-
-&lt;script type="text/javascript" src="http://track.clickpost.in/clickpost-widget.js"&gt;&lt;/script&gt;
-</code></pre>
-<h2 id="tracking-widget-using-reference-number-order-id">Tracking widget using Reference Number (Order ID)</h2>
-
-<h3 id="fields-explanation">Fields Explanation:</h3>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>id</td>
-<td>string</td>
-<td>Your order reference number</td>
-</tr>
-<tr>
-<td>data-username</td>
-<td>string</td>
-<td>username provided to you</td>
-</tr>
-<tr>
-<td>data-key</td>
-<td>string</td>
-<td>API Key provided to you</td>
-</tr>
-</tbody></table>
-<pre class="highlight plaintext"><code>&lt;div id="1234567890" class="tracking-widget" data-key="123-456-7890" data-username="xyz"&gt;&lt;/div&gt;
-
-&lt;script type="text/javascript" src="http://track.clickpost.in/clickpost-widget-1.0.1.js"&gt;&lt;/script&gt;
-</code></pre>
-<h2 id="tracking-widget-using-reference-number-order-id-with-customer-ndr-feedback-form">Tracking widget using Reference Number (Order ID) with Customer NDR Feedback Form</h2>
-
-<p>Widget with failed delivery form:</p>
-<pre class="highlight plaintext"><code>&lt;div id="1234567890" class="tracking-widget" data-key="123-456-7890" data-username="xyz"&gt;&lt;/div&gt;
-
-&lt;script type="text/javascript" src="http://track.clickpost.in/clickpost-widget-1.0.2.js"&gt;&lt;/script&gt;
-</code></pre>
-<p>Note: No need to add more than one script for multiple tracking widgets in a page.</p>
 
           <h1 id="tracking-status-codes">Tracking Status Codes</h1>
 
