@@ -166,42 +166,45 @@
 <p><strong>Response</strong></p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
-</span><span class="nt">"meta"</span><span class="p">:</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUCCESS"</span><span class="p">,</span><span class="w">
-          </span><span class="nt">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-</span><span class="nt">"result"</span><span class="p">:</span><span class="w">
-    </span><span class="p">[{</span><span class="w">
-     </span><span class="nt">"pincode_serviceable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-     </span><span class="nt">"request_details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="nt">"pickup_pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110017"</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"reference_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"delivery_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FORWARD"</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"order_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PREPAID"</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"drop_pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110019"</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"item"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bottle"</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"invoice_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">1245</span><span class="w">
-                       </span><span class="p">},</span><span class="w">
-     </span><span class="nt">"form_tax_details"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-                            </span><span class="nt">"form_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"entry_tax"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
-                       </span><span class="p">}],</span><span class="w">
-     </span><span class="nt">"preference_array"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
-                            </span><span class="nt">"cp_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fedex"</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"priority"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-                      </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="nt">"cp_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bluedart"</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"priority"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
-                      </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
-                            </span><span class="nt">"cp_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EcomExpress"</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"priority"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
-                      </span><span class="p">}]</span><span class="w">
-    </span><span class="p">}]</span><span class="w">
+    </span><span class="nt">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"form_tax_details"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nt">"entry_tax"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"form_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nt">"request_details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nt">"order_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PREPAID"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"drop_pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110019"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"reference_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"delivery_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FORWARD"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"pickup_pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110017"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"invoice_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">1245</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"item"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bottle"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nt">"preference_array"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nt">"cp_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fedex"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"account_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fedex Economy"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"priority"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="err">}</span><span class="p">,</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nt">"cp_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fedex"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"account_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fedex Standard Overnight"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"priority"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                </span><span class="err">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="nt">"pincode_serviceable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nt">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUCCESS"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>It’s a POST request as follows</p>
@@ -338,6 +341,7 @@
 <ol>
 <li>cp_id: courier partner id as mentioned on page 1 of this document</li>
 <li>cp_name: name of the courier partner</li>
+<li>account_code: account code created while adding credentials on Clickpost dashboard, this is useful if you have multiple accounts for a courier partner</li>
 <li>priority: priority</li>
 </ol></li>
 </ul></li>
@@ -1098,7 +1102,8 @@ Headers: {'Content-type': 'application/json'}
         </span><span class="nt">"awb_number "</span><span class="p">:</span><span class="w"> </span><span class="s2">"43062728295"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"delivery_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FORWARD"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"async"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"gst_number"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"21313"</span><span class="w">
+        </span><span class="nt">"gst_number"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"21313"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"account_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ecom surface"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nt">"pickup_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nt">"pickup_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
@@ -1206,7 +1211,8 @@ Headers: {'Content-type': 'application/json'}
         </span><span class="nt">"awb_number "</span><span class="p">:</span><span class="w"> </span><span class="s2">"43062728295"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"delivery_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FORWARD"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"async"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"gst_number"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"21313"</span><span class="w">
+        </span><span class="nt">"gst_number"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"21313"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"account_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ecom surface"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nt">"pickup_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nt">"pickup_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
@@ -1289,7 +1295,7 @@ Headers: {'Content-type': 'application/json'}
 </tr>
 </thead><tbody>
 <tr>
-<td>Username</td>
+<td>username</td>
 <td>character</td>
 <td>User name provided to you</td>
 </tr>
@@ -1557,17 +1563,12 @@ Headers: {'Content-type': 'application/json'}
 <tr>
 <td>order_type</td>
 <td>character</td>
-<td>COD/PREPAID</td>
+<td>COD/PREPAID/EXCHANGE</td>
 </tr>
 <tr>
-<td>cod_value: if order_type = COD</td>
+<td>cod_value</td>
 <td>double</td>
-<td>cod_value should be greater than 0</td>
-</tr>
-<tr>
-<td>cod_value: if order_type = PREPAID</td>
-<td>double</td>
-<td>cod_value should be equal to 0</td>
+<td>if order_type = COD, cod_value should be greater than 0, if order_type = PREPAID, cod_value should be equal to 0</td>
 </tr>
 </tbody></table>
 
@@ -1585,12 +1586,17 @@ Headers: {'Content-type': 'application/json'}
 <td>integer</td>
 <td>ID of courier partner for which the order is to be placed.</td>
 </tr>
+<tr>
+<td>account_code</td>
+<td>character</td>
+<td>(optional) in case you have multiple accounts for a courier partner, code of account saved in clickpost is to be passed in additional object</td>
+</tr>
 </tbody></table>
 
 <p>List of courier partners is present at:
 <a href="http://track.clickpost.in/courier_partner" target="_blank">http://track.clickpost.in/courier_partner</a></p>
 
-<h5 id="compulsory-fields-in-additional-object"><strong>Compulsory fields in additional object:</strong></h5>
+<h5 id="additional-object"><strong>additional object:</strong></h5>
 
 <table><thead>
 <tr>
@@ -1605,16 +1611,6 @@ Headers: {'Content-type': 'application/json'}
 <td>true or false based upon if label need to be generated</td>
 </tr>
 <tr>
-<td>rvp_reason</td>
-<td>character</td>
-<td>rvp reason if order is for reverse pickup</td>
-</tr>
-<tr>
-<td>priority</td>
-<td>character</td>
-<td>&ldquo;NORMAL&rdquo; or any other priority for order</td>
-</tr>
-<tr>
 <td>return_info</td>
 <td>object</td>
 <td>return info object information if needed</td>
@@ -1627,7 +1623,17 @@ Headers: {'Content-type': 'application/json'}
 <tr>
 <td>delivery_type</td>
 <td>character</td>
-<td>FORWARD or any other order type</td>
+<td>FORWARD or RVP</td>
+</tr>
+<tr>
+<td>rvp_reason</td>
+<td>character</td>
+<td>rvp reason if order is for reverse pickup</td>
+</tr>
+<tr>
+<td>priority</td>
+<td>character</td>
+<td>&ldquo;NORMAL&rdquo; or any other priority for order</td>
 </tr>
 <tr>
 <td>async</td>
