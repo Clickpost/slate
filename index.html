@@ -393,7 +393,7 @@ Headers: {'Content-type': 'application/json'}
         </span><span class="nt">"phone"</span><span class="p">:</span><span class="w"> </span><span class="mi">8080808080</span><span class="p">,</span><span class="w">
         </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Address top floor kalkaji NewDelhi "</span><span class="w">
     </span><span class="p">},</span><span class="w">
-  </span><span class="nt">"tin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000000"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"tin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00000000"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"invoice_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-12-16"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"order_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PREPAID"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"cod_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
@@ -546,8 +546,6 @@ Nagar, New Delhi"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
     </span><span class="nt">"reference_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sok56sjkaphf"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"pickup_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-10-01T12:00:00Z"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"rvp_reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Not Interested"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"delivery_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RVP"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"gst_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nt">"seller_gstin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"taxable_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
@@ -568,7 +566,10 @@ Nagar, New Delhi"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"invoice_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"cgst_tax_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
     </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
+
+    </span><span class="s2">"rvp_reason"</span><span class="err">:</span><span class="w"> </span><span class="s2">"Not Interested"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"delivery_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RVP"</span><span class="p">,</span><span class="w">
+</span><span class="err">}</span><span class="w">
 </span></code></pre>
 <blockquote>
 <p><strong>Example:</strong> POST Body: (Reverse Pickup with QC detail RVP Shipment[Only for Shadowfax Reverse]):</p>
@@ -1088,8 +1089,6 @@ Headers: {'Content-type': 'application/json'}
     </span><span class="p">},</span><span class="w">
     </span><span class="nt">"additional"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nt">"label "</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"rvp_reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"priority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NORMAL"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"return_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="nt">"pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110019"</span><span class="p">,</span><span class="w">
             </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Address top floor kalkaji NewDelhi "</span><span class="p">,</span><span class="w">
@@ -1197,8 +1196,6 @@ Headers: {'Content-type': 'application/json'}
     </span><span class="p">},</span><span class="w">
     </span><span class="nt">"additional"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nt">"label "</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"rvp_reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"priority"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NORMAL"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"return_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="nt">"pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110019"</span><span class="p">,</span><span class="w">
             </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Address top floor kalkaji NewDelhi "</span><span class="p">,</span><span class="w">
@@ -2462,7 +2459,7 @@ Headers: {'Content-type': 'application/json'}
         </span><span class="nt">"phone"</span><span class="p">:</span><span class="w"> </span><span class="mi">8080808080</span><span class="p">,</span><span class="w">
         </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Deepanshu"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110019"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Address top floor kalkaji NewDelhi "</span><span class="w">
+        </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Address top floor Nehru Place New Delhi "</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nt">"pickup_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8080808080"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"drop_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
@@ -2473,7 +2470,6 @@ Headers: {'Content-type': 'application/json'}
     </span><span class="nt">"weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
     </span><span class="nt">"length"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
     </span><span class="nt">"invoice_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"rvp_reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Customer Refused"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
     </span><span class="nt">"drop_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8080808080"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"pickup_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Deepanshu"</span><span class="p">,</span><span class="w">
@@ -2481,7 +2477,7 @@ Headers: {'Content-type': 'application/json'}
     </span><span class="nt">"data_validation"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
     </span><span class="nt">"pickup_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IN"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"invoice_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INV-234/3"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"pickup_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A-228 top floor nea"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"pickup_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A-228 top floor near XYZ, Gurgaon"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"pickup_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gurgaon"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"cod_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="nt">"shipment_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MPS"</span><span class="p">,</span><span class="w">
@@ -3759,7 +3755,7 @@ latest_status indicates the latest status for the shipment at the time when the 
 
 <hr>
 
-<h2 id="testing-webhook">Testing Webhook:</h2>
+<h2 id="testing-webhook">Testing Webhook</h2>
 
 <p>You can test the webhooks by making a POST request on the following URL:</p>
 
