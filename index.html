@@ -887,7 +887,7 @@ Nagar, New Delhi"</span><span class="p">,</span><span class="w">
 <tr>
 <td>reference_number</td>
 <td>character</td>
-<td>reference number to tag the order with your order id.</td>
+<td>reference number to tag the order with your order id. Reference number has to follow Code 39 standards (https://en.wikipedia.org/wiki/Code_39)</td>
 </tr>
 <tr>
 <td>length</td>
@@ -3029,8 +3029,9 @@ Headers: {'Content-type': 'application/json'}
   </span><span class="nt">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABCDRESDEFGHIJKL1257679"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
   </span><span class="nt">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"42d42a34-ae09-4693-b20c-ae2624218a329"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"account_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fedex Domestic"</span><span class="w">
 
-  </span><span class="nt">"consumer_details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+  </span><span class="s2">"consumer_details"</span><span class="err">:</span><span class="w"> </span><span class="p">{</span><span class="w">
           </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Prashant Gupta"</span><span class="p">,</span><span class="w">
           </span><span class="nt">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8080808080"</span><span class="p">,</span><span class="w">
           </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"support@clickpost.in"</span><span class="w">
@@ -3102,6 +3103,11 @@ Headers: {'Content-type': 'application/json'}
 <td>cp_id (required)</td>
 <td>integer</td>
 <td>courier_partner_id as specified on page 1 of this documentation</td>
+</tr>
+<tr>
+<td>account_code (optional)</td>
+<td>string</td>
+<td>account code in case you have multiple accounts for same courier partner</td>
 </tr>
 </tbody></table>
 
