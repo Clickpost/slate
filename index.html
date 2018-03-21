@@ -189,14 +189,14 @@
                     </span><span class="nt">"cp_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fedex"</span><span class="p">,</span><span class="w">
                     </span><span class="nt">"cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
                     </span><span class="nt">"account_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fedex Economy"</span><span class="p">,</span><span class="w">
-                    </span><span class="nt">"priority"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-                </span><span class="err">}</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"priority"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+                </span><span class="p">},</span><span class="w">
                 </span><span class="p">{</span><span class="w">
                     </span><span class="nt">"cp_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fedex"</span><span class="p">,</span><span class="w">
                     </span><span class="nt">"cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
                     </span><span class="nt">"account_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fedex Standard Overnight"</span><span class="p">,</span><span class="w">
-                    </span><span class="nt">"priority"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-                </span><span class="err">}</span><span class="w">
+                    </span><span class="nt">"priority"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+                </span><span class="p">}</span><span class="w">
             </span><span class="p">],</span><span class="w">
             </span><span class="nt">"pincode_serviceable"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
         </span><span class="p">}</span><span class="w">
@@ -1084,32 +1084,6 @@ Headers: {'Content-type': 'application/json'}
 <p><strong>Example:</strong> POST Body (COD Shipment)</p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
-    </span><span class="nt">"drop_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"drop_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"F-68 third floor kalkaji New Delhi "</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"drop_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9717732407"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"drop_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IN"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"drop_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"drop_pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110019"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"drop_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delhi"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"drop_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Prashant"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nt">"additional"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"label "</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"return_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nt">"pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110019"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Address top floor kalkaji NewDelhi "</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8080808080"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Deepanshu"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IN"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="nt">"awb_number "</span><span class="p">:</span><span class="w"> </span><span class="s2">"43062728295"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"delivery_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FORWARD"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"async"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"gst_number"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"21313"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"account_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ecom surface"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
     </span><span class="nt">"pickup_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nt">"pickup_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"pickup_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A-228 top floor kalkaji New Delhi "</span><span class="p">,</span><span class="w">
@@ -1121,6 +1095,15 @@ Headers: {'Content-type': 'application/json'}
         </span><span class="nt">"pickup_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Deepanshu"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"pickup_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IN"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"pickup_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9816691388"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"drop_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"drop_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"F-68 third floor kalkaji New Delhi "</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"drop_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9717732407"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"drop_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IN"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"drop_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"drop_pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110019"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"drop_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delhi"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"drop_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Prashant"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nt">"shipment_details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nt">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
@@ -1169,6 +1152,23 @@ Headers: {'Content-type': 'application/json'}
         </span><span class="nt">"igst_tax_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
         </span><span class="nt">"invoice_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"cgst_tax_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"additional"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"label"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"return_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110019"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Address top floor kalkaji NewDelhi "</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8080808080"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Deepanshu"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IN"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nt">"awb_number "</span><span class="p">:</span><span class="w"> </span><span class="s2">"43062728295"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"delivery_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FORWARD"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"async"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"gst_number"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"21313"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"account_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ecom surface"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
