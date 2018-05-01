@@ -5158,7 +5158,28 @@ You must replace username / key with username / key provided to you.
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
     </span><span class="nt">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"cp_response"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UPL10575891229462827496"</span><span class="w">
+        </span><span class="nt">"ndr_update_status"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nt">"cp_response"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UPL15970567163944112616"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"awb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1823821"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nt">"cp_response"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UPL15970567163944112616"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"awb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3278213"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nt">"cp_response"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UPL15970567163944112616"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"awb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"278382"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nt">"cp_response"</span><span class="p">:</span><span class="w"> </span><span class="s2">"in valid awb and action not supported"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"awb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1278728"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nt">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Success"</span><span class="p">,</span><span class="w">
@@ -5285,7 +5306,10 @@ You must replace username / key with username / key provided to you.
 <li>result: 
 
 <ul>
-<li>cp_response: courier company reference number for the action requested<br></li>
+<li>ndr_update_status: contains array of ndr update responses for each awb number</li>
+<li>ndr_update_status-&gt;cp_response: courier company reference number for the action requested<br></li>
+<li>ndr_update_status-&gt;status: true/false based on if ndr action is updated or not</li>
+<li>ndr_update_status-&gt;awb: awb number corresponding to ndr update action<br></li>
 </ul></li>
 </ol>
 
