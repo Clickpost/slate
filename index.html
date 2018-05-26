@@ -126,7 +126,7 @@
 <li><strong>Manifestation API</strong>: Create order on Courier Partner and fetch AWB, Cancel orders and place pickup request</li>
 <li><strong>Track Shipment</strong>: Track your shipment using AWB and Courier Partner</li>
 <li><strong>Cancellation API</strong>: Cancel shipment manifested on Courier Partner for faster returns and higher inventory availability</li>
-<li><strong>Serviceability API</strong>: Check pincode serviceability</li>
+<li><strong>Serviceability, Cost, TAT API</strong>: Check pincode serviceability, cost for shipping and turn around time for the delivery.</li>
 <li><strong>Expected Date of Delivery API</strong>: Check predictive sla time range for any shipment</li>
 <li><strong>Pickup Request API</strong>: Recommend list of Courier Partners in priority order</li>
 <li><strong>Customer Feedback API</strong>: Gives list of customer feedbacks submitted on tracking page by end user.</li>
@@ -2797,16 +2797,27 @@ Headers: {'Content-type': 'application/json'}
 <p><strong>Response</strong></p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order Placed Successfully"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-  </span><span class="p">},</span><span class="w">
-  </span><span class="nt">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"reference_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASDF1234"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="s2">"785578015860"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://pyck-res-bucket.s3.amazonaws.com:443/fedex/2017-02-11/785578015860.pdf"</span><span class="w">
-  </span><span class="p">}</span><span class="w">
+    </span><span class="nt">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order Placed Successfully"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"reference_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASDF1234"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="s2">"785578015860"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://pyck-res-bucket.s3.amazonaws.com:443/fedex/2017-02-11/785578015860.pdf"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"children"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+                </span><span class="nt">"reference_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASDF1234"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="s2">"785578015860_1"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://pyck-res-bucket.s3.amazonaws.com:443/fedex/2017-02-11/785578015860.pdf"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nt">"reference_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASDF1234"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="s2">"785578015860_2"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://pyck-res-bucket.s3.amazonaws.com:443/fedex/2017-02-11/785578015860.pdf"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>The create order B2B API allows uploading the package details (manifest information) for multi piece shipment into the courier partner’s system and returns a label generated by them. You can create single order; errors/warnings will be highlighted in the response.</p>
@@ -3330,7 +3341,8 @@ Headers: {'Content-type': 'application/json'}
 <li>label: AWS link of the label generated for the shipment (Not generated for RVP shipments)
 Additional fields for Bluedart:</li>
 <li>DestinationLocation: 3 digit destination location code needed by Bluedart on shipping label</li>
-<li>DestinationArea: 3 digit destination area code needed by Bluedart on shipping label</li>
+<li>DestinationArea: 3 digit destination area code needed by Bluedart on shipping label
+6 All above details will be given for children awbs also under children field, which is an array having label, awb and reference number for all the children</li>
 </ol></li>
 </ol>
 
@@ -4351,42 +4363,59 @@ number already in a deleted state."</span><span class="p">,</span><span class="w
 <blockquote>
 <p><strong>Example(POST Body)</strong></p>
 </blockquote>
-<pre class="highlight json"><code><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"pickup_pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110017"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"drop_pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110019"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"optional"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nt">"breadth"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"length"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"invoice_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">1245</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">]</span><span class="w">
+<pre class="highlight json"><code><span class="p">[{</span><span class="w">
+    </span><span class="nt">"optional"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"length"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"breadth"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"invoice_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">1245</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"drop_pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110020"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"pickup_pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"122002"</span><span class="w">
+</span><span class="p">}]</span><span class="w">
 </span></code></pre>
 <blockquote>
 <p><strong>Response</strong></p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"serviceable"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nt">"PREPAID"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"COD"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nt">"comitted_sla"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"account_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sample_Ecom_1"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"shipping_charge"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nt">"PREPAID"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"COD"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"serviceable"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nt">"PREPAID"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"COD"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nt">"comitted_sla"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"account_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sample_Ecom_2"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"shipping_charge"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nt">"PREPAID"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"COD"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
     </span><span class="nt">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nt">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
         </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUCCESS"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nt">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-        </span><span class="p">{</span><span class="w">
-            </span><span class="nt">"serviceable"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="nt">"PREPAID"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"COD"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-            </span><span class="p">},</span><span class="w">
-            </span><span class="nt">"comitted_sla"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-    </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Serviceability api checks if pickup and drop pincodes are serviceabile or not. It accepts the shipment dimension fields as additional parameters. Courier company id can be passed to check the serviceability for a specific courier company.</p>
+<p>Serviceability api checks if pickup and drop pincodes are serviceabile or not, shipping charges for the shipment and turn around time for the delivery. It accepts the shipment dimension fields as additional parameters. Courier company id can be passed to check the serviceability for a specific courier company.</p>
 
 <p>It’s a POST request as follows</p>
 
@@ -4518,6 +4547,8 @@ number already in a deleted state."</span><span class="p">,</span><span class="w
 <li>PREPAID: Values: true: if the pincode is COD serviceable else false</li>
 </ul></li>
 <li>commited_sla: average commited SLA by courier partner (based on your contract with courier partner) for the shipment if dispatched today. (integer field)</li>
+<li>account_code: average commited SLA by courier partner (based on your contract with courier partner) for the shipment if dispatched today. (integer field)</li>
+<li>shipping_charges: average commited SLA by courier partner (based on your contract with courier partner) for the shipment if dispatched today. (integer field)</li>
 </ul></li>
 </ol>
 
@@ -5149,7 +5180,7 @@ You must replace username / key with username / key provided to you.
             </span><span class="p">},</span><span class="w">
             </span><span class="p">{</span><span class="w">
                 </span><span class="nt">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1278728"</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"act"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RE-ATTEMPT"</span><span class="w">
+                </span><span class="nt">"act"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INITIATE_RTO"</span><span class="w">
             </span><span class="p">}</span><span class="w">
         </span><span class="p">]</span><span class="w">
 </span></code></pre>
@@ -5282,7 +5313,7 @@ You must replace username / key with username / key provided to you.
 <tr>
 <td>NO_DATA</td>
 <td>NO_DATA</td>
-<td>[RE-ATTEMPT] No extra data is required</td>
+<td>[RE-ATTEMPT and INITIATE_RTO] No extra data is required</td>
 </tr>
 </tbody></table>
 
