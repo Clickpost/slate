@@ -4481,8 +4481,9 @@ number already in a deleted state."</span><span class="p">,</span><span class="w
         </span><span class="nt">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
         </span><span class="nt">"invoice_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">1245</span><span class="p">,</span><span class="w">
         </span><span class="nt">"weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
-    </span><span class="p">},</span><span class="w">
+        </span><span class="nt">"cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"service_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FORWARD/RVP/EXCHANGE"</span><span class="p">,</span><span class="w">
+    </span><span class="err">}</span><span class="p">,</span><span class="w">
     </span><span class="nt">"drop_pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110020"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"pickup_pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"122002"</span><span class="w">
 </span><span class="p">}]</span><span class="w">
@@ -4494,7 +4495,6 @@ number already in a deleted state."</span><span class="p">,</span><span class="w
     </span><span class="nt">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="nt">"cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"is_rvp"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
             </span><span class="nt">"serviceable"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="nt">"PREPAID"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
                 </span><span class="nt">"COD"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
@@ -4508,7 +4508,6 @@ number already in a deleted state."</span><span class="p">,</span><span class="w
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="nt">"cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"is_rvp"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
             </span><span class="nt">"serviceable"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="nt">"PREPAID"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
                 </span><span class="nt">"COD"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
@@ -4631,6 +4630,11 @@ number already in a deleted state."</span><span class="p">,</span><span class="w
 <td>integer</td>
 <td>clickpost courier comapny id</td>
 </tr>
+<tr>
+<td>service_type</td>
+<td>characyer</td>
+<td>Any one of FORWARD/RVP/EXCHANGE, if service_type param is not passed, then default is FORWARD.</td>
+</tr>
 </tbody></table>
 
 <h3 id="response-explanation">Response explanation:</h3>
@@ -4662,7 +4666,6 @@ number already in a deleted state."</span><span class="p">,</span><span class="w
 <li>commited_sla: average commited SLA by courier partner (based on your contract with courier partner) for the shipment if dispatched today. (integer field)</li>
 <li>account_code: Account code for which the details are given in the result.</li>
 <li>shipping_charges: Shipping charges for the delivery of the shipment.</li>
-<li>is_rvp: True if the account/cp is for reverse pickup or False if for forward shipment.</li>
 </ul></li>
 </ol>
 
