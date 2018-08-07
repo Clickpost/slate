@@ -4029,9 +4029,11 @@ Headers: {'Content-type': 'application/json'}
 <h4 id="fields-explanation">Fields Explanation:</h4>
 
 <ol>
-<li>“service_id” is the service identifier for which you want to register the webhook. Right  now, Clickpost provides webhook only for tracking service, which has service_id = 2</li>
-<li>“key”: API key provided to you</li>
-<li>“webhook_url” is the url on which data will be posted on your server</li>
+<li><p>“service_id” is the service identifier for which you want to register the webhook. Right now, Clickpost provides webhook only for tracking service:
+a. In case you want to receive webhooks for all status change, pass service_id = 2
+b. In case you want to receive webhooks for all status change, pass service_id = 15</p></li>
+<li><p>“key”: API key provided to you</p></li>
+<li><p>“webhook_url” is the url on which data will be posted on your server</p></li>
 </ol>
 
 <blockquote>
@@ -4081,7 +4083,7 @@ Headers: {'Content-type': 'application/json'}
 </tr>
 </tbody></table>
 
-<h3 id="webhook-data-post-on-client-server">Webhook data POST on Client Server:</h3>
+<h3 id="webhook-data-post-on-client-server-for-all-events">Webhook data POST on Client Server for all events:</h3>
 
 <p>Every time courier partner updates tracking of the shipment, We will post data to your server using the url you registered while registering for webhooks.</p>
 
@@ -4296,6 +4298,84 @@ Headers: {'Content-type': 'application/json'}
 <li>clickpost_status_description: description of clickpost_status_code (Specified on next page)</li>
 </ol>
 
+<hr>
+
+<h3 id="webhook-data-post-on-client-server-for-selected-events">Webhook data POST on Client Server for selected events:</h3>
+
+<p>In case customer wants to recieve notifications only for certain events, Clickpost provides funtionality for the same.</p>
+
+<p>If customer opts for this service, we add: &ldquo;notification_event_id&rdquo; key in additional object of the payload. This will inform you the current status of shipment.</p>
+
+<h4 id="possible-values">Possible values:</h4>
+
+<ol>
+<li>Out For Pickup</li>
+<li>Shipped</li>
+<li>Out For Delivery</li>
+<li>Failed Delivery</li>
+<li>Delivered</li>
+<li>RTO</li>
+</ol>
+
+<p>Please see the sample payload on the right:</p>
+
+<blockquote>
+<p><strong>Failed delivery Payload</strong></p>
+</blockquote>
+<pre class="highlight json"><code><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="nt">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Customer Cancelled the order"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="s2">"420714276042"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FailedDelivery"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-06T14:48:57.002000Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pending"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"additional"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"ndr_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No attempt"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"notification_event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"ndr_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"latest_status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Customer Cancelled the order"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-06T14:48:57.002000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FailedDelivery"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pending"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kayamkulam_Bhrnikvu_D (Kerala)"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kayamkulam_Bhrnikvu_D (Kerala)"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre>
+<blockquote>
+<p><strong>Delivered Payload</strong>
+&ldquo;`json</p>
+</blockquote>
+
+<p>{
+  &quot;remark&rdquo;: &ldquo;Delivered to consignee&rdquo;,
+  &ldquo;waybill&rdquo;: &ldquo;420714276075&rdquo;,
+  &ldquo;clickpost_status_description&rdquo;: &ldquo;Delivered&rdquo;,
+  &ldquo;timestamp&rdquo;: &ldquo;2018-08-06T15:00:32.002000Z&rdquo;,
+  &ldquo;cp_id&rdquo;: 4,
+  &ldquo;status&rdquo;: &ldquo;Delivered&rdquo;,
+  &ldquo;clickpost_status_code&rdquo;: 8,
+  &ldquo;additional&rdquo;: {
+    &ldquo;notification_event_id&rdquo;: 5,
+    &ldquo;latest_status&rdquo;: {
+      &ldquo;remark&rdquo;: &ldquo;Delivered to consignee&rdquo;,
+      &ldquo;timestamp&rdquo;: &ldquo;2018-08-06T15:00:32.002000Z&rdquo;,
+      &ldquo;clickpost_status_description&rdquo;: &ldquo;Delivered&rdquo;,
+      &ldquo;status&rdquo;: &ldquo;Delivered&rdquo;,
+      &ldquo;clickpost_status_code&rdquo;: 8,
+      &ldquo;location&rdquo;: &ldquo;Udaipur_DC (Rajasthan)&rdquo;
+    }
+  },
+  &ldquo;location&rdquo;: &ldquo;Udaipur_DC (Rajasthan)&rdquo;
+}
+&ldquo;`</p>
+
 <h3 id="important-notes-and-special-data-in-webhooks-examples-are-present-on-the-right">Important Notes and special data in Webhooks (Examples are present on the right):</h3>
 
 <ol>
@@ -4303,6 +4383,9 @@ Headers: {'Content-type': 'application/json'}
 latest_status indicates the latest status for the shipment at the time when the webhook is sent. This is sent with all webhooks</li>
 <li>In case of NuvoEx Reverse Pickup: doorstep Quality Check order, additional has dsqc object at the time of pickup cancelled (clickpost_status_code = 10) and pickedup (clickpost_status_code = 4)</li>
 <li>In case of Failed Delivery, Clickpost unified NDR status code and NDR status description is sent in additional</li>
+<li>Please make your API end point idempotent</li>
+<li>Since webhooks are transactional in nature, To insure minimal API data loss, we have retries in place if we do not get http 200 response from your server</li>
+<li>If you opt for selected events webhook notification, in case clickpost receives multiple notification from courier partner at the same time, only the latest notification will be sent to you</li>
 </ol>
 
 <h3 id="ndr-status-codes">NDR Status Codes</h3>
@@ -4315,7 +4398,7 @@ latest_status indicates the latest status for the shipment at the time when the 
 </thead><tbody>
 <tr>
 <td>0</td>
-<td>&ldquo;Unknown Exception&rdquo;</td>
+<td>&quot;Unknown Exception&rdquo;</td>
 </tr>
 <tr>
 <td>1</td>
