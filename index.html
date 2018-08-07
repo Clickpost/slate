@@ -4003,7 +4003,7 @@ status. Clickpost has mapped various statuses of different courier companies int
 </ul></li>
 </ol>
 
-<h2 id="tracking-waybills-using-webhooks">Tracking Waybills Using Webhooks</h2>
+<h2 id="tracking-awb-using-webhooks">Tracking AWB Using Webhooks</h2>
 
 <h3 id="register-for-webhooks">Register for Webhooks:</h3>
 
@@ -4349,33 +4349,32 @@ b. In case you want to receive webhooks for all status change, pass service_id =
 
 </span></code></pre>
 <blockquote>
-<p><strong>Delivered Payload</strong>
-&ldquo;`json</p>
+<p><strong>Delivered Payload</strong></p>
 </blockquote>
+<pre class="highlight json"><code><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="nt">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delivered to consignee"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="s2">"420714276075"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delivered"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-06T15:00:32.002000Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delivered"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"additional"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"notification_event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"latest_status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delivered to consignee"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-06T15:00:32.002000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delivered"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delivered"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Udaipur_DC (Rajasthan)"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Udaipur_DC (Rajasthan)"</span><span class="w">
+</span><span class="p">}</span><span class="w">
 
-<p>{
-  &quot;remark&rdquo;: &ldquo;Delivered to consignee&rdquo;,
-  &ldquo;waybill&rdquo;: &ldquo;420714276075&rdquo;,
-  &ldquo;clickpost_status_description&rdquo;: &ldquo;Delivered&rdquo;,
-  &ldquo;timestamp&rdquo;: &ldquo;2018-08-06T15:00:32.002000Z&rdquo;,
-  &ldquo;cp_id&rdquo;: 4,
-  &ldquo;status&rdquo;: &ldquo;Delivered&rdquo;,
-  &ldquo;clickpost_status_code&rdquo;: 8,
-  &ldquo;additional&rdquo;: {
-    &ldquo;notification_event_id&rdquo;: 5,
-    &ldquo;latest_status&rdquo;: {
-      &ldquo;remark&rdquo;: &ldquo;Delivered to consignee&rdquo;,
-      &ldquo;timestamp&rdquo;: &ldquo;2018-08-06T15:00:32.002000Z&rdquo;,
-      &ldquo;clickpost_status_description&rdquo;: &ldquo;Delivered&rdquo;,
-      &ldquo;status&rdquo;: &ldquo;Delivered&rdquo;,
-      &ldquo;clickpost_status_code&rdquo;: 8,
-      &ldquo;location&rdquo;: &ldquo;Udaipur_DC (Rajasthan)&rdquo;
-    }
-  },
-  &ldquo;location&rdquo;: &ldquo;Udaipur_DC (Rajasthan)&rdquo;
-}
-&ldquo;`</p>
-
+</span></code></pre>
 <h3 id="important-notes-and-special-data-in-webhooks-examples-are-present-on-the-right">Important Notes and special data in Webhooks (Examples are present on the right):</h3>
 
 <ol>
@@ -4398,7 +4397,7 @@ latest_status indicates the latest status for the shipment at the time when the 
 </thead><tbody>
 <tr>
 <td>0</td>
-<td>&quot;Unknown Exception&rdquo;</td>
+<td>&ldquo;Unknown Exception&rdquo;</td>
 </tr>
 <tr>
 <td>1</td>
