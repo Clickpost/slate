@@ -4029,9 +4029,12 @@ Headers: {'Content-type': 'application/json'}
 <h4 id="fields-explanation">Fields Explanation:</h4>
 
 <ol>
-<li><p>“service_id” is the service identifier for which you want to register the webhook. Right now, Clickpost provides webhook only for tracking service:
-a. In case you want to receive webhooks for all status change, pass service_id = 2
-b. In case you want to receive webhooks for all status change, pass service_id = 15</p></li>
+<li><p>&ldquo;service_id&rdquo; is the service identifier for which you want to register the webhook. Right now, Clickpost provides webhook only for tracking service:</p>
+
+<ol>
+<li>In case you want to receive webhooks for all status change, pass service_id = 2</li>
+<li>In case you want to receive webhooks for selected status change, pass service_id = 15. Please inform your Clickpost POC to activate this service for you.</li>
+</ol></li>
 <li><p>“key”: API key provided to you</p></li>
 <li><p>“webhook_url” is the url on which data will be posted on your server</p></li>
 </ol>
