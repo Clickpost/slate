@@ -581,8 +581,7 @@ Nagar, New Delhi"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"founders@clickpost.in"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"pickup_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Deepanshu"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"pickup_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8080808080"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"pickup_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B-220/2, 1st Floor, Right Door, Savitri Nagar,
-    New Delhi"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"pickup_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B-220/2, 1st Floor, Right Door, Savitri Nagar, New Delhi"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"pickup_pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110017"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"pickup_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"pickup_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
@@ -1166,7 +1165,7 @@ Additional fields for Bluedart:</li>
 </ol></li>
 </ol>
 
-<h2 id="order-creation-v3-api">Order Creation V3 API</h2>
+<h2 id="order-creation-v3-api-forward">Order Creation V3 API (Forward)</h2>
 
 <blockquote>
 <p>URL to hit:</p>
@@ -1262,9 +1261,9 @@ Headers: {'Content-type': 'application/json'}
         </span><span class="p">},</span><span class="w">
         </span><span class="nt">"awb_number "</span><span class="p">:</span><span class="w"> </span><span class="s2">"43062728295"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"delivery_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FORWARD"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"async"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"async"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
         </span><span class="nt">"gst_number"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"21313"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"account_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ecom surface"</span><span class="w">
+        </span><span class="nt">"account_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;account_code generated via clickpost dashboard&gt;"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -1288,63 +1287,26 @@ Headers: {'Content-type': 'application/json'}
 <p><strong>Example:</strong> POST Body (PREPAID Shipment)</p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
-    </span><span class="nt">"drop_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"drop_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"F-68 third floor kalkaji New Delhi "</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"drop_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9717732407"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"drop_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IN"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"drop_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"drop_pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110019"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"drop_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delhi"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"drop_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Prashant"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-    </span><span class="nt">"additional"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"label "</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"return_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nt">"pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110019"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Address top floor kalkaji NewDelhi "</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8080808080"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Deepanshu"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IN"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
-        </span><span class="nt">"awb_number "</span><span class="p">:</span><span class="w"> </span><span class="s2">"43062728295"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"delivery_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FORWARD"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"async"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"gst_number"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"21313"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"account_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ecom surface"</span><span class="w">
-    </span><span class="p">},</span><span class="w">
     </span><span class="nt">"pickup_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nt">"pickup_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"pickup_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A-228 top floor kalkaji New Delhi "</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"deepanshu.kartikey@pyck.in"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"support@clickpost.in"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"pickup_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-20T12:00:00Z"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"pickup_pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110019"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"pickup_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"tin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"120349483"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"pickup_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Deepanshu"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"pickup_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IN"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"pickup_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9816691388"</span><span class="w">
+        </span><span class="nt">"pickup_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8080808080"</span><span class="w">
     </span><span class="p">},</span><span class="w">
-    </span><span class="nt">"gst_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"seller_gstin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"taxable_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"ewaybill_serial_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2345677"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"is_seller_registered_under_gst"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"sgst_tax_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"place_of_supply"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"gst_discount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"hsn_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"sgst_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"enterprise_gstin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"gst_total_tax"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"igst_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"cgst_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"gst_tax_base"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"consignee_gstin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1233"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"igst_tax_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"invoice_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"cgst_tax_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+    </span><span class="nt">"drop_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"drop_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"F-68 third floor kalkaji New Delhi "</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"drop_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8080808080"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"drop_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IN"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"drop_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"drop_pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110019"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"drop_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delhi"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"drop_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Prashant"</span><span class="w">
     </span><span class="p">},</span><span class="w">
     </span><span class="nt">"shipment_details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nt">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
@@ -1371,8 +1333,46 @@ Headers: {'Content-type': 'application/json'}
                 </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XYZ1"</span><span class="w">
             </span><span class="p">}</span><span class="w">
         </span><span class="p">],</span><span class="w">
-        </span><span class="nt">"cod_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"cod_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
         </span><span class="nt">"courier_partner"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"gst_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"seller_gstin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"taxable_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"ewaybill_serial_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2345677"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"is_seller_registered_under_gst"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"sgst_tax_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"place_of_supply"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"gst_discount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"hsn_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"sgst_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"enterprise_gstin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"gst_total_tax"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"igst_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"cgst_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"gst_tax_base"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"consignee_gstin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1233"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"igst_tax_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"invoice_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"cgst_tax_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+
+    </span><span class="nt">"additional"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"label "</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"return_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110019"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Address top floor kalkaji New Delhi "</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8080808080"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Deepanshu"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IN"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nt">"awb_number "</span><span class="p">:</span><span class="w"> </span><span class="s2">"43062728295"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"delivery_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FORWARD"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"async"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"gst_number"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">"21313"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"account_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ecom surface"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -1849,58 +1849,6 @@ Headers: {'Content-type': 'application/json'}
 </tr>
 </tbody></table>
 
-<h5 id="compulsory-fields-for-rvp-order-creation"><strong>Compulsory fields for RVP order creation:</strong></h5>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>rvp_reason</td>
-<td>character</td>
-<td>stating the reason for Reverse Pickup</td>
-</tr>
-<tr>
-<td>delivery_type</td>
-<td>character</td>
-<td>For Reverse Pickup, the value of this field should  be <strong>&ldquo;RVP&rdquo;</strong></td>
-</tr>
-</tbody></table>
-
-<h5 id="optional-field-for-nuvoex-rvp-doorstep-qc">Optional field for NuvoEx RVP (Doorstep QC):</h5>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>qc_type</td>
-<td>character</td>
-<td>pass &ldquo;doorstep&rdquo; if you want reverse pickup to be done as doorstep quality check as leave it blank</td>
-</tr>
-<tr>
-<td>image_urls</td>
-<td>character</td>
-<td>add this field in items array for each item. value will be comma seperated url strings without spaces.</td>
-</tr>
-<tr>
-<td>cat</td>
-<td>character</td>
-<td>category of product for qc questions to be asked at doorstep. To be passed in items array for each item object</td>
-</tr>
-<tr>
-<td>sub_cat</td>
-<td>character</td>
-<td>sub category of product for qc questions to be asked at doorstep. To be passed in items array for each item object</td>
-</tr>
-</tbody></table>
-
 <h5 id="optional-field-for-bluedart-critical-time-defined-delivery-service">Optional field for Bluedart (Critical / Time defined delivery service):</h5>
 
 <table><thead>
@@ -1950,6 +1898,264 @@ Additional fields for Bluedart:</li>
 <li>DestinationLocation: 3 digit destination location code needed by Bluedart on shipping label</li>
 <li>DestinationArea: 3 digit destination area code needed by Bluedart on shipping label</li>
 </ol></li>
+</ol>
+
+<h2 id="order-creation-v3-api-reverse-pickup-rvp">Order Creation V3 API (Reverse Pickup/ RVP)</h2>
+<pre class="highlight plaintext"><code>https://www.clickpost.in/api/v3/create-order/?username=&lt;user-name&gt;&amp;key=&lt;api-key&gt;
+Headers: {'Content-type': 'application/json'}
+
+(Username/key needs to be replaced with the username/key provided to you)
+</code></pre>
+<blockquote>
+<p><strong>Example:</strong> POST Body</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"pickup_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"pickup_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"pickup_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A-228 top floor kalkaji New Delhi "</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"support@clickpost.in"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"pickup_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-05-20T12:00:00Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"pickup_pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110019"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"pickup_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"tin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"120349483"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"pickup_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Deepanshu"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"pickup_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IN"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"pickup_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8080808080"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"drop_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"drop_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"F-68 third floor kalkaji New Delhi "</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"drop_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8080808080"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"drop_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IN"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"drop_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"drop_pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110019"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"drop_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delhi"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"drop_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Prashant"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"shipment_details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"order_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PREPAID"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"invoice_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"invoice_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INV123"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"invoice_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-12-27"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"reference_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order-1232"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"length"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"breadth"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"item1"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"additional"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nt">"length"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"breadth"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"images"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://sample-file1.jpg,http://sample-file2.jpg"</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="nt">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XYZ1"</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nt">"cod_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"courier_partner"</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"gst_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"seller_gstin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"taxable_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"ewaybill_serial_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2345677"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"is_seller_registered_under_gst"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"sgst_tax_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"place_of_supply"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"gst_discount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"hsn_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"sgst_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"enterprise_gstin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"gst_total_tax"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"igst_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"cgst_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"gst_tax_base"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"consignee_gstin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1233"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"igst_tax_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"invoice_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"cgst_tax_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+
+    </span><span class="nt">"additional"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"label "</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"return_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110019"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Address top floor kalkaji New Delhi "</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8080808080"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Deepanshu"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IN"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nt">"awb_number "</span><span class="p">:</span><span class="w"> </span><span class="s2">"43062728295"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"delivery_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RVP"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"rvp_reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Shipper cancellation"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"async"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"account_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ecom reverse"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<ol>
+<li>All parameter definition remains same as manifestation v3 Forward API</li>
+<li>Following parameters are the changes in manifestation v3 Forward API:</li>
+</ol>
+
+<h5 id="compulsory-fields-for-rvp-order-creation"><strong>Compulsory fields for RVP order creation:</strong></h5>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>rvp_reason</td>
+<td>character</td>
+<td>stating the reason for Reverse Pickup</td>
+</tr>
+<tr>
+<td>delivery_type</td>
+<td>character</td>
+<td>For Reverse Pickup, the value of this field should  be <strong>&ldquo;RVP&rdquo;</strong></td>
+</tr>
+</tbody></table>
+
+<h2 id="multiseller-items-shipment">Multiseller items shipment:</h2>
+<pre class="highlight plaintext"><code>https://www.clickpost.in/api/v3/create-order/?username=&lt;user-name&gt;&amp;key=&lt;api-key&gt;
+Headers: {'Content-type': 'application/json'}
+
+(Username/key needs to be replaced with the username/key provided to you)
+</code></pre>
+<blockquote>
+<p><strong>Example:</strong> POST Body</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="nt">"pickup_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"pickup_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-09-20T12:00:00Z"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pankaj@khazanabazaar.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"pickup_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"402, Orbit tower, Sahara Darwaja, Ring Road, Surat - 395002"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"pickup_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"GUJARAT"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"pickup_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pankaj Kubadiya"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"pickup_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IN"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"tin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"120349483"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"pickup_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SURAT"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"pickup_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"08469591430"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"pickup_pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"395002"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"drop_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"drop_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IN"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"drop_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delhi"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"drop_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9717732402"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"drop_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"F-68 third floor kalkaji New Delhi "</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"drop_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Prashant"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"drop_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"drop_pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110019"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"drop_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"support@clickpost.in"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"shipment_details"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"breadth"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"cod_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"invoice_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-12-27"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"length"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"order_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COD"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"invoice_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INV123"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"invoice_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+            </span><span class="nt">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XYZ1"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"item1"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"gst_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nt">"consignee_gstin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1233"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"invoice_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"seller_gstin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"cgst_tax_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"place_of_supply"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"sgst_tax_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"igst_tax_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"enterprise_gstin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"gst_tax_base"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"igst_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"is_seller_registered_under_gst"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"sgst_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"taxable_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"gst_discount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"gst_total_tax"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"hsn_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"ewaybill_serial_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2345677"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"cgst_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"invoice_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"seller_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Deepanshu"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"seller_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A-228 top floor kalkaji"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"seller_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delhi"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"seller_pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110019"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"invoice_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1882782"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"invoice_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-23"</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nt">"additional"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nt">"breadth"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"images"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://sample-file1.jpg,http://sample-file2.jpg"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"length"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}],</span><span class="w">
+        </span><span class="nt">"courier_partner"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"reference_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UNIQUE-SHIPMENT-ID"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nt">"additional"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"label"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"data_validation"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"async"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"return_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"support@clickpost.in"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Deepanshu"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8080808080"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Address top floor Kalkaji New Delhi "</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IN"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110019"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nt">"delivery_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FORWARD"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"is_multi_seller"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p><strong>Response</strong></p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order Placed Successfully"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"reference_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UNIQUE-SHIPMENT-ID"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="s2">"785578015860"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://pyck-res-bucket.s3.amazonaws.com:443/ECOM/2017-02-18/785578015860.pdf"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>The create order Multi Seller shipment API allows uploading the package details (manifest information) into the courier partner’s system for single shipment having multiple items in it (having different GST values) and returns a label generated by them. You can create single order; errors/warnings will be highlighted in the response.</p>
+
+<p>Please note, in case of any validation failure - order will not get created. Please wait for 8 seconds before you reject a rest-request for latency.</p>
+
+<p>The API is a HTTP POST request to: <code class="prettyprint">https://www.clickpost.in/api/v3/create-order/</code> where output format is json.</p>
+
+<p>All the parameters are same as manifestation v3 API. Changes are:</p>
+
+<ol>
+<li>gst_info added in shipment_details object</li>
+<li>is_multi_seller: true flag to be passed in the additional object.</li>
 </ol>
 
 <h2 id="order-creation-multi-model-api">Order Creation Multi Model API</h2>
@@ -3571,7 +3777,7 @@ Headers: {'Content-type': 'application/json'}
 
 <h4 id="optional">Optional:</h4>
 
-<h4 id="consumer_details-optional-in-case-you-to-send-notifications-to-your-customers-via-mail-sms-please-pass-information-in-this-object">consumer_details(optional): In case you to send notifications to your customers via mail / sms, please pass information in this object:</h4>
+<h4 id="consumer_details-optional-in-case-you-want-clickpost-to-send-notifications-to-your-customers-via-mail-sms-please-pass-information-in-this-object">consumer_details (optional): In case you want Clickpost to send notifications to your customers via mail / sms, please pass information in this object:</h4>
 
 <table><thead>
 <tr>
@@ -3760,10 +3966,6 @@ Headers: {'Content-type': 'application/json'}
 <td>courier_partner_id as specified on page 1 of this documentation</td>
 </tr>
 </tbody></table>
-
-<h4 id="optional">Optional:</h4>
-
-<p>There are no optional params passed in the api.</p>
 
 <h3 id="response-explanation">Response Explanation:</h3>
 
@@ -4005,86 +4207,12 @@ status. Clickpost has mapped various statuses of different courier companies int
 
 <h2 id="tracking-awb-using-webhooks">Tracking AWB Using Webhooks</h2>
 
-<h3 id="register-for-webhooks">Register for Webhooks:</h3>
-
-<p>It&rsquo;s a POST request. (PUT in case you want to update existing webhook url) </p>
-
-<p><code class="prettyprint">https://www.clickpost.in/api/v1/tracking/register-webhook/</code></p>
-
-<blockquote>
-<p><strong>Webhook Registration URL</strong></p>
-</blockquote>
-<pre class="highlight plaintext"><code>URL: https://www.clickpost.in/api/v1/tracking/register-webhook/
-Headers: {'Content-type': 'application/json'}
-</code></pre>
-<blockquote>
-<p><strong>Webhook Registration Example</strong></p>
-</blockquote>
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
-     </span><span class="nt">"service_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-     </span><span class="nt">"key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xxxxxxxxxxxx---Your API KEY---xxxxxxxxxxxxxxxxxxx"</span><span class="p">,</span><span class="w">
-     </span><span class="nt">"webhook_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xxxxxxx---- Your Webhook URL---xxxxxxxx"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<h4 id="fields-explanation">Fields Explanation:</h4>
+<h3 id="activating-webhooks">Activating Webhooks:</h3>
 
 <ol>
-<li><p>&ldquo;service_id&rdquo; is the service identifier for which you want to register the webhook. Right now, Clickpost provides webhook only for tracking service:</p>
-
-<ol>
-<li>In case you want to receive webhooks for all status change, pass service_id = 2</li>
-<li>In case you want to receive webhooks for selected status change, pass service_id = 15. Please inform your Clickpost POC to activate this service for you.</li>
-</ol></li>
-<li><p>“key”: API key provided to you</p></li>
-<li><p>“webhook_url” is the url on which data will be posted on your server</p></li>
+<li>Visit Clickpost dashboard: <em>Settings</em> Tab on the left and Click notification section</li>
+<li>Select webhooks and activate Selected webhooks configuration or All Webhooks configuration as per your need</li>
 </ol>
-
-<blockquote>
-<p><strong>Webhook Registration Response</strong></p>
-</blockquote>
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
-     </span><span class="nt">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUCCESS"</span><span class="p">,</span><span class="w">
-     </span><span class="nt">"webhook_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7e7cc4c4-273d-49ce-90f1-ecc2b69b4e6c"</span><span class="p">,</span><span class="w">
-     </span><span class="nt">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-     </span><span class="nt">"status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<h3 id="response-explanation">Response Explanation:</h3>
-
-<ol>
-<li>“message”: SUCCESS implies the request has been placed successfully. Else message will hold error message</li>
-<li>“webhook_key”: security key that Clickpost will send with every request it will post on  your server. This key will be sent in headers as: <code class="prettyprint">webhook_key: webhook_key_as_in_registration_response</code></li>
-<li>“success” : true if the request has been placed successfully false other wise</li>
-<li>&ldquo;status_codes&rdquo; :</li>
-</ol>
-
-<table><thead>
-<tr>
-<th>Status Code</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>200</td>
-<td>Everything is fine</td>
-</tr>
-<tr>
-<td>301</td>
-<td>Invalid API key</td>
-</tr>
-<tr>
-<td>302</td>
-<td>AWB already exists</td>
-</tr>
-<tr>
-<td>305</td>
-<td>Already registered Webhook for this AWB</td>
-</tr>
-<tr>
-<td>306</td>
-<td>Not authorized to use this service</td>
-</tr>
-</tbody></table>
 
 <h3 id="webhook-data-post-on-client-server-for-all-events">Webhook data POST on Client Server for all events:</h3>
 
@@ -4219,8 +4347,7 @@ Headers: {'Content-type': 'application/json'}
 <blockquote>
 <p><strong>Selected event subscribed webhook: Delivered Payload</strong></p>
 </blockquote>
-<pre class="highlight json"><code><span class="w">
-</span><span class="p">{</span><span class="w">
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delivered to consignee"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="s2">"420714276075"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delivered"</span><span class="p">,</span><span class="w">
