@@ -1471,11 +1471,6 @@ Headers: {'Content-type': 'application/json'}
 <td>character</td>
 <td>pickup country name, maximum length 100 characters i. email: email id to be sent to courier partner for this shipment</td>
 </tr>
-<tr>
-<td>vendor_code</td>
-<td>character</td>
-<td>(optional) vendor code of pickup location. If this field is not provided, Clickpost will generate vendor code for the pickup location</td>
-</tr>
 </tbody></table>
 
 <h5 id="drop-information">Drop Information</h5>
@@ -1822,6 +1817,16 @@ images | character | comma separated images of the item</p>
 <td>character</td>
 <td>gst number for tax purposes</td>
 </tr>
+<tr>
+<td>pickup_type</td>
+<td>character</td>
+<td>Acceptable values: &ldquo;WH&rdquo; (for warehouse pickup) / &ldquo;SL&rdquo; (for seller pickup [marketplace]). This value is passed to EcomExpress only</td>
+</tr>
+<tr>
+<td>vendor_code</td>
+<td>character</td>
+<td>(optional) vendor code of pickup location. If this field is not provided, Clickpost will generate vendor code for the pickup location. For Ecom Express this field is passed to them as pickup_location_code to create location tagging</td>
+</tr>
 </tbody></table>
 
 <h5 id="optional-field-for-bluedart-critical-time-defined-delivery-service">Optional field for Bluedart (Critical / Time defined delivery service):</h5>
@@ -2102,6 +2107,8 @@ Headers: {'Content-type': 'application/json'}
             </span><span class="nt">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="nt">"delivery_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FORWARD"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"vendor_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;WH_CODE&gt;"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"pickup_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WH"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"is_multi_seller"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
