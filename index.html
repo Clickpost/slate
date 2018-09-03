@@ -4177,23 +4177,12 @@ status. Clickpost has mapped various statuses of different courier companies int
 
 <h2 id="tracking-awb-using-webhooks">Tracking AWB Using Webhooks</h2>
 
-<h3 id="activating-webhooks">Activating Webhooks:</h3>
-
-<ol>
-<li>Visit Clickpost dashboard: <em>Settings</em> Tab on the left and Click notification section</li>
-<li>Select webhooks and activate Selected webhooks configuration or All Webhooks configuration as per your need</li>
-</ol>
-
-<h3 id="webhook-data-post-on-client-server-for-all-events">Webhook data POST on Client Server for all events:</h3>
-
-<p>Every time courier partner updates tracking of the shipment, We will post data to your server using the url you registered while registering for webhooks.</p>
-
 <blockquote>
 <p><strong>Webhook Payload Header</strong></p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
-    </span><span class="nt">"Content-Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"webhook_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"webhook_key_given_during_webhooks_register"</span><span class="w">
+  </span><span class="nt">"Content-Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"webhook_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"webhook_key_given_during_webhooks_register"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
@@ -4248,6 +4237,17 @@ status. Clickpost has mapped various statuses of different courier companies int
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
+<h3 id="activating-webhooks">Activating Webhooks:</h3>
+
+<ol>
+<li>Visit Clickpost dashboard: <em>Settings</em> Tab on the left and Click notification section</li>
+<li>Select webhooks and activate Selected webhooks configuration or All Webhooks configuration as per your need</li>
+</ol>
+
+<h3 id="webhook-data-post-on-client-server-for-all-events">Webhook data POST on Client Server for all events:</h3>
+
+<p>Every time courier partner updates tracking of the shipment, We will post data to your server using the url you registered while registering for webhooks.</p>
+
 <h3 id="payload-explanation">Payload Explanation:</h3>
 
 <ol>
