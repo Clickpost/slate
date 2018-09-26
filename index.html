@@ -5213,7 +5213,12 @@ Headers: {'Content-type': 'application/json'}
         </span><span class="nt">"preferred_date"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
         </span><span class="nt">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delivery Failed"</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"reference_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order-ID"</span><span class="w">
+        </span><span class="nt">"reference_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order-ID"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"additional"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nt">"internal_cst_responded"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"internal_username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"netmeds"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"internal_comment"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
 </span><span class="p">}],</span><span class="w">
     </span><span class="nt">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nt">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -5313,6 +5318,9 @@ Headers: {'Content-type': 'application/json'}
 <li>reference_number: reference_number passed to Clickpost</li>
 <li>type: either CLIENT_OPS_FEED or CUSTOMER_FEED</li>
 <li>api_data_push: if the data is pushed via api to courier company or not, null means we did not try to push, true is successfully pushed and false if failed to push.</li>
+<li>additional: internal_cst_responded: in case of CLIENT_OPS_FEED (Feedback by your operations team), if operation team has word with customer, they will mark the same on NDR Management section of the dashboard. Possible values: True / False</li>
+<li>additional: internal_comment: in case of CLIENT_OPS_FEED (Feedback by your operations team), if operation team enters any internal comment. This is a string field</li>
+<li>additional: internal_username: in case of CLIENT_OPS_FEED (Feedback by your operations team), if there are multiple users, username of employee updating the remark will populate here</li>
 </ul></li>
 </ol>
 
