@@ -1975,15 +1975,6 @@ Headers: {'Content-type': 'application/json'}
 
     </span><span class="nt">"additional"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
         </span><span class="nt">"label "</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="nt">"return_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="nt">"pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110019"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Address top floor kalkaji New Delhi "</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8080808080"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Deepanshu"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IN"</span><span class="w">
-        </span><span class="p">},</span><span class="w">
         </span><span class="nt">"awb_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"43062728295"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"delivery_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RVP"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"rvp_reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Shipper cancellation"</span><span class="p">,</span><span class="w">
@@ -2015,6 +2006,37 @@ Headers: {'Content-type': 'application/json'}
 <td>delivery_type</td>
 <td>character</td>
 <td>For Reverse Pickup, the value of this field should  be <strong>&ldquo;RVP&rdquo;</strong></td>
+</tr>
+</tbody></table>
+
+<h5 id="optional-field-for-rvp-doorstep-qc">Optional field for RVP (Doorstep QC):</h5>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>qc_type</td>
+<td>character</td>
+<td>pass &ldquo;doorstep&rdquo; if you want reverse pickup to be done as doorstep quality check as leave it blank</td>
+</tr>
+<tr>
+<td>image_urls</td>
+<td>character</td>
+<td>add this field in items array for each item. value will be comma seperated url strings without spaces.</td>
+</tr>
+<tr>
+<td>cat</td>
+<td>character</td>
+<td>category of product for qc questions to be asked at doorstep. To be passed in items array for each item object</td>
+</tr>
+<tr>
+<td>sub_cat</td>
+<td>character</td>
+<td>sub category of product for qc questions to be asked at doorstep. To be passed in items array for each item object</td>
 </tr>
 </tbody></table>
 
@@ -2773,58 +2795,6 @@ tin | character | TIN number of seller (Now GST No)</p>
 <td>transit_email</td>
 <td>character</td>
 <td>email id for reference to pick order for last mile</td>
-</tr>
-</tbody></table>
-
-<h5 id="compulsory-fields-for-rvp-order-creation"><strong>Compulsory fields for RVP order creation:</strong></h5>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>rvp_reason</td>
-<td>character</td>
-<td>stating the reason for Reverse Pickup</td>
-</tr>
-<tr>
-<td>delivery_type</td>
-<td>character</td>
-<td>For Reverse Pickup, the value of this field should  be <strong>&ldquo;RVP&rdquo;</strong></td>
-</tr>
-</tbody></table>
-
-<h5 id="optional-field-for-nuvoex-rvp-doorstep-qc">Optional field for NuvoEx RVP (Doorstep QC):</h5>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>qc_type</td>
-<td>character</td>
-<td>pass &ldquo;doorstep&rdquo; if you want reverse pickup to be done as doorstep quality check as leave it blank</td>
-</tr>
-<tr>
-<td>image_urls</td>
-<td>character</td>
-<td>add this field in items array for each item. value will be comma seperated url strings without spaces.</td>
-</tr>
-<tr>
-<td>cat</td>
-<td>character</td>
-<td>category of product for qc questions to be asked at doorstep. To be passed in items array for each item object</td>
-</tr>
-<tr>
-<td>sub_cat</td>
-<td>character</td>
-<td>sub category of product for qc questions to be asked at doorstep. To be passed in items array for each item object</td>
 </tr>
 </tbody></table>
 
