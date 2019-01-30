@@ -5682,9 +5682,9 @@ You must replace username / key with username / key provided to you.
 </blockquote>
 <pre class="highlight json"><code><span class="w">
 </span><span class="p">{</span><span class="w">
-  </span><span class="nt">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="s2">"P0109276342"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">101</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w">
   </span><span class="nt">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OutForDelivery"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"O"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VASAI, MUMBAI"</span><span class="p">,</span><span class="w">
@@ -5695,7 +5695,7 @@ You must replace username / key with username / key provided to you.
     </span><span class="nt">"forward_awb"</span><span class="p">:</span><span class="s2">"sample_forward_awb"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"forward_reference_number"</span><span class="p">:</span><span class="s2">"sample_forward_reference"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"latest_status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">101</span><span class="p">,</span><span class="w">
       </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VASAI, MUMBAI"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"O"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OutForDelivery"</span><span class="p">,</span><span class="w">
@@ -5712,20 +5712,16 @@ You must replace username / key with username / key provided to you.
 <li>Select webhooks and activate Selected webhooks configuration or All Webhooks configuration as per your need</li>
 </ol>
 
-<h3 id="webhook-data-post-on-client-server-for-all-events">Webhook data POST on Client Server for all events:</h3>
-
-<p>Every time courier partner updates tracking of the shipment, We will post data to your server using the url you registered while registering for webhooks.</p>
-
 <h3 id="payload-explanation">Payload Explanation:</h3>
 
 <ol>
-<li>waybill: AWB number for which data is posted.</li>
+<li>waybill: AWB number for which data is posted (Will be blank for return order placed).</li>
 <li>status: status of the shipment at that time</li>
 <li>remarks: remark given by courier partner</li>
 <li>location: location of shipment at the time of the scan</li>
 <li>timestamp: date/time in IST format when the scan was done</li>
-<li>clickpost_status_code: clickpost generated status code for particular status. Clickpost has mapped various statuses of different courier companies into few status codes, which helps customers understand and take action on statuses in preemptive manner. (Explained in next section)</li>
-<li>clickpost_status_description: description of clickpost_status_code (Specified on next page)</li>
+<li>clickpost_status_code: clickpost generated status code for particular status. Clickpost has mapped various statuses of different courier companies into few status codes, which helps customers understand and take action on statuses in preemptive manner.</li>
+<li>clickpost_status_description: description of clickpost_status_code</li>
 <li>is_rvp inside additional object tells the payload is for reverse orders. forward_awb field contain the forward awb number for which return order has been placed and forward_reference_number will have the corresponding reference number.</li>
 <li>waybill number will be blank as order is not yet created on courier company (not manifested yet) </li>
 <li>clickpost_status_code will have 101 value which is Return Order Placed.</li>
@@ -5737,38 +5733,8 @@ You must replace username / key with username / key provided to you.
 
 <p>In case customer wants to recieve notifications only for certain events, Clickpost provides funtionality for the same.</p>
 
-<p>If customer opts for this service, we add: &ldquo;notification_event_id&rdquo; key in additional object of the payload. This will inform you the current status of shipment. For retur (Return Request Placed) this field&rsquo;s value will be 11 </p>
+<p>If customer opts for this service, we add: &ldquo;notification_event_id&rdquo; key in additional object of the payload. This will inform you the current status of shipment. For return (Return Request Placed) this field&rsquo;s value will be 11 </p>
 
-<p>Please see the sample payload on the right:</p>
-
-<blockquote>
-<p><strong>Selected event subscribed webhook: Delivered Payload</strong></p>
-</blockquote>
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="nt">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delivered to consignee"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="s2">"420714276075"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delivered"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-06T15:00:32.002000Z"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delivered"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Udaipur_DC (Rajasthan)"</span><span class="p">,</span><span class="w">
-  </span><span class="nt">"additional"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nt">"is_rvp"</span><span class="p">:</span><span class="err">True</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"forward_awb"</span><span class="p">:</span><span class="s2">"sample_forward_awb"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"forward_reference_number"</span><span class="p">:</span><span class="s2">"sample_forward_reference"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"notification_event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"latest_status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="nt">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delivered to consignee"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-06T15:00:32.002000Z"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delivered"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delivered"</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
-      </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Udaipur_DC (Rajasthan)"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
 <h3 id="important-notes-and-special-data-in-webhooks-examples-are-present-on-the-right">Important Notes and special data in Webhooks (Examples are present on the right):</h3>
 
 <ol>
@@ -5799,13 +5765,15 @@ latest_status indicates the latest status for the shipment at the time when the 
     </span><span class="nt">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XYZABC"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bengaluru_Koramangala_Dc (Karnataka)"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-07-12T17:12:36.710"</span><span class="p">,</span><span class="w">
-    </span><span class="nt">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">101</span><span class="p">,</span><span class="w">
     </span><span class="nt">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FailedDelivery"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-
     </span><span class="nt">"additional"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"is_rvp"</span><span class="p">:</span><span class="err">True</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"forward_awb"</span><span class="p">:</span><span class="s2">"sample_forward_awb"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"forward_reference_number"</span><span class="p">:</span><span class="s2">"sample_forward_reference"</span><span class="p">,</span><span class="w">
       </span><span class="nt">"latest_status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="nt">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">101</span><span class="p">,</span><span class="w">
         </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bengaluru_Koramangala_Dc (Karnataka)"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"When forward shipment is not accepted by end customer"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FailedDelivery"</span><span class="p">,</span><span class="w">
