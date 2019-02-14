@@ -4409,6 +4409,7 @@ status. Clickpost has mapped various statuses of different courier companies int
 <li>Failed Delivery</li>
 <li>Delivered</li>
 <li>RTO</li>
+<li>RTO-Delivered</li>
 </ol>
 
 <p>Please see the sample payload on the right:</p>
@@ -5691,6 +5692,7 @@ You must replace username / key with username / key provided to you.
   </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-02T13:23:02Z"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Return Order Placed"</span><span class="p">,</span><span class="w">
   </span><span class="nt">"additional"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"self_shipped"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
     </span><span class="nt">"is_rvp"</span><span class="p">:</span><span class="err">True</span><span class="p">,</span><span class="w">
     </span><span class="nt">"forward_awb"</span><span class="p">:</span><span class="s2">"sample_forward_awb"</span><span class="p">,</span><span class="w">
     </span><span class="nt">"forward_reference_number"</span><span class="p">:</span><span class="s2">"sample_forward_reference"</span><span class="p">,</span><span class="w">
@@ -5725,6 +5727,7 @@ You must replace username / key with username / key provided to you.
 <li>is_rvp inside additional object tells the payload is for reverse orders. forward_awb field contain the forward awb number for which return order has been placed and forward_reference_number will have the corresponding reference number.</li>
 <li>waybill number will be blank as order is not yet created on courier company (not manifested yet) </li>
 <li>clickpost_status_code will have 101 value which is Return Order Placed.</li>
+<li>self_shipped: Either True or False depending upon how the return shipment is shipped, if shipped by customer, then self_shipped is True else False.</li>
 </ol>
 
 <hr>
