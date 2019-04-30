@@ -435,215 +435,214 @@ Headers: {'Content-type': 'application/json'}
 <blockquote>
 <p><strong>Response</strong></p>
 </blockquote>
-<pre class="highlight plaintext"><code>{
-  "meta": {
-    "message": "Order Placed Successfully",
-    "status": 200,
-    "success": true
-  },
-  "result": {
-    "reference_number": "SAMPLE-REF-No",
-    "waybill": "785578015860",
-    "label": "https://pyck-res-bucket.s3.amazonaws.com:443/fedex/2017-02-11/785578015860.pdf"
-  }
-}
-</code></pre>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order Placed Successfully"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"reference_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SAMPLE-REF-No"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="s2">"785578015860"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://pyck-res-bucket.s3.amazonaws.com:443/fedex/2017-02-11/785578015860.pdf"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"security_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"560fee51-1af3-4d1d-a6e8-0149b0868d38"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sort_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC/HYG/TEX/LUV"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <blockquote>
 <p><strong>Example:</strong> POST Body (PREPAID Shipment)</p>
 </blockquote>
-<pre class="highlight plaintext"><code>{
-    "pickup_address": "B-220/2, 1st Floor, Right Door, Savitri
-Nagar, New Delhi",
-    "pickup_city": "DELHI",
-    "pickup_state": "DELHI",
-    "pickup_country": "IN",
-    "pickup_pincode": "110017",
-    "pickup_time": "2015-12-10T12:00:00Z",
-    "drop_name": "Rahul",
-    "drop_phone": "8376035546",
-    "drop_address": "L-19B, Third Floor, Malviya Nagar, New
-    Delhi",
-    "drop_city": "delhi",
-    "pickup_name": "Deepanshu",
-    "pickup_phone": "8376035546",
-    "drop_state": "DL",
-    "drop_country": "IN",
-    "drop_pincode": "110092",
-    "return_info": {
-        "pincode": "110019",
-        "city": "DELHI",
-        "name": "Clickpost",
-        "state": "DELHI",
-        "country": "IN",
-        "phone": 8080808080,
-        "address": "Test Address, Test Location, Test Landmark New Delhi"
-    },
-    "tin": "120349483",
-    "invoice_date": "2015-12-27",
-    "order_type": "PREPAID",
-    "cod_value": "0",
-    "items": [{"product_url":"&lt;Product Page Url&gt;","price":"370.00","description":"IN1543MTOSKTBLA-146-10","sku":"IN1543MTOSKTBLA-146-10","quantity":"1","images": "http://sample-file1.jpg,http://sample-file2.jpg"},{"product_url":"&lt;Product Page Url&gt;","price":"694.00","description":"IN1516MTODREMLT-147-10","sku":"IN1516MTODREMLT-147-10","quantity":"1","images":"http://sample-file1.jpg,http://sample-file2.jpg"}],
-    "invoice_number": "INV-234/3",
-    "invoice_value": "100",
-    "reference_number": "SAMPLE-REF-No",
-    "email": "founders@clickpost.in",
-    "weight": "10",
-    "length": "10",
-    "height": "10",
-    "breadth": "10",
-    "courier_partner": 5,
-    "gst_info": {
-        "seller_gstin": "1234",
-        "taxable_value": 100,
-        "ewaybill_serial_number": "2345677",
-        "is_seller_registered_under_gst": false,
-        "sgst_tax_rate": 100,
-        "place_of_supply": "DELHI",
-        "gst_discount": 0,
-        "hsn_code": "1234",
-        "sgst_amount": 100,
-        "enterprise_gstin": "13",
-        "gst_total_tax": 100,
-        "igst_amount": 100,
-        "cgst_amount": 200,
-        "gst_tax_base": 200,
-        "consignee_gstin": "1233",
-        "igst_tax_rate": 100,
-        "invoice_reference": "1234",
-        "cgst_tax_rate": 100
-    }
-}
-</code></pre>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"pickup_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B-220/2, 1st Floor, Right Door, Savitri Nagar, New Delhi"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pickup_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pickup_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pickup_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IN"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pickup_pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110017"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pickup_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-12-10T12:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"drop_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rahul"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"drop_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8376035546"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"drop_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L-19B, Third Floor, Malviya Nagar, New Delhi"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"drop_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"delhi"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pickup_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Deepanshu"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pickup_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8376035546"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"drop_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DL"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"drop_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IN"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"drop_pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110092"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"return_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110019"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Clickpost"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IN"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="mi">8080808080</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Test Address, Test Location, Test Landmark New Delhi"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"tin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"120349483"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"invoice_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-12-27"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"order_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PREPAID"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"cod_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="s2">"product_url"</span><span class="p">:</span><span class="s2">"&lt;Product Page Url&gt;"</span><span class="p">,</span><span class="s2">"price"</span><span class="p">:</span><span class="s2">"370.00"</span><span class="p">,</span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"IN1543MTOSKTBLA-146-10"</span><span class="p">,</span><span class="s2">"sku"</span><span class="p">:</span><span class="s2">"IN1543MTOSKTBLA-146-10"</span><span class="p">,</span><span class="s2">"quantity"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="s2">"images"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://sample-file1.jpg,http://sample-file2.jpg"</span><span class="p">},{</span><span class="s2">"product_url"</span><span class="p">:</span><span class="s2">"&lt;Product Page Url&gt;"</span><span class="p">,</span><span class="s2">"price"</span><span class="p">:</span><span class="s2">"694.00"</span><span class="p">,</span><span class="s2">"description"</span><span class="p">:</span><span class="s2">"IN1516MTODREMLT-147-10"</span><span class="p">,</span><span class="s2">"sku"</span><span class="p">:</span><span class="s2">"IN1516MTODREMLT-147-10"</span><span class="p">,</span><span class="s2">"quantity"</span><span class="p">:</span><span class="s2">"1"</span><span class="p">,</span><span class="s2">"images"</span><span class="p">:</span><span class="s2">"http://sample-file1.jpg,http://sample-file2.jpg"</span><span class="p">}],</span><span class="w">
+    </span><span class="s2">"invoice_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INV-234/3"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"invoice_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"reference_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SAMPLE-REF-No"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"founders@clickpost.in"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"weight"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"length"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"breadth"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"courier_partner"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"gst_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"seller_gstin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"taxable_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ewaybill_serial_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2345677"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"is_seller_registered_under_gst"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sgst_tax_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"place_of_supply"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"gst_discount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"hsn_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sgst_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"enterprise_gstin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"gst_total_tax"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"igst_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"cgst_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"gst_tax_base"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"consignee_gstin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1233"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"igst_tax_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"invoice_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"cgst_tax_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <blockquote>
 <p><strong>Example:</strong> POST Body: (Reverse Pickup: RVP Shipment):</p>
 </blockquote>
-<pre class="highlight plaintext"><code>{
-    "courier_partner": 7,
-    "email": "founders@clickpost.in",
-    "pickup_name": "Deepanshu",
-    "pickup_phone": "8080808080",
-    "pickup_address": "B-220/2, 1st Floor, Right Door, Savitri Nagar,
-    New Delhi",
-    "pickup_pincode": "110017",
-    "pickup_city": "DELHI",
-    "pickup_state": "DELHI",
-    "pickup_country": "IN",
-    "drop_name": "Rahul",
-    "drop_phone": "8080808080",
-    "drop_address": "L-19B, third Floor Malviya Nagar, New Delhi",
-    "drop_pincode": "110017",
-    "drop_city": "DELHI",
-    "drop_state": "DELHI",
-    "drop_country": "IN",
-    "order_type": "PREPAID",
-    "cod_value": 0,
-    "tin": "120349483",
-    "invoice_number": "INV-4/3",
-    "invoice_value": 100,
-    "invoice_date": "2015-12-27",
-    "items": [{"product_url":"&lt;Product Page Url&gt;", "price": 200, "description": "item1", "sku":
-    "XYZ1", "quantity": 1, "images": "http://sample-file1.jpg,http://sample-file2.jpg"}],
-    "height": 10,
-    "length": 10,
-    "breadth": 10,
-    "weight": 100,
-    "reference_number": "sok56sjkaphf",
-    "pickup_time": "2016-10-01T12:00:00Z",
-    "gst_info": {
-        "seller_gstin": "1234",
-        "taxable_value": 100,
-        "ewaybill_serial_number": "2345677",
-        "is_seller_registered_under_gst": false,
-        "sgst_tax_rate": 100,
-        "place_of_supply": "DELHI",
-        "gst_discount": 0,
-        "hsn_code": "1234",
-        "sgst_amount": 100,
-        "enterprise_gstin": "13",
-        "gst_total_tax": 100,
-        "igst_amount": 100,
-        "cgst_amount": 200,
-        "gst_tax_base": 200,
-        "consignee_gstin": "1233",
-        "igst_tax_rate": 100,
-        "invoice_reference": "1234",
-        "cgst_tax_rate": 100
-    },
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"courier_partner"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"founders@clickpost.in"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pickup_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Deepanshu"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pickup_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8080808080"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pickup_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B-220/2, 1st Floor, Right Door, Savitri Nagar, New Delhi"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pickup_pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110017"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pickup_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pickup_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pickup_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IN"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"drop_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rahul"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"drop_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8080808080"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"drop_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L-19B, third Floor Malviya Nagar, New Delhi"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"drop_pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110017"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"drop_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"drop_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"drop_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IN"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"order_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PREPAID"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"cod_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"120349483"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"invoice_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INV-4/3"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"invoice_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"invoice_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-12-27"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="s2">"product_url"</span><span class="p">:</span><span class="s2">"&lt;Product Page Url&gt;"</span><span class="p">,</span><span class="w"> </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"item1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"sku"</span><span class="p">:</span><span class="w">
+    </span><span class="s2">"XYZ1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s2">"images"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://sample-file1.jpg,http://sample-file2.jpg"</span><span class="p">}],</span><span class="w">
+    </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"length"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"breadth"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"reference_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sok56sjkaphf"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pickup_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-10-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"gst_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"seller_gstin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"taxable_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ewaybill_serial_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2345677"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"is_seller_registered_under_gst"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sgst_tax_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"place_of_supply"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"gst_discount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"hsn_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sgst_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"enterprise_gstin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"gst_total_tax"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"igst_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"cgst_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"gst_tax_base"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"consignee_gstin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1233"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"igst_tax_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"invoice_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"cgst_tax_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+    </span><span class="p">},</span><span class="w">
 
-    "rvp_reason": "Not Interested",
-    "delivery_type": "RVP"
-}
-</code></pre>
+    </span><span class="s2">"rvp_reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Not Interested"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"delivery_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RVP"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <blockquote>
 <p><strong>Example:</strong> POST Body: (Reverse Pickup with QC detail RVP Shipment[Only for Shadowfax Reverse]):</p>
 </blockquote>
-<pre class="highlight plaintext"><code>{
-    "courier_partner": 7,
-    "email": "founders@clickpost.in",
-    "pickup_name": "Deepanshu",
-    "pickup_phone": "8080808080",
-    "pickup_address": "B-220/2, 1st Floor, Right Door, Savitri Nagar, New Delhi",
-    "pickup_pincode": "110017",
-    "pickup_city": "DELHI",
-    "pickup_state": "DELHI",
-    "pickup_country": "IN",
-    "drop_name": "Rahul",
-    "drop_phone": "8080808080",
-    "drop_address": "L-19B, third Floor Malviya Nagar, New Delhi",
-    "drop_pincode": "110017",
-    "drop_city": "DELHI",
-    "drop_state": "DELHI",
-    "drop_country": "IN",
-    "order_type": "PREPAID",
-    "cod_value": 0,
-    "tin": "120349483",
-    "invoice_number": "INV-4/3",
-    "invoice_value": 100,
-    "invoice_date": "2015-12-27",
-    "items": [
-    {"product_url":"&lt;Product Page Url&gt;",
-    "price": 200, 
-    "description": "item1",
-    "sku": "XYZ1",
-    "quantity": 1,
-    "cat": "electronics",
-    "sub_cat": "tv",    
-    "image_urls":[
-        "https://assetscdn.paytm.com/images/catalog/view_item/114560/1494268990652.jpg",
-        "https://assetscdn.paytm.com/images/catalog/view_item/116303/1493891914950.jpg"
-      ]
-    }
-    ],    
-    "height": 10,
-    "length": 10,
-    "breadth": 10,
-    "weight": 100,
-    "reference_number": "sok56sjkaphf",
-    "pickup_time": "2016-10-01T12:00:00Z",
-    "rvp_reason": "Not Interested",
-    "delivery_type": "RVP",
-    "qc_type": "doorstep",
-    "gst_info": {
-        "seller_gstin": "1234",
-        "taxable_value": 100,
-        "ewaybill_serial_number": "2345677",
-        "is_seller_registered_under_gst": false,
-        "sgst_tax_rate": 100,
-        "place_of_supply": "DELHI",
-        "gst_discount": 0,
-        "hsn_code": "1234",
-        "sgst_amount": 100,
-        "enterprise_gstin": "13",
-        "gst_total_tax": 100,
-        "igst_amount": 100,
-        "cgst_amount": 200,
-        "consignee_gstin": "1233",
-        "igst_tax_rate": 100,
-        "invoice_reference": "1234",
-        "cgst_tax_rate": 100
-    }
-}
-</code></pre>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"courier_partner"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"founders@clickpost.in"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pickup_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Deepanshu"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pickup_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8080808080"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pickup_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"B-220/2, 1st Floor, Right Door, Savitri Nagar, New Delhi"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pickup_pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110017"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pickup_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pickup_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pickup_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IN"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"drop_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rahul"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"drop_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8080808080"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"drop_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"L-19B, third Floor Malviya Nagar, New Delhi"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"drop_pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110017"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"drop_city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"drop_state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"drop_country"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IN"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"order_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"PREPAID"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"cod_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"tin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"120349483"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"invoice_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"INV-4/3"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"invoice_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"invoice_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2015-12-27"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="s2">"product_url"</span><span class="p">:</span><span class="s2">"&lt;Product Page Url&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w"> 
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"item1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XYZ1"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"cat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"electronics"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"sub_cat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tv"</span><span class="p">,</span><span class="w">    
+    </span><span class="s2">"image_urls"</span><span class="p">:[</span><span class="w">
+        </span><span class="s2">"https://assetscdn.paytm.com/images/catalog/view_item/114560/1494268990652.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"https://assetscdn.paytm.com/images/catalog/view_item/116303/1493891914950.jpg"</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">    
+    </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"length"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"breadth"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"reference_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sok56sjkaphf"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pickup_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-10-01T12:00:00Z"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"rvp_reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Not Interested"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"delivery_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RVP"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"qc_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"doorstep"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"gst_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"seller_gstin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"taxable_value"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ewaybill_serial_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2345677"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"is_seller_registered_under_gst"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sgst_tax_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"place_of_supply"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DELHI"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"gst_discount"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"hsn_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sgst_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"enterprise_gstin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"gst_total_tax"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"igst_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"cgst_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"consignee_gstin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1233"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"igst_tax_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"invoice_reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1234"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"cgst_tax_rate"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <p>The create order API allows uploading the package details (manifest information) into the courier partner’s system and returns a label generated by them. You can create single order; errors/warnings will be highlighted in the response.</p>
 
 <p>Please note, in case of any validation failure - order will not get created. Please wait for 8 seconds before you reject a rest-request for latency.</p>
@@ -1165,7 +1164,9 @@ Nagar, New Delhi",
 <ol>
 <li>reference_number: reference number provided in the post data</li>
 <li>waybill: waybill generated by courier partner for the shipment</li>
-<li>label: AWS link of the label generated for the shipment (Not generated for RVP shipments)
+<li>label: AWS link of the label generated for the shipment (Not generated for RVP shipments)</li>
+<li>security_key: All orders are allocated a security key, please store this security key in your system (36 char)</li>
+<li>sort_code: for certain logistics partners, a sort_code is passed in API response that you can consume if you generate the shipping label at your end. For courier partners where this is not needed, it will have null value (max 20 char)
 Additional fields for Bluedart:</li>
 <li>DestinationLocation: 3 digit destination location code needed by Bluedart on shipping label</li>
 <li>DestinationArea: 3 digit destination area code needed by Bluedart on shipping label</li>
@@ -1287,6 +1288,7 @@ Headers: {'Content-type': 'application/json'}
   </span><span class="p">},</span><span class="w">
   </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="s2">"sort_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"security_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"560fee51-1af3-4d1d-a6e8-0149b0868d38"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"reference_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASDF1234"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="s2">"785578015860"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://pyck-res-bucket.s3.amazonaws.com:443/fedex/2017-02-11/785578015860.pdf"</span><span class="w">
@@ -1925,13 +1927,13 @@ Headers: {'Content-type': 'application/json'}
 <li>reference_number: reference number provided in the post data</li>
 <li>waybill: waybill generated by courier partner for the shipment</li>
 <li>label: AWS link of the label generated for the shipment (Not generated for RVP shipments)</li>
-<li>sort_code: Sort Code of shipment, needed by certain logistics partner on the label. response will be null if the sort code is not applicable for logistics partner. Right now populated for Delhivery / Ecom / Bluedart / XpressBees.</li>
+<li>sort_code: Sort Code of shipment, needed by certain logistics partner on the label. response will be null if the sort code is not applicable for logistics partner. Right now populated for Delhivery / Ecom / Bluedart / XpressBees. (max 20 char)</li>
+<li>security_key: All orders are allocated a security key, please store this security key in your system (36 char)
+Additional fields for Bluedart:</li>
+<li>DestinationLocation: 3 digit destination location code needed by Bluedart on shipping label</li>
+<li>DestinationArea: 3 digit destination area code needed by Bluedart on shipping label</li>
 </ol></li>
 </ol>
-
-<p>Additional fields for Bluedart:
-  5. DestinationLocation: 3 digit destination location code needed by Bluedart on shipping label
-  6. DestinationArea: 3 digit destination area code needed by Bluedart on shipping label</p>
 
 <h2 id="order-creation-v3-api-reverse">Order Creation V3 API (Reverse)</h2>
 <pre class="highlight plaintext"><code>https://www.clickpost.in/api/v3/create-order/?username=&lt;user-name&gt;&amp;key=&lt;api-key&gt;
@@ -2195,20 +2197,21 @@ Headers: {'Content-type': 'application/json'}
 <blockquote>
 <p><strong>Response</strong></p>
 </blockquote>
-<pre class="highlight plaintext"><code>{
-  "meta": {
-    "message": "Order Placed Successfully",
-    "status": 200,
-    "success": true
-  },
-  "result": {
-    "sort_code": "DEL/SET",
-    "reference_number": "UNIQUE-SHIPMENT-ID",
-    "waybill": "785578015860",
-    "label": "https://pyck-res-bucket.s3.amazonaws.com:443/ECOM/2017-02-18/785578015860.pdf"
-  }
-}
-</code></pre>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order Placed Successfully"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"sort_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DEL/SET"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"security_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"560fee51-1af3-4d1d-a6e8-0149b0868d38"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"reference_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UNIQUE-SHIPMENT-ID"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="s2">"785578015860"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://pyck-res-bucket.s3.amazonaws.com:443/ECOM/2017-02-18/785578015860.pdf"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <p>The create order Multi Seller shipment API allows uploading the package details (manifest information) into the courier partner’s system for single shipment having multiple items in it (having different GST values) and returns a label generated by them. You can create single order; errors/warnings will be highlighted in the response.</p>
 
 <p>Please note, in case of any validation failure - order will not get created. Please wait for 8 seconds before you reject a rest-request for latency.</p>
@@ -2322,25 +2325,25 @@ Headers: {'Content-type': 'application/json'}
 <blockquote>
 <p><strong>Response</strong></p>
 </blockquote>
-<pre class="highlight plaintext"><code>{
-    "order_id": 76703,
-    "meta": {
-        "status": 200,
-        "success": true,
-        "message": "Order Placed Successfully"
-    },
-    "result": {
-        "reference_number": "RE1234",
-        "DestinationArea": "CAR",
-        "waybill": "69573426016",
-        "label1": "https://pyck-res-bucket.s3.amazonaws.com:443/bluedart/2017-11-30/69573426016.pdf",
-        "waybill1": "69573426016",
-        "label": "https://pyck-res-bucket.s3.amazonaws.com:443/bluedart/2017-11-30/69573426016.pdf",
-        "DestinationLocation": "CMM"
-    },
-    "tracking_id": 3475042
-}
-</code></pre>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">76703</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order Placed Successfully"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"reference_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RE1234"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"DestinationArea"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CAR"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="s2">"69573426016"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"label1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://pyck-res-bucket.s3.amazonaws.com:443/bluedart/2017-11-30/69573426016.pdf"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"waybill1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"69573426016"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://pyck-res-bucket.s3.amazonaws.com:443/bluedart/2017-11-30/69573426016.pdf"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"DestinationLocation"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CMM"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"tracking_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3475042</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <p>The create order Multi Model API allows uploading the package details (manifest information) into the courier partner’s system for multi hop shipment (2 courier company do the delivery of shipment) and returns a label generated by them. You can create single order; errors/warnings will be highlighted in the response.</p>
 
 <p>Please note, in case of any validation failure - order will not get created. Please wait for 8 seconds before you reject a rest-request for latency.</p>
@@ -3088,52 +3091,54 @@ Headers: {'Content-type': 'application/json'}
 <blockquote>
 <p><strong>Response</strong></p>
 </blockquote>
-<pre class="highlight plaintext"><code>{
-    "meta": {
-        "message": "Order Placed Successfully",
-        "status": 200,
-        "success": true
-    },
-    "result": {
-        "reference_number": "ASDF1234",
-        "waybill": "785578015860",
-        "label": "https://pyck-res-bucket.s3.amazonaws.com:443/XPRESBEES_CARGO/2017-02-11/785578015860.pdf",
-        "children": [{
-                "reference_number": "ASDF1234",
-                "waybill": "785578015860_1",
-                "label": null,
-                "item": {
-                    "height": 10,
-                    "quantity": 1,
-                    "price": 200,
-                    "breadth": 10,
-                    "description": "item1",
-                    "weight": 100,
-                    "waybill": "58402429105_1",
-                    "sku": "XYZ1",
-                    "length": 10
-                }
-            },
-            {
-                "reference_number": "ASDF1234",
-                "waybill": "785578015860_2",
-                "label": null,
-                "item": {
-                    "height": 10,
-                    "quantity": 1,
-                    "price": 200,
-                    "breadth": 10,
-                    "description": "item2",
-                    "weight": 100,
-                    "waybill": "58402429105_1",
-                    "sku": "XYZ2",
-                    "length": 10
-                }
-            }
-        ]
-    }
-}
-</code></pre>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order Placed Successfully"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"security_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ee30803e-3fd9-460d-8cfa"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sort_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABC/XYZ"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"reference_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASDF1234"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="s2">"785578015860"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://pyck-res-bucket.s3.amazonaws.com:443/XPRESBEES_CARGO/2017-02-11/785578015860.pdf"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"children"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+                </span><span class="s2">"reference_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASDF1234"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="s2">"785578015860_1"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"item"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"breadth"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"item1"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="s2">"58402429105_1"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XYZ1"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"length"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"reference_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ASDF1234"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="s2">"785578015860_2"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"item"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"breadth"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"item2"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="s2">"58402429105_1"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XYZ2"</span><span class="p">,</span><span class="w">
+                    </span><span class="s2">"length"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <p>The create order B2B API allows uploading the package details (manifest information) for multi piece shipment into the courier partner’s system and returns a label generated by them. You can create single order; errors/warnings will be highlighted in the response.</p>
 
 <p>Details for multiple shipments needs to passed in items array during object creation. This array is treated as multiple shipments/carton boxes if shipment_type is MPS.</p>
@@ -3647,7 +3652,9 @@ Headers: {'Content-type': 'application/json'}
 <li>reference_number: reference number provided in the post data</li>
 <li>waybill: waybill generated by courier partner for the shipment</li>
 <li>label: AWS link of the label generated for the shipment (Not generated for RVP shipments)</li>
-<li>All above details will be given for children awbs as well under children field along with item info, which is an array having label, awb and reference number for all the children
+<li>All above details will be given for children awbs as well under children field along with item info, which is an array having label, awb and reference number for all the children</li>
+<li>security_key: All orders are allocated a security key, please store this security key in your system (36 chars)</li>
+<li>sort_code: for certain logistics partners, a sort_code is passed in API response that you can consume if you generate the shipping label at your end. For courier partners where this is not needed, it will have null value (13 chars)
 Additional fields for Bluedart:</li>
 <li>DestinationLocation: 3 digit destination location code needed by Bluedart on shipping label</li>
 <li>DestinationArea: 3 digit destination area code needed by Bluedart on shipping label</li>
@@ -3657,6 +3664,153 @@ Additional fields for Bluedart:</li>
 <aside class="warning">
 You must replace Username/key with the username/key provided to you.
 </aside>
+
+<h2 id="fetch-awb-number-reference-number-for-already-manifested-order">Fetch AWB Number / Reference number for already manifested order</h2>
+
+<blockquote>
+<p>URL (To fetch awb / courier_partner for a reference_number):</p>
+</blockquote>
+<pre class="highlight plaintext"><code>https://www.clickpost.in/api/v3/create-order?key=&lt;api-key&gt;&amp;reference_number=&lt;reference_number&gt;
+Headers: {'Content-type': 'application/json'}
+
+(Username/key needs to be replaced with the username/key provided to you)
+</code></pre>
+<blockquote>
+<p><strong>Response</strong></p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Success"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"security_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"560fee51-1af3-4d1d-a6e8-0149b0868d38"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"courier_partner"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"reference_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100035710-1-2-3"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://pyck-res-bucket.s3.amazonaws.com:443/FEDEX/2019-03-31/8505644567.pdf"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8505644567"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>URL (To check reference_number for an awb):</p>
+</blockquote>
+<pre class="highlight plaintext"><code>https://www.clickpost.in/api/v3/create-order?key=&lt;api-key&gt;&amp;cp_id=&lt;courier_partner_id&gt;&amp;awb=&lt;waybill&gt;
+Headers: {'Content-type': 'application/json'}
+
+(Username/key needs to be replaced with the username/key provided to you)
+</code></pre>
+<blockquote>
+<p><strong>Response</strong></p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Success"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"security_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"560fee51-1af3-4d1d-a6e8-0149b0868d45"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"courier_partner"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"reference_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"100035710-1-2-3"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://pyck-res-bucket.s3.amazonaws.com:443/FEDEX/2019-03-31/8505644567.pdf"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8505644567"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>The API is a HTTP GET request to: <code class="prettyprint">https://www.clickpost.in/api/v3/create-order/</code> where output format is json.</p>
+
+<p>The create-order GET API helps customers to fetch awb and shipping label for already manifested order before requesting for the AWB again for same shipment.</p>
+
+<p>key is compulsory to pass for authentication. You must pass either reference_number or (cp_id and awb) in the API to get the result.</p>
+
+<p>Listed below are the parameters:</p>
+
+<h4 id="url-parameters">URL parameters:</h4>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>key</td>
+<td>character</td>
+<td>API key provided to you (mandatory)</td>
+</tr>
+<tr>
+<td>reference_number</td>
+<td>character</td>
+<td>reference_number passed in the POST payload during manifestation (optional)</td>
+</tr>
+<tr>
+<td>cp_id</td>
+<td>integer</td>
+<td>courier partner ID of Clickpost (optional) [list at <a href="http://track.clickpost.in/courier_partner" target="_blank">http://track.clickpost.in/courier_partner</a>]</td>
+</tr>
+<tr>
+<td>awb</td>
+<td>character</td>
+<td>waybill number of the shipment (optional)</td>
+</tr>
+</tbody></table>
+
+<h2 id="fetch-shipping-label">Fetch shipping label</h2>
+
+<blockquote>
+<p>URL:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>https://www.clickpost.in/api/v1/fetch/shippinglabel/?&amp;key=&lt;api-key&gt;&amp;waybill=&lt;waybill&gt;&amp;cp_id=&lt;cp_id&gt;&amp;regenerate=false
+Headers: {'Content-type': 'application/json'}
+
+(Username/key needs to be replaced with the username/key provided to you)
+</code></pre>
+<blockquote>
+<p><strong>Response</strong></p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"shipping_label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://pyck-res-bucket.s3.amazonaws.com:443/DELHIVERY/2019-03-01/258731.pdf"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUCCESS"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Use this API to fetch shipping label for already manifested order. Its a GET API.</p>
+
+<p>Listed below are the parameters:</p>
+
+<h4 id="url-parameters">URL parameters:</h4>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>key</td>
+<td>character</td>
+<td>API key provided to you (mandatory)</td>
+</tr>
+<tr>
+<td>cp_id</td>
+<td>integer</td>
+<td>courier partner ID of Clickpost (optional) [list at <a href="http://track.clickpost.in/courier_partner" target="_blank">http://track.clickpost.in/courier_partner</a>]</td>
+</tr>
+<tr>
+<td>waybill</td>
+<td>character</td>
+<td>waybill number of the shipment (optional)</td>
+</tr>
+</tbody></table>
 
 <hr>
 
@@ -3745,6 +3899,8 @@ Headers: {'Content-type': 'application/json'}
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
+<p>Note: All orders are passed a security_key in response. Please store this security key to be used in Customer engagement platform.</p>
+
 <h3 id="fields-explanation">Fields Explanation</h3>
 
 <h4 id="compulsory">Compulsory:</h4>
@@ -3971,9 +4127,11 @@ Headers: {'Content-type': 'application/json'}
 <tr>
 <td>cp_id (required)</td>
 <td>integer</td>
-<td>courier_partner_id as specified on page 1 of this documentation</td>
+<td>courier_partner_id [List of courier partners is present at:</td>
 </tr>
 </tbody></table>
+
+<p><a href="http://track.clickpost.in/courier_partner" target="_blank">http://track.clickpost.in/courier_partner</a>]</p>
 
 <h3 id="response-explanation">Response Explanation:</h3>
 
@@ -3985,6 +4143,107 @@ Headers: {'Content-type': 'application/json'}
 <li>message: SUCCESS if everything is fine, else the error message c. status: 200, if the API data was fine, 400 in case of a bad request</li>
 </ul></li>
 <li>&ldquo;result&rdquo; is an array of records. Each record holds information of comma-separated waybill entered in the request parameter.<br></li>
+</ol>
+
+<h2 id="fetch-updated-orders-list">Fetch updated-orders list</h2>
+
+<blockquote>
+<p><strong>URL</strong></p>
+</blockquote>
+<pre class="highlight plaintext"><code>https://www.clickpost.in/api/v1/updated-order?username=&lt;clickpost-username&gt;&amp;key=&lt;clickpost-api-key&gt;&amp;start_date=1531980785&amp;end_date=1531984399
+
+Headers: {'Content-type': 'application/json'}
+</code></pre>
+<blockquote>
+<p><strong>Response</strong></p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-15T14:52:45.304018Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-15 20:22:43"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OrderPlaced"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"courier_partner"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SF41917204SCR"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-15T15:00:04.672388Z"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-15T14:47:26.614788Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-15 20:17:25"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OrderPlaced"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"courier_partner"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SF41917199SCR"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-15T15:00:07.132808Z"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-15T13:58:34.822899Z"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-15 19:28:33"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"OrderPlaced"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"courier_partner"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SF41917168SCR"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-15T15:00:42.625536Z"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUCCESS"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>The updated-order API retrieves the shipments which are updated between specified start and end time.</p>
+
+<p>The API is a HTTP GET request to:
+<code class="prettyprint">https://www.clickpost.in/api/v1/updated-order</code> </p>
+
+<p>where output is json</p>
+
+<p>Listed below are the parameters:</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>key (required)</td>
+<td>character</td>
+<td>this is the API Key</td>
+</tr>
+<tr>
+<td>username (required)</td>
+<td>character</td>
+<td>user name, provided to you</td>
+</tr>
+<tr>
+<td>start_date (required)</td>
+<td>integer</td>
+<td>start time for the query to run. To be passed in epoch time</td>
+</tr>
+<tr>
+<td>end_date (required)</td>
+<td>integer</td>
+<td>end time for the query to run. To be passed in epoch time</td>
+</tr>
+</tbody></table>
+
+<p>Note: The difference between start_date and end_date cannot be more than 30 minutes. If you plan to use polling, Its highly recommended to 1st run updated-order API, get list of updated shipments and then request the status details if required for those shipments using polling.</p>
+
+<h3 id="response-explanation">Response Explanation:</h3>
+
+<ol>
+<li>“meta” stores information about the API, success or failure
+
+<ul>
+<li>success: true/false, true if the API worked fine, else false</li>
+<li>message: SUCCESS if everything is fine, else the error message c. status: 200, if the API data was fine, 400 in case of a bad request</li>
+</ul></li>
+<li>“result” is an array of records. Each record holds information of comma-separated waybill entered in the request parameter.</li>
 </ol>
 
 <h2 id="tracking-awb-using-polling">Tracking AWB Using Polling</h2>
@@ -4109,7 +4368,7 @@ Headers: {'Content-type': 'application/json'}
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Package tracker API retrieves the historic statuses and the current status of the package.</p>
+<p>The track-order API retrieves the historic statuses and the current status of the package.</p>
 
 <p>The API is a HTTP GET request to:
 <code class="prettyprint">https://www.clickpost.in/api/v2/track-order/</code> </p>
@@ -4313,8 +4572,12 @@ status. Clickpost has mapped various statuses of different courier companies int
 
 <ol>
 <li>Visit Clickpost dashboard: <em>Settings</em> Tab on the left and Click notification section</li>
-<li>Select webhooks and activate Selected webhooks configuration or All Webhooks configuration as per your need</li>
+<li>Select webhooks and activate Selected webhooks configuration or All Webhooks configuration as per your need: </li>
+<li>Selected webhooks configuration: trigger webhooks only when shipment reaches certain checkpoints in its journey.</li>
+<li>All webhooks configuration: trigger webhooks for all shipment statuses as they come.</li>
 </ol>
+
+<p>We generally recommend customers to use selected webhooks configuration as all webhooks will trigger too many status messages on your system.</p>
 
 <h3 id="webhook-data-post-on-client-server-for-all-events">Webhook data POST on Client Server for all events:</h3>
 
@@ -4349,7 +4612,15 @@ status. Clickpost has mapped various statuses of different courier companies int
 <li>Failed Delivery</li>
 <li>Delivered</li>
 <li>RTO</li>
+<li>Order Cancelled</li>
 <li>RTO-Delivered</li>
+</ol>
+
+<p>Following notification_event_id are useful for customers using Clickpost&rsquo;s managed returns service which accepts return requests from end user:</p>
+
+<ol>
+<li>Return Request placed: As soon as a return request is placed by the end user using Clickpost&rsquo;s return UI</li>
+<li>AWB Generated: As soon as an AWB is generated in Clickpost for a return request</li>
 </ol>
 
 <p>Please see the sample payload on the right:</p>
@@ -4359,30 +4630,32 @@ status. Clickpost has mapped various statuses of different courier companies int
 </blockquote>
 <pre class="highlight json"><code><span class="w">
 </span><span class="p">{</span><span class="w">
-  </span><span class="s2">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Customer Cancelled the order"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="s2">"420714276042"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FailedDelivery"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-06T14:48:57.002000Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pending"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2614010163240"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Customer escalation received"</span><span class="p">,</span><span class="w">
   </span><span class="s2">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kayamkulam_Bhrnikvu_D (Kerala)"</span><span class="p">,</span><span class="w">
-
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pending"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FailedDelivery"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lucknow_Aliganj (Uttar Pradesh)"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-05-01T00:55:06.367000Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
   </span><span class="s2">"additional"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+
+    </span><span class="s2">"ndr_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ndr_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Customer unavailable"</span><span class="p">,</span><span class="w">
 
     </span><span class="s2">"notification_event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
 
-    </span><span class="s2">"ndr_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No attempt"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"ndr_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-
     </span><span class="s2">"latest_status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Customer Cancelled the order"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-08-06T14:48:57.002000Z"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FailedDelivery"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pending"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Customer escalation received"</span><span class="p">,</span><span class="w">
       </span><span class="s2">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Kayamkulam_Bhrnikvu_D (Kerala)"</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pending"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lucknow_Aliganj (Uttar Pradesh)"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"clickpost_status_bucket_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Failed delivery"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FailedDelivery"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-05-01T00:55:06.367000Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"clickpost_status_bucket"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"is_rvp"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
@@ -4538,7 +4811,7 @@ latest_status indicates the latest status for the shipment at the time when the 
 
           <h1 id="track-return-order">Track Return Order</h1>
 
-<h2 id="tracking-awb-using-webhooks">Tracking AWB Using Webhooks</h2>
+<h2 id="return-order-placed-webhook">Return Order Placed Webhook</h2>
 
 <blockquote>
 <p><strong>Webhook Payload Header</strong></p>
@@ -4553,35 +4826,56 @@ latest_status indicates the latest status for the shipment at the time when the 
 </blockquote>
 <pre class="highlight json"><code><span class="w">
 </span><span class="p">{</span><span class="w">
-  </span><span class="s2">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">101</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Return Order Placed"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"O"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VASAI, MUMBAI"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-02T13:23:02Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Return Order Placed"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"additional"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"self_shipped"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="err">False</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"is_rvp"</span><span class="p">:</span><span class="err">True</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"forward_awb"</span><span class="p">:</span><span class="s2">"sample_forward_awb"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"forward_reference_number"</span><span class="p">:</span><span class="s2">"sample_forward_reference"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"latest_status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">101</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"O"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Return Order Placed"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-08-02T13:23:02Z"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Return Order Placed"</span><span class="w">
+        </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Return Order Placed"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"notification_event"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-29 07:47:07.161221"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">101</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">-1</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"clickpost_status_bucket_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Return Order Placed"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"clickpost_status_bucket"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Return Order Placed"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Return Order Placed"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"additional"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"latest_status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"clickpost_status_bucket_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Return Order Placed"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Return Order Placed"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"clickpost_status_bucket"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Return Order Placed"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Return Order Placed"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-29 07:47:07.161252"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">101</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="s2">"is_rvp"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"notification_event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"forward_awb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5522110373319"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"self_shipped"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"forward_reference_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1405277"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"item_info"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+              </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"120667"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+          </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9649"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+          </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"46457"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+          </span><span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w">
+              </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10924"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+          </span><span class="p">}],</span><span class="w">
+        </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
 </span></code></pre>
-<h3 id="activating-webhooks">Activating Webhooks:</h3>
+<p>This webhook is only useful for customers using Clickpost managed returns platform to accept customer returns on their website.</p>
+
+<h3 id="activating-return-order-placed-webhook">Activating Return order placed webhook:</h3>
 
 <ol>
-<li>Visit Clickpost dashboard: <em>Settings</em> Tab on the left and Click notification section</li>
-<li>Select webhooks and activate Selected webhooks configuration or All Webhooks configuration as per your need</li>
+<li>Visit Clickpost dashboard: <em>Settings</em> Tab on the right and Click notification section</li>
+<li>Select webhooks and activate Selected webhooks configuration &ndash;&gt; &ldquo;Return Order Placed&rdquo;. </li>
 </ol>
 
 <h3 id="payload-explanation">Payload Explanation:</h3>
@@ -4594,75 +4888,18 @@ latest_status indicates the latest status for the shipment at the time when the 
 <li>timestamp: date/time in IST format when the scan was done</li>
 <li>clickpost_status_code: clickpost generated status code for particular status. Clickpost has mapped various statuses of different courier companies into few status codes, which helps customers understand and take action on statuses in preemptive manner.</li>
 <li>clickpost_status_description: description of clickpost_status_code</li>
-<li>is_rvp inside additional object tells the payload is for reverse orders. forward_awb field contain the forward awb number for which return order has been placed and forward_reference_number will have the corresponding reference number.</li>
-<li>waybill number will be blank as order is not yet created on courier company (not manifested yet) </li>
+<li>is_rvp inside additional object tells the payload is for reverse orders. </li>
+<li>forward_awb field contain the forward awb number for which return order has been placed </li>
+<li>forward_reference_number will have the corresponding reference number.</li>
+<li>waybill number will be blank as order is not yet created on courier partner (not manifested yet) </li>
 <li>clickpost_status_code will have 101 value which is Return Order Placed.</li>
 <li>self_shipped: Either True or False depending upon how the return shipment is shipped, if shipped by customer, then self_shipped is True else False.</li>
+<li>item_info: represents the item details for which return request is raised by the customer</li>
 </ol>
 
 <hr>
 
-<h3 id="webhook-data-post-on-client-server-for-selected-events">Webhook data POST on Client Server for selected events:</h3>
-
-<p>In case customer wants to recieve notifications only for certain events, Clickpost provides funtionality for the same.</p>
-
-<p>If customer opts for this service, we add: &ldquo;notification_event_id&rdquo; key in additional object of the payload. This will inform you the current status of shipment. For return (Return Request Placed) this field&rsquo;s value will be 11 </p>
-
-<h3 id="important-notes-and-special-data-in-webhooks-examples-are-present-on-the-right">Important Notes and special data in Webhooks (Examples are present on the right):</h3>
-
-<ol>
-<li>Webhooks do not guarantee the order of data send to Client servers. 
-latest_status indicates the latest status for the shipment at the time when the webhook is sent. This is sent with all webhooks</li>
-<li>Please make your API end point idempotent</li>
-<li>Since webhooks are transactional in nature, To insure minimal API data loss, we have retries in place if we do not get http 200 response from your server</li>
-<li>If you opt for selected events webhook notification, in case clickpost receives multiple notification from courier partner at the same time, only the latest notification will be sent to you</li>
-</ol>
-
-<hr>
-
-<h2 id="testing-webhook">Testing Webhook</h2>
-
-<blockquote>
-<p><strong>Test Webhook URL</strong></p>
-</blockquote>
-<pre class="highlight plaintext"><code>https://www.clickpost.in/api/v1/test_webhook?key=&lt;YOUR_API_KEY&gt;
-</code></pre>
-<blockquote>
-<p><strong>Test Webhook Payload</strong></p>
-</blockquote>
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
-  </span><span class="s2">"test_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.clickpost.in/"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"test_data"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Return Order Placed"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Return Order Placed"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-07-12T17:12:36.710"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">101</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Return Order Placed"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"additional"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"is_rvp"</span><span class="p">:</span><span class="err">True</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"forward_awb"</span><span class="p">:</span><span class="s2">"sample_forward_awb"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"forward_reference_number"</span><span class="p">:</span><span class="s2">"sample_forward_reference"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"latest_status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">101</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Return Order Placed"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Return Order Placed"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-07-12T17:12:36.710"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Return Order Placed"</span><span class="w">
-      </span><span class="p">}</span><span class="w">      
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span></code></pre>
-<p>You can test the webhooks by making a POST request on the following URL:</p>
-
-<p><code class="prettyprint">https://www.clickpost.in/api/v1/test_webhook?key=&lt;YOUR_API_KEY&gt;</code></p>
-
-<p>Where test_url is your server URL where you want to test the webhook data.</p>
+<p>Logic to be applied on webhook endpoint to detect returns webhook: In all reverse pickup order webhooks, is_rvp will be true. If its true, check the forward_awb or forward_reference_number in the payload, verify it with the same in your system and update the sku(s) present in item_info.</p>
 
 <hr>
 
