@@ -5064,7 +5064,7 @@ latest_status indicates the latest status for the shipment at the time when the 
 <blockquote>
 <p>URL to hit:</p>
 </blockquote>
-<pre class="highlight plaintext"><code>https://www.clickpost.in/api/v1/cancel-order/?username=test&amp;key=42d42a34-ae09-469312b20c-ae2624&amp;waybill=782715732348&amp;cp_id=8
+<pre class="highlight plaintext"><code>https://www.clickpost.in/api/v1/cancel-order/?username=test&amp;key=42d42a34-ae09-469312b20c-ae2624&amp;waybill=782715732348&amp;cp_id=8&amp;account_code=cli12
 
 Headers: {'Content-type': 'application/json'}
 
@@ -5095,6 +5095,7 @@ number already in a deleted state."</span><span class="p">,</span><span class="w
 <li>key: API key provided to you.</li>
 <li>waybill: waybill, which needs to be cancelled</li>
 <li>cp_id: Courier Partner ID of the courier from which shipment was dispatched. List: <a href="http://track.clickpost.in/courier_partner" target="_blank">http://track.clickpost.in/courier_partner</a></li>
+<li>account_code (optional): in case you have multiple courier accounts for a courier partner on Clickpost, please pass account_code in the cancellation API so that clickpost uses correct credentials to mark the shipment cancel</li>
 </ol>
 
 <h3 id="response-explanation">Response Explanation:</h3>
