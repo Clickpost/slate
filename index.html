@@ -5131,6 +5131,8 @@ number already in a deleted state."</span><span class="p">,</span><span class="w
 
           <h1 id="pincode-serviceability-api">Pincode Serviceability API</h1>
 
+<h2 id="v1-api-gives-list-of-only-those-courier-partners-where-atleast-one-of-the-service-cod-prepaid-exchange-is-active">V1 API: Gives list of only those courier partners where atleast one of the service [COD/PREPAID/EXCHANGE] is active</h2>
+
 <blockquote>
 <p>URL to hit</p>
 </blockquote>
@@ -5163,7 +5165,7 @@ number already in a deleted state."</span><span class="p">,</span><span class="w
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
             </span><span class="s2">"serviceable"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-                </span><span class="s2">"PREPAID"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"PREPAID"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"COD"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"EXCHANGE"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="err">EXCHANGE</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="err">is</span><span class="w"> </span><span class="err">returned</span><span class="w"> </span><span class="err">only</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">service_type</span><span class="p">:</span><span class="w"> </span><span class="err">RVP</span><span class="w">
             </span><span class="p">},</span><span class="w">
@@ -5178,7 +5180,7 @@ number already in a deleted state."</span><span class="p">,</span><span class="w
             </span><span class="s2">"cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
             </span><span class="s2">"serviceable"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                 </span><span class="s2">"PREPAID"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-                </span><span class="s2">"COD"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+                </span><span class="s2">"COD"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="s2">"comitted_sla"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
             </span><span class="s2">"account_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Sample_Ecom_2"</span><span class="p">,</span><span class="w">
@@ -5195,7 +5197,7 @@ number already in a deleted state."</span><span class="p">,</span><span class="w
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Serviceability api checks if pickup and drop pincodes are serviceabile or not, shipping charges for the shipment and turn around time for the delivery. It accepts the shipment dimension fields as additional parameters. Courier company id can be passed to check the serviceability for a specific courier company.</p>
+<p>Serviceability api V1 checks if pickup and drop pincodes are serviceabile or not, shipping charges for the shipment [if you have opted to get shipping charges] and turn around time [if you have opted to get TAT] for the delivery. It accepts the shipment dimension fields as additional parameters. Courier company id can be passed to check the serviceability for a specific courier company.</p>
 
 <p>It’s a POST request as follows</p>
 
@@ -5340,7 +5342,173 @@ Headers: {&lsquo;Content-type&rsquo;: &#39;application/json&rsquo;}</p>
 You must replace username / key with username / key provided to you.
 </aside>
 
-<hr>
+<h2 id="serviceability-v2-api">Serviceability V2 API</h2>
+
+<blockquote>
+<p>URL to hit</p>
+</blockquote>
+<pre class="highlight plaintext"><code>https://www.clickpost.in/api/v2/serviceability_api/?username=shop101-supply&amp;key=69de94cf-8fd0-4200-a090-30ce18a2b96c
+
+(username and key needs to be replaced with the key provided to you)
+</code></pre>
+<blockquote>
+<p><strong>Example(POST Body)</strong></p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">[{</span><span class="w">
+    </span><span class="s2">"drop_pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"110020"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"pickup_pincode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"122002"</span><span class="w">
+</span><span class="p">}]</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p><strong>Response</strong></p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"service_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FORWARD"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">737</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"shipping_charge"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+            </span><span class="s2">"account_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Xpressbees Surface"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"comitted_sla"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"serviceable"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"EXCHANGE"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"PICKUP"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"COD"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"PREPAID"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"service_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FORWARD"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"account_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">723</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"shipping_charge"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span><span class="w">
+            </span><span class="s2">"account_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delhivery Express"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"comitted_sla"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"serviceable"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"EXCHANGE"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"PICKUP"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"COD"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"PREPAID"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUCCESS"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Serviceability api checks if pickup and drop pincodes are serviceabile or not, shipping charges for the shipment and turn around time for the delivery. It accepts the shipment dimension fields as additional parameters. </p>
+
+<p>It’s a POST request as follows</p>
+
+<p>URL:
+<code class="prettyprint">https://www.clickpost.in/api/v2/serviceability_api/</code>
+Headers: {&#39;Content-type&rsquo;: &#39;application/json&rsquo;}</p>
+
+<h4 id="url-parameters">URL Parameters:</h4>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>key</td>
+<td>character</td>
+<td>API key provided to you</td>
+</tr>
+<tr>
+<td>username</td>
+<td>character</td>
+<td>username provided to you</td>
+</tr>
+</tbody></table>
+
+<h4 id="post-parameters">POST Parameters:</h4>
+
+<p>Format: JSON</p>
+
+<h3 id="compulsory-fields">Compulsory Fields</h3>
+
+<p>Payload is a list of json objects each of which have following fields:</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>pickup_pincode</td>
+<td>integer</td>
+<td>pincode of pickup address</td>
+</tr>
+<tr>
+<td>drop_pincode</td>
+<td>integer</td>
+<td>pincode of drop address</td>
+</tr>
+</tbody></table>
+
+<h3 id="optional-fields">Optional Fields</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>service_type</td>
+<td>character</td>
+<td>Any one of FORWARD/RVP, if service_type param is not passed, then default is FORWARD.</td>
+</tr>
+</tbody></table>
+
+<h3 id="response-explanation">Response explanation:</h3>
+
+<p>Response object has two parts:</p>
+
+<ol>
+<li>meta: stores information about the API, success or failure
+
+<ul>
+<li>success: true/false, tells whether the order was created or not</li>
+<li>message: SUCCESS in case request was successfully processed by clickpost, else returns error message.</li>
+<li>status:
+
+<ol>
+<li>200 if the order is created successfully,</li>
+<li>400 if there is a bad request encountered: errors will be present in “message”</li>
+</ol></li>
+</ul></li>
+<li>result: 
+
+<ul>
+<li>serviceable: JSON object which stores following two fields:
+
+<ul>
+<li>COD: Values: true: if the pincode is COD serviceable else false</li>
+<li>PREPAID: Values: true: if the pincode is COD serviceable else false</li>
+<li>PICKUP: If pickup pincode is serviceable</li>
+<li>EXCHANGE: If exchange is serviceable</li>
+</ul></li>
+<li>commited_sla: average commited SLA by courier partner (based on your contract with courier partner) for the shipment if dispatched today. (integer field)</li>
+<li>account_code: Account code for which the details are given in the result.</li>
+<li>shipping_charges: Shipping charges for the delivery of the shipment.</li>
+</ul></li>
+</ol>
+
+<aside class="warning">
+You must replace username / key with username / key provided to you.
+</aside>
 
           <h1 id="expected-date-of-delivery-api">Expected Date of Delivery API</h1>
 
