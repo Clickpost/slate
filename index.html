@@ -3904,6 +3904,87 @@ Headers: {'Content-type': 'application/json'}
 </tr>
 </tbody></table>
 
+<h2 id="processing-async-api-requests">Processing Async API requests:</h2>
+
+<p>In case you have account with courier partner which does not support sync API, please follow the steps present here to process the request:</p>
+
+<p>When you hit the request for the 1st time, Clickpost will queue the request and share the response with &ldquo;meta&rdquo; &ndash;&gt; &ldquo;status&rdquo; = 202</p>
+
+<blockquote>
+<p><strong>Response</strong> [Async order creation request accepted]</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order Placed Successfully"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">202</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8488542</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"reference_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST-ALPHA-132135"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sort_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Generally it takes 30 sec for the courier to process the request in async manner. Since Clickpost APIs are idempotent, you can continue to make the order creation request with same parameters, Clickpost will check the reference number and will return &ldquo;meta&rdquo; &ndash;&gt; &ldquo;status&rdquo; 102 if the request is still under process:</p>
+
+<blockquote>
+<p><strong>Response</strong> [Async order creation request in process]</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8488863</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sort_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"security_key"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"reference_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST-ALPHA-132135"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"We are processing your order"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">102</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Once the request is processed and you make the polling call with same reference number on the same API, you will get success [status code 200 or 323] or failure depending on response from courier partner</p>
+
+<blockquote>
+<p><strong>Response</strong> [Async order creation Success]</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">323</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"You have already placed this order"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1993933981231"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"sort_code"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"reference_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AR9-19-2697"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://test-bucket.s3.amazonaws.com:443/test/2019-09-23/19939339821.pdf"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"security_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"f60207d9-8bd9-441c-80e9-0c3781721fed"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"tracking_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">52158761</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">7127897</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre>
+<blockquote>
+<p><strong>Response</strong> [Async order creation failure]</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">8488743</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{'status': {'reason': 'ConfigurationError&lt;FAAS: warehouses&lt;GURGOANTHEA&gt; has not been configured&gt;', 'job_id': 'b3f5be04-f916-4bef-b0d4-3d8753e8332f', 'success': False, 'value': 'ConfigurationError', 'type': 'Complete'}}"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">319</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"reference_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"TEST-ALPHA-132135"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <hr>
 
           <h1 id="track-order">Track Order</h1>
