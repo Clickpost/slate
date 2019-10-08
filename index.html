@@ -5483,7 +5483,7 @@ You must replace username / key with username / key provided to you.
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>Serviceability api checks if pickup and drop pincodes are serviceabile or not, shipping charges for the shipment and turn around time for the delivery. It accepts the shipment dimension fields as additional parameters. </p>
+<p>Serviceability API checks if pickup and drop pincodes are serviceable or not, shipping charges for the shipment and turn around time for the delivery.</p>
 
 <p>It’s a POST request as follows</p>
 
@@ -5569,7 +5569,7 @@ Headers: {&#39;Content-type&rsquo;: &#39;application/json&rsquo;}</p>
 
 <ol>
 <li>200 if the order is created successfully,</li>
-<li>400 if there is a bad request encountered: errors will be present in “message”</li>
+<li>400 if there is a bad request encountered: errors will be present in &ldquo;message&rdquo;</li>
 </ol></li>
 </ul></li>
 <li>result: 
@@ -5586,6 +5586,121 @@ Headers: {&#39;Content-type&rsquo;: &#39;application/json&rsquo;}</p>
 <li>commited_sla: average commited SLA by courier partner (based on your contract with courier partner) for the shipment if dispatched today. (integer field)</li>
 <li>account_code: Account code for which the details are given in the result.</li>
 <li>shipping_charges: Shipping charges for the delivery of the shipment.</li>
+</ul></li>
+</ol>
+
+<aside class="warning">
+You must replace username / key with username / key provided to you.
+</aside>
+
+<h2 id="bulk-serviceability-api">Bulk Serviceability API</h2>
+
+<blockquote>
+<p>URL to hit</p>
+</blockquote>
+<pre class="highlight plaintext"><code>https://www.clickpost.in/api/v1/bulk_serviceability_api/?username=test&amp;key=a090-30ce18a2b96c743dhg-djhsu2&amp;courier_partner_id=&lt;cp_id&gt;&amp;account_code=&lt;account_code&gt;
+
+(username and key needs to be replaced with the key provided to you)
+</code></pre>
+<blockquote>
+<p><strong>Response</strong></p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"pickup_pincodes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"PREPAID"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"690546"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"drop_pincodes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"PREPAID"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"560067"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"560102"</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"COD"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"855114"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Success"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre>
+<p>Bulk Serviceability API takes courier_partner_id and account_code as input and returns all the pickup and drop pincodes along with order_types serviceable for that account present in Clickpost.</p>
+
+<p>It’s a GET request</p>
+
+<p>URL:
+<code class="prettyprint">https://www.clickpost.in/api/v2/bulk_serviceability_api/</code>
+Headers: {&#39;Content-type&rsquo;: &#39;application/json&rsquo;}</p>
+
+<h4 id="url-parameters">URL Parameters:</h4>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>key</td>
+<td>character</td>
+<td>API key provided to you</td>
+</tr>
+<tr>
+<td>username</td>
+<td>character</td>
+<td>username provided to you</td>
+</tr>
+<tr>
+<td>courier_partner_id</td>
+<td>integer</td>
+<td>courier partner ID</td>
+</tr>
+<tr>
+<td>account_code</td>
+<td>character</td>
+<td>account code as added in Clickpost dashboard</td>
+</tr>
+</tbody></table>
+
+<h3 id="response-explanation">Response explanation:</h3>
+
+<p>Response object has two parts:</p>
+
+<ol>
+<li>meta: stores information about the API, success or failure
+
+<ul>
+<li>success: true/false, tells whether the order was created or not</li>
+<li>message: SUCCESS in case request was successfully processed by clickpost, else returns error message.</li>
+<li>status:
+
+<ol>
+<li>200 if the order is created successfully,</li>
+<li>400 if there is a bad request encountered: errors will be present in &ldquo;message&rdquo;</li>
+</ol></li>
+</ul></li>
+<li>result: 
+
+<ul>
+<li>pickup_pincodes: JSON object with value as:
+
+<ul>
+<li>PREPAID: All pincodes will be pickup only</li>
+</ul></li>
+<li>drop_pincodes: JSON object with 3 possible values:
+
+<ul>
+<li>COD: Values: true: if the pincode is COD serviceable else false</li>
+<li>PREPAID: If pickup pincode is serviceable</li>
+<li>EXCHANGE: If exchange is serviceable</li>
+</ul></li>
 </ul></li>
 </ol>
 
