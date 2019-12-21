@@ -4781,6 +4781,18 @@ status. Clickpost has mapped various statuses of different courier companies int
 
 <p>We generally recommend customers to use selected webhooks configuration as all webhooks will trigger too many status messages on your system.</p>
 
+<h3 id="important-notes-and-special-data-in-webhooks-examples-are-present-on-the-right">Important Notes and special data in Webhooks (Examples are present on the right):</h3>
+
+<ol>
+<li>Webhooks do not guarantee the order of data send to Client servers. 
+latest_status indicates the latest status for the shipment at the time when the webhook is sent. This is sent with all webhooks</li>
+<li>In case of Failed Delivery, Clickpost unified NDR status code and NDR status description is sent in additional</li>
+<li>Please make your API end point idempotent</li>
+<li>Since webhooks are transactional in nature, To insure minimal API data loss, we have retries in place if we do not get http 200 response from your server</li>
+<li>If you opt for selected events webhook notification, in case clickpost receives multiple notification from courier partner at the same time, only the latest notification will be sent to you</li>
+<li>While consuming the webhooks do not apply strict JSON check in the code as you might have new keys in the payload as we enhance the services.</li>
+</ol>
+
 <h3 id="webhook-data-post-on-client-server-for-all-events">Webhook data POST on Client Server for all events:</h3>
 
 <p>Every time courier partner updates tracking of the shipment, We will post data to your server using the url you registered while registering for webhooks.</p>
@@ -4793,9 +4805,75 @@ status. Clickpost has mapped various statuses of different courier companies int
 <li>remarks: remark given by courier partner</li>
 <li>location: location of shipment at the time of the scan</li>
 <li>timestamp: date/time in IST format when the scan was done</li>
-<li>clickpost_status_code: clickpost generated status code for particular status. Clickpost has mapped various statuses of different courier companies into few status codes, which helps customers understand and take action on statuses in preemptive manner. (Explained in next section)</li>
-<li>clickpost_status_description: description of clickpost_status_code (Specified on next page)</li>
+<li>clickpost_status_code: clickpost status code for particular status. Clickpost has mapped various statuses of different courier companies into few status codes, which helps customers understand and take action on statuses in preemptive manner. [Visit &ldquo;Tracking Status Codes&rdquo; section]</li>
+<li>clickpost_status_description: description of clickpost_status_code [Visit &ldquo;Tracking Status Codes&rdquo; section]</li>
 </ol>
+
+<h3 id="ndr-status-codes">NDR Status Codes</h3>
+
+<table><thead>
+<tr>
+<th>ndr_status_code</th>
+<th>ndr_status_description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>0</td>
+<td>&ldquo;Unknown Exception&rdquo;</td>
+</tr>
+<tr>
+<td>1</td>
+<td>&ldquo;Customer Unavailable&rdquo;</td>
+</tr>
+<tr>
+<td>2</td>
+<td>&ldquo;Rejected by Customer&rdquo;</td>
+</tr>
+<tr>
+<td>3</td>
+<td>&ldquo;Delivery Rescheduled&rdquo;</td>
+</tr>
+<tr>
+<td>4</td>
+<td>&ldquo;No Attempt&rdquo;</td>
+</tr>
+<tr>
+<td>5</td>
+<td>&ldquo;Customer Unreachable&rdquo;</td>
+</tr>
+<tr>
+<td>6</td>
+<td>&ldquo;Address Issue&rdquo;</td>
+</tr>
+<tr>
+<td>7</td>
+<td>&ldquo;Payment Issue&rdquo;</td>
+</tr>
+<tr>
+<td>8</td>
+<td>&ldquo;Out Of Delivery Area&rdquo;</td>
+</tr>
+<tr>
+<td>9</td>
+<td>&ldquo;Order Already Cancelled&rdquo;</td>
+</tr>
+<tr>
+<td>10</td>
+<td>&ldquo;Self Collect&rdquo;</td>
+</tr>
+<tr>
+<td>11</td>
+<td>&ldquo;Shipment Seized By Customer&rdquo;</td>
+</tr>
+<tr>
+<td>12</td>
+<td>&ldquo;Customer wants open delivery&rdquo;</td>
+</tr>
+<tr>
+<td>13</td>
+<td>&ldquo;Shipment Misrouted by logistics partner&rdquo;</td>
+</tr>
+</tbody></table>
 
 <hr>
 
@@ -4893,7 +4971,73 @@ status. Clickpost has mapped various statuses of different courier companies int
 </tr>
 </tbody></table>
 
-<p>Please see the sample payload on the right:</p>
+<h3 id="ndr-status-codes">NDR Status Codes</h3>
+
+<table><thead>
+<tr>
+<th>ndr_status_code</th>
+<th>ndr_status_description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>0</td>
+<td>&ldquo;Unknown Exception&rdquo;</td>
+</tr>
+<tr>
+<td>1</td>
+<td>&ldquo;Customer Unavailable&rdquo;</td>
+</tr>
+<tr>
+<td>2</td>
+<td>&ldquo;Rejected by Customer&rdquo;</td>
+</tr>
+<tr>
+<td>3</td>
+<td>&ldquo;Delivery Rescheduled&rdquo;</td>
+</tr>
+<tr>
+<td>4</td>
+<td>&ldquo;No Attempt&rdquo;</td>
+</tr>
+<tr>
+<td>5</td>
+<td>&ldquo;Customer Unreachable&rdquo;</td>
+</tr>
+<tr>
+<td>6</td>
+<td>&ldquo;Address Issue&rdquo;</td>
+</tr>
+<tr>
+<td>7</td>
+<td>&ldquo;Payment Issue&rdquo;</td>
+</tr>
+<tr>
+<td>8</td>
+<td>&ldquo;Out Of Delivery Area&rdquo;</td>
+</tr>
+<tr>
+<td>9</td>
+<td>&ldquo;Order Already Cancelled&rdquo;</td>
+</tr>
+<tr>
+<td>10</td>
+<td>&ldquo;Self Collect&rdquo;</td>
+</tr>
+<tr>
+<td>11</td>
+<td>&ldquo;Shipment Seized By Customer&rdquo;</td>
+</tr>
+<tr>
+<td>12</td>
+<td>&ldquo;Customer wants open delivery&rdquo;</td>
+</tr>
+<tr>
+<td>13</td>
+<td>&ldquo;Shipment Misrouted by logistics partner&rdquo;</td>
+</tr>
+</tbody></table>
+
+<p>Please see the sample payload on the right.</p>
 
 <blockquote>
 <p><strong>Selected event subscribed webhook: Failed delivery Payload</strong></p>
@@ -4965,84 +5109,6 @@ status. Clickpost has mapped various statuses of different courier companies int
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre>
-<h3 id="important-notes-and-special-data-in-webhooks-examples-are-present-on-the-right">Important Notes and special data in Webhooks (Examples are present on the right):</h3>
-
-<ol>
-<li>Webhooks do not guarantee the order of data send to Client servers. 
-latest_status indicates the latest status for the shipment at the time when the webhook is sent. This is sent with all webhooks</li>
-<li>In case of NuvoEx Reverse Pickup: doorstep Quality Check order, additional has dsqc object at the time of pickup cancelled (clickpost_status_code = 10) and pickedup (clickpost_status_code = 4)</li>
-<li>In case of Failed Delivery, Clickpost unified NDR status code and NDR status description is sent in additional</li>
-<li>Please make your API end point idempotent</li>
-<li>Since webhooks are transactional in nature, To insure minimal API data loss, we have retries in place if we do not get http 200 response from your server</li>
-<li>If you opt for selected events webhook notification, in case clickpost receives multiple notification from courier partner at the same time, only the latest notification will be sent to you</li>
-</ol>
-
-<h3 id="ndr-status-codes">NDR Status Codes</h3>
-
-<table><thead>
-<tr>
-<th>ndr_status_code</th>
-<th>ndr_status_description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>0</td>
-<td>&ldquo;Unknown Exception&rdquo;</td>
-</tr>
-<tr>
-<td>1</td>
-<td>&ldquo;Customer Unavailable&rdquo;</td>
-</tr>
-<tr>
-<td>2</td>
-<td>&ldquo;Rejected by Customer&rdquo;</td>
-</tr>
-<tr>
-<td>3</td>
-<td>&ldquo;Delivery Rescheduled&rdquo;</td>
-</tr>
-<tr>
-<td>4</td>
-<td>&ldquo;No Attempt&rdquo;</td>
-</tr>
-<tr>
-<td>5</td>
-<td>&ldquo;Customer Unreachable&rdquo;</td>
-</tr>
-<tr>
-<td>6</td>
-<td>&ldquo;Address Issue&rdquo;</td>
-</tr>
-<tr>
-<td>7</td>
-<td>&ldquo;Payment Issue&rdquo;</td>
-</tr>
-<tr>
-<td>8</td>
-<td>&ldquo;Out Of Delivery Area&rdquo;</td>
-</tr>
-<tr>
-<td>9</td>
-<td>&ldquo;Order Already Cancelled&rdquo;</td>
-</tr>
-<tr>
-<td>10</td>
-<td>&ldquo;Self Collect&rdquo;</td>
-</tr>
-<tr>
-<td>11</td>
-<td>&ldquo;Shipment Seized By Customer&rdquo;</td>
-</tr>
-<tr>
-<td>12</td>
-<td>&ldquo;Customer wants open delivery&rdquo;</td>
-</tr>
-<tr>
-<td>13</td>
-<td>&ldquo;Shipment Misrouted by logistics partner&rdquo;</td>
-</tr>
-</tbody></table>
-
 <p><em>Clickpost recommends that the mapping of NDR be done strictly on ndr_status_code and not on ndr_status_description</em></p>
 
 <hr>
@@ -6681,6 +6747,21 @@ You must replace username / key with username / key provided to you.
 <td>28</td>
 <td>AWB REGISTERED</td>
 <td>&#39;AWB registered on Clickpost&rsquo;</td>
+</tr>
+<tr>
+<td>30</td>
+<td>EXCHANGE_PICKUP</td>
+<td>&#39;Exchange successful, Shipment delivered and picked up from the customer&rsquo; [Only for exchange service]</td>
+</tr>
+<tr>
+<td>31</td>
+<td>EXCHANGE_INTRANSIT</td>
+<td>&#39;Exchanged shipment In Transit to warehouse&rsquo; [Only for exchange service]</td>
+</tr>
+<tr>
+<td>32</td>
+<td>EXCHANGE_DELIVERED</td>
+<td>&#39;When an exchange shipment is delivered back&rsquo; [Only for exchange service]</td>
 </tr>
 <tr>
 <td>101</td>
