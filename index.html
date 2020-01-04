@@ -4703,6 +4703,13 @@ status. Clickpost has mapped various statuses of different courier companies int
 
 <h2 id="tracking-awb-using-webhooks">Tracking AWB Using Webhooks</h2>
 
+<h3 id="clickpost-exposes-webhooks-for-status-updates-in-2-ways">Clickpost exposes webhooks for status updates in 2 ways:</h3>
+
+<ol>
+<li><p>For all events/status: This will trigger status updates for all the scans done by courier partner for the shipment. You can opt in for these webhooks using &ldquo;Webhooks: All Status&rdquo; on the dashboard. From tech perspective, apply check on clickpost_status_code in latest_status to update the status in your system.</p></li>
+<li><p>For selected events/status: This will trigger status updates only for selected checkpoints opted by you on the Clickpost dashboard. You can opt in for these webhooks using &ldquo;Webhooks: Selected Status&rdquo; on the dashboard. From tech perspective, apply check on notification_event_id in the webhook object to update the status in your system. The checkpoints available for Selected webhooks are as mentioned on the dashboard.</p></li>
+</ol>
+
 <blockquote>
 <p><strong>Webhook Payload Header</strong></p>
 </blockquote>
@@ -4774,7 +4781,7 @@ status. Clickpost has mapped various statuses of different courier companies int
 
 <ol>
 <li>Visit Clickpost dashboard: <em>Settings</em> Tab on the left and Click notification section</li>
-<li>Select webhooks and activate Selected webhooks configuration or All Webhooks configuration as per your need: </li>
+<li>Select webhooks and activate Selected webhooks configuration or All Webhooks configuration as per your need.</li>
 <li>Selected webhooks configuration: trigger webhooks only when shipment reaches certain checkpoints in its journey.</li>
 <li>All webhooks configuration: trigger webhooks for all shipment statuses as they come.</li>
 </ol>
