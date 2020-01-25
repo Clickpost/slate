@@ -133,6 +133,7 @@
 <li><strong>Operation and Customer Feedback API</strong>: Gives list of customer feedbacks and operations feedback on the tracking page.</li>
 <li><strong>NDR Action update API</strong>: Updates the after NDR action directly on courier company&rsquo;s database.</li>
 <li><strong>Return Webhooks</strong>: Track your return shipment using AWB and Courier Partner using webhooks (we give data on your endpoint).</li>
+<li><strong>Whatsapp Optin-Optout</strong>: In case customer sends whatsapp optout communication to you, you can update the same in Clickpost using this API </li>
 </ol>
 
 <!--We have language bindings in Shell, Ruby, PHP and Python!-->
@@ -1313,7 +1314,8 @@ Headers: {'Content-type': 'application/json'}
         </span><span class="s2">"from_wh"</span><span class="p">:</span><span class="w"> </span><span class="s2">"From Warehouse"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"to_wh"</span><span class="p">:</span><span class="w"> </span><span class="s2">"To Warehouse"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"channel_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Channel Name: In case you have different channels to receive orders"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"order_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YYYY-MM-DD"</span><span class="w">
+        </span><span class="s2">"order_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YYYY-MM-DD"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"enable_whatsapp"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="err">Useful</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">whatsapp</span><span class="w"> </span><span class="err">communication</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -2281,7 +2283,8 @@ Headers: {'Content-type': 'application/json'}
         </span><span class="s2">"from_wh"</span><span class="p">:</span><span class="w"> </span><span class="s2">"From Warehouse"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"to_wh"</span><span class="p">:</span><span class="w"> </span><span class="s2">"To Warehouse"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"channel_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Channel Name: In case you have different channels to receive orders"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"order_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YYYY-MM-DD"</span><span class="w">
+        </span><span class="s2">"order_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YYYY-MM-DD"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"enable_whatsapp"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="err">Useful</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">whatsapp</span><span class="w"> </span><span class="err">communication</span><span class="w"> 
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -4052,7 +4055,8 @@ Headers: {'Content-type': 'application/json'}
     </span><span class="s2">"order_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-02-14T18:00:00+05:30"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"ship_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-02-14T23:00:00+05:30"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"min_edd"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"max_edd"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+    </span><span class="s2">"max_edd"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"enable_whatsapp"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
@@ -4255,6 +4259,11 @@ Headers: {'Content-type': 'application/json'}
 <td>max_edd</td>
 <td>integer</td>
 <td>maximum days commited to the customer for 1st delivery attempt</td>
+</tr>
+<tr>
+<td>enable_whatsapp</td>
+<td>boolean</td>
+<td>if you have whatsapp for business account, you can pass opt-in information here so Clickpost starts sending out communications to customers</td>
 </tr>
 </tbody></table>
 
@@ -6620,6 +6629,90 @@ You must replace username / key with username / key provided to you.
 </aside>
 
 <hr>
+
+          <h2 id="whatsapp-opt-out-opt-in-api">Whatsapp opt-out/opt-in API</h2>
+
+<blockquote>
+<p><strong>URL</strong></p>
+</blockquote>
+<pre class="highlight plaintext"><code>https://www.clickpost.in/api/v1/enable_shipment_notification/?key=&lt;enterprise_key&gt;
+
+Headers: {'Content-type': 'application/json'}
+</code></pre>
+<blockquote>
+<p><strong>Request</strong></p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"awb"</span><span class="p">:</span><span class="s2">"&lt;awb_number&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"whatsapp_disable"</span><span class="p">:</span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p><strong>Response</strong></p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUCCESS"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>The whatsapp optin API allows you to inform Clickpost systems if whatsapp communication shall be enabled/disabled for a particular shipment.</p>
+
+<p>The API is a HTTP POST request to:
+<code class="prettyprint">https://www.clickpost.in/api/v1/enable_shipment_notification/</code> </p>
+
+<p>where output is json</p>
+
+<p>Listed below are the URL parameters:</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>key (required)</td>
+<td>character</td>
+<td>your Clickpost API Key</td>
+</tr>
+</tbody></table>
+
+<p>Payload</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>awb</td>
+<td>character</td>
+<td>shipment for which action is to be performed</td>
+</tr>
+<tr>
+<td>whatsapp_enable</td>
+<td>boolean</td>
+<td>action to be done: true implies whatsapp communication shall be sent for the shipment, false implies whatsapp communication shall be disabled</td>
+</tr>
+</tbody></table>
+
+<h3 id="response-explanation">Response Explanation:</h3>
+
+<ol>
+<li>&ldquo;meta&rdquo; stores information about the API, success or failure
+
+<ul>
+<li>success: true/false, true if the API worked fine, else false</li>
+<li>message: SUCCESS if everything is fine, else the error message </li>
+<li>status: 200, if the API data was fine</li>
+</ul></li>
+</ol>
 
           <h1 id="tracking-status-codes">Tracking Status Codes</h1>
 
