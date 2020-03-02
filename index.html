@@ -4479,7 +4479,10 @@ Headers: {'Content-type': 'application/json'}
             </span><span class="s2">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SF41917204SCR"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-15T15:00:04.672388Z"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"account_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"reference_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CP-35416108"</span><span class="w">
+            </span><span class="s2">"reference_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CP-35416108"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"001"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mumbai Hub"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order Manifested in Courier System"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-15T14:47:26.614788Z"</span><span class="p">,</span><span class="w">
@@ -4490,7 +4493,10 @@ Headers: {'Content-type': 'application/json'}
             </span><span class="s2">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SF41917199SCR"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-15T15:00:07.132808Z"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"account_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"reference_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CP-35416108"</span><span class="w">
+            </span><span class="s2">"reference_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CP-35416108"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Data Received Successfully"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bangalore Hub"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order Manifested in Courier System"</span><span class="w">
         </span><span class="p">},</span><span class="w">
         </span><span class="p">{</span><span class="w">
             </span><span class="s2">"created_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-15T13:58:34.822899Z"</span><span class="p">,</span><span class="w">
@@ -4501,7 +4507,10 @@ Headers: {'Content-type': 'application/json'}
             </span><span class="s2">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SF41917168SCR"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"updated_at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-04-15T15:00:42.625536Z"</span><span class="p">,</span><span class="w">
             </span><span class="s2">"account_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"reference_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CP-35416108"</span><span class="w">
+            </span><span class="s2">"reference_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"CP-35416108"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"001"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New Delhi"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order Manifested in Courier System"</span><span class="w">
         </span><span class="p">}</span><span class="w">
     </span><span class="p">],</span><span class="w">
     </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
@@ -4554,13 +4563,13 @@ Headers: {'Content-type': 'application/json'}
 <h3 id="response-explanation">Response Explanation:</h3>
 
 <ol>
-<li>“meta” stores information about the API, success or failure
+<li>&ldquo;meta&rdquo; stores information about the API, success or failure
 
 <ul>
 <li>success: true/false, true if the API worked fine, else false</li>
 <li>message: SUCCESS if everything is fine, else the error message c. status: 200, if the API data was fine, 400 in case of a bad request</li>
 </ul></li>
-<li>“result” is an array of records. Each record holds information of comma-separated waybill entered in the request parameter.</li>
+<li>&ldquo;result&rdquo; is an array of records. Each record holds information of comma-separated waybill entered in the request parameter.</li>
 </ol>
 
 <h2 id="tracking-awb-using-polling">Tracking AWB Using Polling</h2>
@@ -4722,6 +4731,8 @@ Headers: {'Content-type': 'application/json'}
 <td>courier_partner_id as specified on page 1 of this documentation</td>
 </tr>
 </tbody></table>
+
+<p>Note: You can query upto 15 waybills [AWBs] status in 1 API request</p>
 
 <h3 id="response-explanation">Response Explanation:</h3>
 
