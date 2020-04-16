@@ -1436,7 +1436,9 @@ Headers: {'Content-type': 'application/json'}
         </span><span class="s2">"from_wh"</span><span class="p">:</span><span class="w"> </span><span class="s2">"From Warehouse"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"to_wh"</span><span class="p">:</span><span class="w"> </span><span class="s2">"To Warehouse"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"channel_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Channel Name: In case you have different channels to receive orders"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"order_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YYYY-MM-DD"</span><span class="w">
+        </span><span class="s2">"order_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YYYY-MM-DD"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"isFragile"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"isDangerous"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -1930,6 +1932,16 @@ Headers: {'Content-type': 'application/json'}
 <td>vendor_code</td>
 <td>character</td>
 <td>(optional) vendor code of pickup location. If this field is not provided, Clickpost will generate vendor code for the pickup location. For Ecom Express this field is passed to them as pickup_location_code to create location tagging</td>
+</tr>
+<tr>
+<td>isFragile</td>
+<td>boolean</td>
+<td>true if shipment is Fragile. Default false. [Currently used only for eKart APIs]</td>
+</tr>
+<tr>
+<td>isDangerous</td>
+<td>boolean</td>
+<td>true if shipment is Dangerous/Liquid. Default false. [Currently used only for eKart APIs]</td>
 </tr>
 </tbody></table>
 
