@@ -1319,7 +1319,9 @@ Headers: {'Content-type': 'application/json'}
         </span><span class="s2">"to_wh"</span><span class="p">:</span><span class="w"> </span><span class="s2">"To Warehouse"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"channel_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Channel Name: In case you have different channels to receive orders"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"order_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YYYY-MM-DD"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"enable_whatsapp"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="err">Useful</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">whatsapp</span><span class="w"> </span><span class="err">communication</span><span class="w">
+        </span><span class="s2">"enable_whatsapp"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="err">Useful</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">whatsapp</span><span class="w"> </span><span class="err">communication</span><span class="w">
+        </span><span class="s2">"is_fragile"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"is_dangerous"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -1931,7 +1933,7 @@ Headers: {'Content-type': 'application/json'}
 <tr>
 <td>vendor_code</td>
 <td>character</td>
-<td>(optional) vendor code of pickup location. If this field is not provided, Clickpost will generate vendor code for the pickup location. For Ecom Express this field is passed to them as pickup_location_code to create location tagging</td>
+<td>(optional) vendor code of pickup location. If this field is not provided, Clickpost will generate vendor code for the pickup location. For Ecom Express this field is passed to them as &ldquo;pickup_location_code&rdquo; to create location tagging. For Delhivery this field is passed in the API field &lsquo;pickup_location[&ldquo;name&rdquo;]&rsquo;. For XpressBees, this field is passed in their API field &ldquo;PickupVendorCode&rdquo;.</td>
 </tr>
 <tr>
 <td>is_fragile</td>
