@@ -4620,6 +4620,7 @@ Headers: {'Content-type': 'application/json'}
                 </span><span class="s2">"is_stuck"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"dest_hub_inscan"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"order_detail"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+                </span><span class="s2">"courier_partner_edd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-03-20"</span><span class="p">,</span><span class="w">
                 </span><span class="s2">"edd"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                     </span><span class="s2">"min_sla"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
                     </span><span class="s2">"max_sla"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
@@ -4752,18 +4753,18 @@ Headers: {'Content-type': 'application/json'}
 <h3 id="response-explanation">Response Explanation:</h3>
 
 <ol>
-<li>“meta” stores information about the API, success or failure
+<li>&ldquo;meta&rdquo; stores information about the API, success or failure
 
 <ul>
 <li>success: true/false, true if the API worked fine, else false</li>
 <li>message: SUCCESS if everything is fine, else the error message c. status: 200, if the API data was fine, 400 in case of a bad request</li>
 </ul></li>
-<li>“result” is an array of records. Each record holds information of comma-separated waybill entered in the request parameter.</li>
+<li>&ldquo;result&rdquo; is an array of records. Each record holds information of comma-separated waybill entered in the request parameter.</li>
 <li>Each record has following objects:
 
 <ul>
-<li>“valid”: (true / false) in case a wrong AWB / AWB which is not yet registered on Clickpost; is entered to track a shipment, “valid” field will be false. If the AWB is correct, “valid” will be true</li>
-<li>“waybill”: AWB provided in the API. Is the key of each object. The value is a dictionary storing information about shipment:
+<li>&ldquo;valid&rdquo;: (true / false) in case a wrong AWB / AWB which is not yet registered on Clickpost; is entered to track a shipment, “valid” field will be false. If the AWB is correct, “valid” will be true</li>
+<li>&ldquo;waybill&rdquo;: AWB provided in the API. Is the key of each object. The value is a dictionary storing information about shipment:
 
 <ol>
 <li>scans: Stores all scans that happened for shipment. Has following keys:
@@ -4778,7 +4779,12 @@ Headers: {'Content-type': 'application/json'}
 status. Clickpost has mapped various statuses of different courier companies into few status codes, which helps customers understand and take action on statuses in preemptive manner. (Explained on last page of this document)</li>
 <li>clickpost_status_description: description of clickpost_status_code (Specified on last page of this document)</li>
 </ol></li>
-<li>lateststatus: Stores information about the latest status of shipment, has following fields:
+<li>&ldquo;additional&rdquo;: gives additional information about the shipment:
+
+<ol>
+<li>courier_partner_edd: Expected delivery date as given by courier partner over APIs</li>
+</ol></li>
+<li>&ldquo;latest_status&rdquo;: Stores information about the latest status of shipment, has following fields:
 
 <ol>
 <li>status: status of the shipment at that time</li>
@@ -4963,6 +4969,7 @@ latest_status indicates the latest status for the shipment at the time when the 
 <li>timestamp: date/time in IST format when the scan was done</li>
 <li>clickpost_status_code: clickpost status code for particular status. Clickpost has mapped various statuses of different courier companies into few status codes, which helps customers understand and take action on statuses in preemptive manner. [Visit &ldquo;Tracking Status Codes&rdquo; section]</li>
 <li>clickpost_status_description: description of clickpost_status_code [Visit &ldquo;Tracking Status Codes&rdquo; section]</li>
+<li>courier_partner_edd: Expected delivery date as given by courier partner over APIs</li>
 </ol>
 
 <h3 id="ndr-status-codes">NDR Status Codes</h3>
