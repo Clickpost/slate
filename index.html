@@ -4139,7 +4139,7 @@ Headers: {'Content-type': 'application/json'}
 
           <h1 id="track-order">Track Order</h1>
 
-<h2 id="register-an-awb-for-tracking">Register an AWB for tracking</h2>
+<h2 id="register-a-shipment-for-tracking-in">Register a shipment for tracking: [IN]</h2>
 
 <blockquote>
 <p>POST request. URL:</p>
@@ -4392,6 +4392,420 @@ Headers: {'Content-type': 'application/json'}
 <td>ship_date</td>
 <td>character</td>
 <td>timestamp when order was ready to ship</td>
+</tr>
+<tr>
+<td>min_edd</td>
+<td>integer</td>
+<td>minimum days commited to the customer for 1st delivery attempt</td>
+</tr>
+<tr>
+<td>max_edd</td>
+<td>integer</td>
+<td>maximum days commited to the customer for 1st delivery attempt</td>
+</tr>
+<tr>
+<td>enable_whatsapp</td>
+<td>boolean</td>
+<td>if you have whatsapp for business account, you can pass opt-in information here so Clickpost starts sending out communications to customers</td>
+</tr>
+</tbody></table>
+
+<p>API response: &ldquo;meta&rdquo; &ndash;&gt; &ldquo;status&rdquo;: 200 and 303 represents success response</p>
+
+<h2 id="register-a-shipment-for-tracking-mena-sea-eu-us">Register a shipment for tracking: [MENA, SEA, EU, US]</h2>
+
+<blockquote>
+<p>POST request URL:</p>
+</blockquote>
+<pre class="highlight plaintext"><code>https://www.clickpost.in/api/v3/tracking/awb-register/?key=&lt;clickpost_api_key&gt;
+
+Headers: {'Content-type': 'application/json'}
+</code></pre>
+<blockquote>
+<p><strong>Sample Payload</strong></p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ABCDRESDEFGHIJKL"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"courier_partner"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"account_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Fedex Domestic"</span><span class="p">,</span><span class="w">
+
+    </span><span class="s2">"shipment_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"order_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COD"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"invoice_value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12345"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"cod_amount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1000"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"currency_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SAR"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"reference_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"123XYZ"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"order_id of the shipment"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"length"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"breadth"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"items"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"sku"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XYZ1"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"item1"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"images"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;Image URL&gt;"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"return_days"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"length"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"height"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"breadth"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"weight"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+
+    </span><span class="s2">"pickup_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Rashid Alma"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"warehouse_1@hotmail.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"966"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"8001111090"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KRAMAT ASEM RAYA N0. 6, UTAN KAYU SELATAN, JAKARTA TIMUR 13120"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"postal_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JK0701"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Riyadh"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"district"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XYZ"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Al-Riyadh"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"country_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SA"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">10.01</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"long"</span><span class="p">:</span><span class="w"> </span><span class="mf">10.2</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+
+    </span><span class="s2">"drop_info"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Amal Hisham"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a_maal11@hotmail.com"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"966"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"558022554"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JALAN PANJANG NO. 08, JAKARTA BARAT"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"postal_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JK0703"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JK0703"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"district"</span><span class="p">:</span><span class="w"> </span><span class="s2">"XYZ"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Al-Riyadh"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"country_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AE"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"lat"</span><span class="p">:</span><span class="w"> </span><span class="mf">10.01</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"long"</span><span class="p">:</span><span class="w"> </span><span class="mf">10.01</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+
+    </span><span class="s2">"additional"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"enable_whatsapp"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"language_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"EN"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"order_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-02-14"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ship_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2017-02-14"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"min_edd"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"max_edd"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p><strong>Response</strong></p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SUCCESS"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"security_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"530470b0-8ebd-40c3-9c9e-6ca6bf1d29b8"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Note: All orders are passed a security_key in response. Please store this security key. </p>
+
+<p>API response: &ldquo;meta&rdquo; &ndash;&gt; &ldquo;status&rdquo;: 200 and 303 represents success response. All the other status codes represent a failure. Our API will always return HTTP status code 200.</p>
+
+<h3 id="fields-explanation">Fields Explanation</h3>
+
+<h4 id="compulsory">Compulsory:</h4>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>waybill (required)</td>
+<td>character (100 chars)</td>
+<td>this is/are comma separated waybill numbers for which the status is required</td>
+</tr>
+<tr>
+<td>courier_partner (required)</td>
+<td>integer</td>
+<td>courier_partner ID of the courier on which you want to track the AWB. List of courier partners: http://track.clickpost.in/courier_partner</td>
+</tr>
+<tr>
+<td>account_code (required)</td>
+<td>character (100 chars)</td>
+<td>account code in case you have multiple accounts for same courier partner</td>
+</tr>
+</tbody></table>
+
+<h4 id="optional">Optional:</h4>
+
+<h4 id="pickup_info-optional-pickup-location-information-all-the-fields-are-optional">pickup_info (optional): [pickup location information: all the fields are optional]</h4>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>character (100 characters)</td>
+<td>name of person at pickup location which shall be contacted by courier partner</td>
+</tr>
+<tr>
+<td>email</td>
+<td>character (100 characters)</td>
+<td>email of the person at pickup location</td>
+</tr>
+<tr>
+<td>phone_code</td>
+<td>character</td>
+<td>ISO phone code of the country where the pickup is to be done. Country and their phone codes: https://www.clickpost.in/api/v1/countries/</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>character (11 characters)</td>
+<td>phone number of the person at pickup location</td>
+</tr>
+<tr>
+<td>address</td>
+<td>character (500 character)</td>
+<td>address of pickup location</td>
+</tr>
+<tr>
+<td>postal_code</td>
+<td>character (50 character)</td>
+<td>postal code of the pickup location. For MENA region, this field represents area code</td>
+</tr>
+<tr>
+<td>city</td>
+<td>character (200 character)</td>
+<td>city of the pickup location</td>
+</tr>
+<tr>
+<td>district</td>
+<td>character (200 character)</td>
+<td>district of the pickup location [Required for South East Asian countries]</td>
+</tr>
+<tr>
+<td>state</td>
+<td>character (200 character)</td>
+<td>state of the pickup location</td>
+</tr>
+<tr>
+<td>country_code</td>
+<td>character</td>
+<td>ISO country code of the country where pickup is to be done. Country code list: https://www.clickpost.in/api/v1/countries/</td>
+</tr>
+<tr>
+<td>lat</td>
+<td>float</td>
+<td>latitute of the pickup location</td>
+</tr>
+<tr>
+<td>long</td>
+<td>float</td>
+<td>longitud of the pickup location</td>
+</tr>
+</tbody></table>
+
+<h4 id="drop_info-optional-destination-location-information-all-the-fields-are-optional">drop_info (optional): [destination location information: all the fields are optional]</h4>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>name</td>
+<td>character (100 characters)</td>
+<td>name of person at destination location who will be contacted by courier partner</td>
+</tr>
+<tr>
+<td>email</td>
+<td>character (100 characters)</td>
+<td>email of the person at destination location</td>
+</tr>
+<tr>
+<td>phone_code</td>
+<td>character</td>
+<td>ISO phone code of the country where the delivery is to be done. Country and their phone codes: https://www.clickpost.in/api/v1/countries/</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>character (11 characters)</td>
+<td>phone number of the person at destination location</td>
+</tr>
+<tr>
+<td>address</td>
+<td>character (500 character)</td>
+<td>address of destination location</td>
+</tr>
+<tr>
+<td>postal_code</td>
+<td>character (50 character)</td>
+<td>postal code of the destination location. For MENA region, this field represents area code</td>
+</tr>
+<tr>
+<td>city</td>
+<td>character (200 character)</td>
+<td>city of the destination location</td>
+</tr>
+<tr>
+<td>district</td>
+<td>character (200 character)</td>
+<td>district of the destination location [Required for South East Asian countries]</td>
+</tr>
+<tr>
+<td>state</td>
+<td>character (200 character)</td>
+<td>state of the destination location</td>
+</tr>
+<tr>
+<td>country_code</td>
+<td>character</td>
+<td>ISO country code of the country where destination is to be done. Country code list: https://www.clickpost.in/api/v1/countries/</td>
+</tr>
+<tr>
+<td>lat</td>
+<td>float</td>
+<td>latitute of the destination location</td>
+</tr>
+<tr>
+<td>long</td>
+<td>float</td>
+<td>longitud of the destination location</td>
+</tr>
+</tbody></table>
+
+<h4 id="shipment_info-optional-shipment-information-for-rich-analytics-on-your-data">shipment_info (optional): shipment information for rich analytics on your data:</h4>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>order_type</td>
+<td>string</td>
+<td>type of shipment based on payment mode [Possible values: &ldquo;COD&rdquo;, &ldquo;PREPAID&rdquo;]</td>
+</tr>
+<tr>
+<td>invoice_value</td>
+<td>float</td>
+<td>declared value of the shipment</td>
+</tr>
+<tr>
+<td>cod_amount</td>
+<td>float</td>
+<td>cash on delivery amount, that courier has to collect while delivering the shipment</td>
+</tr>
+<tr>
+<td>currency_code</td>
+<td>string (3 characters)</td>
+<td>ISO currency code of currency selected by customer for placing the order: Currency codes in Clickpost https://www.clickpost.in/api/v1/countries/ [https://en.wikipedia.org/wiki/ISO_4217]</td>
+</tr>
+<tr>
+<td>reference_number</td>
+<td>string (50 characters)</td>
+<td>unique shipment ID for the shipment. (You can perform search on this parameter on Clickpost dashboard)</td>
+</tr>
+<tr>
+<td>order_id</td>
+<td>string (50 characters)</td>
+<td>Order ID of the shipment</td>
+</tr>
+<tr>
+<td>length</td>
+<td>int</td>
+<td>length in cms</td>
+</tr>
+<tr>
+<td>height</td>
+<td>int</td>
+<td>height in cms</td>
+</tr>
+<tr>
+<td>breadth</td>
+<td>int</td>
+<td>breadth in cms</td>
+</tr>
+<tr>
+<td>weight</td>
+<td>int</td>
+<td>weight in grams</td>
+</tr>
+</tbody></table>
+
+<p>Clickpost also accepts item (SKU: Stock Keeping Unit) level information with the shipment information, which enables you to use Clickpost&rsquo;s returns platform. Please pass following attributes of item [SKU]:</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>sku</td>
+<td>string (50 character)</td>
+<td>SKU (Stock Keeping Unit) ID of the item</td>
+</tr>
+<tr>
+<td>description</td>
+<td>string (500 characters)</td>
+<td>SKU description</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td>int</td>
+<td>quantity of SKU ordered by customer</td>
+</tr>
+<tr>
+<td>price</td>
+<td>float</td>
+<td>price of 1 unit</td>
+</tr>
+<tr>
+<td>images</td>
+<td>string (1000 character)</td>
+<td>image URL of the SKU</td>
+</tr>
+<tr>
+<td>return_days</td>
+<td>int</td>
+<td>eligible days for return from the date, shipment was delivered to customer</td>
+</tr>
+</tbody></table>
+
+<h4 id="additional-optional-extra-information-about-shipment-used-to-power-tracking-page">additional (optional): extra information about shipment used to power tracking page:</h4>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>order_date</td>
+<td>character</td>
+<td>timestamp when the order was placed in yyyy-mm-dd format</td>
+</tr>
+<tr>
+<td>ship_date</td>
+<td>character</td>
+<td>timestamp when order was ready to ship in yyyy-mm-dd format</td>
 </tr>
 <tr>
 <td>min_edd</td>
