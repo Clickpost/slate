@@ -1456,7 +1456,8 @@ Headers: {'Content-type': 'application/json'}
         </span><span class="s2">"channel_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Channel Name: In case you have different channels to receive orders"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"order_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YYYY-MM-DD"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"is_fragile"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"is_dangerous"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="s2">"is_dangerous"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"order ID of the shipment"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -1961,6 +1962,11 @@ Headers: {'Content-type': 'application/json'}
 <td>boolean</td>
 <td>true if shipment is dangerous/liquid. Default false. [Currently used only for eKart APIs]</td>
 </tr>
+<tr>
+<td>order_id</td>
+<td>character [50 characters]</td>
+<td>order ID of the shipment</td>
+</tr>
 </tbody></table>
 
 <h5 id="optional-field-for-bluedart-critical-time-defined-delivery-service">Optional field for Bluedart (Critical / Time defined delivery service):</h5>
@@ -2126,7 +2132,8 @@ Headers: {'Content-type': 'application/json'}
         </span><span class="s2">"from_wh"</span><span class="p">:</span><span class="w"> </span><span class="s2">"From Warehouse"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"to_wh"</span><span class="p">:</span><span class="w"> </span><span class="s2">"To Warehouse"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"channel_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Channel Name: In case you have different channels to receive orders"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"order_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YYYY-MM-DD"</span><span class="w">
+        </span><span class="s2">"order_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YYYY-MM-DD"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"order ID of the shipment"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -2317,6 +2324,7 @@ Headers: {'Content-type': 'application/json'}
         </span><span class="s2">"to_wh"</span><span class="p">:</span><span class="w"> </span><span class="s2">"To Warehouse"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"channel_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Channel Name: In case you have different channels to receive orders"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"order_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"YYYY-MM-DD"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"order ID of the shipment"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"enable_whatsapp"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="err">#</span><span class="w"> </span><span class="err">Useful</span><span class="w"> </span><span class="err">for</span><span class="w"> </span><span class="err">whatsapp</span><span class="w"> </span><span class="err">communication</span><span class="w"> 
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -3215,7 +3223,8 @@ Headers: {'Content-type': 'application/json'}
         </span><span class="s2">"account_code"</span><span class="p">:</span><span class="s2">"AIR"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"from_wh"</span><span class="p">:</span><span class="w"> </span><span class="s2">"From Warehouse"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"to_wh"</span><span class="p">:</span><span class="w"> </span><span class="s2">"To Warehouse"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"channel_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Channel Name: In case you have different channels to receive orders"</span><span class="w">
+        </span><span class="s2">"channel_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Channel Name: In case you have different channels to receive orders"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order ID of the order"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -3888,7 +3897,8 @@ Headers: {'Content-type': 'application/json'}
         </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="s2">"order_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-30T20:14:34"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"vendor_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADDR12182_1463"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"account_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SMSA Domestic"</span><span class="w">
+        </span><span class="s2">"account_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SMSA Domestic"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order Number of the Shipment"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -4220,6 +4230,11 @@ Headers: {'Content-type': 'application/json'}
 <td>enable_whatsapp</td>
 <td>boolean</td>
 <td>if you have whatsapp for business account, you can pass opt-in information here so Clickpost starts sending out communications to customers</td>
+</tr>
+<tr>
+<td>order_id</td>
+<td>character [50 characters]</td>
+<td>order ID of the shipment</td>
 </tr>
 </tbody></table>
 
