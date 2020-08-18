@@ -3894,6 +3894,7 @@ Headers: {'Content-type': 'application/json'}
     </span><span class="p">},</span><span class="w">
     </span><span class="s2">"tax_info"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
     </span><span class="s2">"additional"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"rvp_reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Customer wants to return the product"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"async"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
         </span><span class="s2">"label"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
         </span><span class="s2">"order_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-01-30T20:14:34"</span><span class="p">,</span><span class="w">
@@ -4242,6 +4243,11 @@ Headers: {'Content-type': 'application/json'}
 <td>invoice_base_64</td>
 <td>character</td>
 <td>base 64 string of invoice. Required by DHL for PLT (Paper Less Trade) process</td>
+</tr>
+<tr>
+<td>rvp_reason</td>
+<td>character</td>
+<td>mandatory for reverse pickups [pickups from customer location]. Not required for forward, warehouse to customer</td>
 </tr>
 </tbody></table>
 
@@ -5725,13 +5731,21 @@ status. Clickpost has mapped various statuses of different courier companies int
 
 <ol>
 <li>Visit Clickpost dashboard: <em>Settings</em> Tab on the left and Click notification section</li>
-<li>Select webhooks and activate Selected webhooks configuration or All Webhooks configuration as per your need.</li>
+<li>Select webhooks and activate Selected Events webhooks configuration or All Events Webhooks configuration as per your need.</li>
 <li>Selected webhooks configuration: trigger webhooks only when shipment reaches certain checkpoints in its journey.</li>
 <li>All webhooks configuration: trigger webhooks for all shipment statuses as they come.</li>
 </ol>
 
 <p>We generally recommend customers to use selected webhooks configuration as all webhooks will trigger too many status messages on your system.</p>
 
+<h4 id="note">Note:</h4>
+
+<p>If you wish to configure the basic token auth also along with the webhooks the headers will change as follows:</p>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"Content-Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"Authorization"</span><span class="p">:</span><span class="w"> </span><span class="s2">"&lt;value entered on the dashboard for the token under basic token auth section&gt;"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
 <h3 id="important-notes-and-special-data-in-webhooks-examples-are-present-on-the-right">Important Notes and special data in Webhooks (Examples are present on the right):</h3>
 
 <ol>
