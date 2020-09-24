@@ -3934,7 +3934,8 @@ Headers: {'Content-type': 'application/json'}
         </span><span class="s2">"vendor_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ADDR12182_1463"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"account_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"SMSA Domestic"</span><span class="p">,</span><span class="w">
         </span><span class="s2">"order_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Order Number of the Shipment"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"invoice_base_64"</span><span class="p">:</span><span class="w"> </span><span class="s2">"base_64_string_of_invoice"</span><span class="w">
+        </span><span class="s2">"invoice_base_64"</span><span class="p">:</span><span class="w"> </span><span class="s2">"base_64_string_of_invoice"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"duty_fee_paid_by"</span><span class="p">:</span><span class="s2">"S"</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -4281,6 +4282,11 @@ Headers: {'Content-type': 'application/json'}
 <td>rvp_reason</td>
 <td>character</td>
 <td>mandatory for reverse pickups [pickups from customer location]. Not required for forward, warehouse to customer</td>
+</tr>
+<tr>
+<td>duty_fee_paid_by</td>
+<td>character</td>
+<td>defines who will be paying the duty charges for the shipment. Possible values: &ldquo;S&rdquo;: Shipper, &ldquo;R&rdquo;: Recipient [only applicable for UPS / DHL]</td>
 </tr>
 </tbody></table>
 
@@ -5293,7 +5299,7 @@ Headers: {'Content-type': 'application/json'}
 <blockquote>
 <p><strong>URL</strong></p>
 </blockquote>
-<pre class="highlight plaintext"><code>https://www.clickpost.in/api/v1/updated-order?username=&lt;clickpost-username&gt;&amp;key=&lt;clickpost-api-key&gt;&amp;start_date=1531980785&amp;end_date=1531984399
+<pre class="highlight plaintext"><code>https://api.clickpost.in/api/v1/updated-order?username=&lt;clickpost-username&gt;&amp;key=&lt;clickpost-api-key&gt;&amp;start_date=1531980785&amp;end_date=1531984399
 
 Headers: {'Content-type': 'application/json'}
 </code></pre>
@@ -5355,7 +5361,9 @@ Headers: {'Content-type': 'application/json'}
 <p>The updated-order API retrieves the shipments which are updated between specified start and end time.</p>
 
 <p>The API is a HTTP GET request to:
-<code class="prettyprint">https://www.clickpost.in/api/v1/updated-order</code> </p>
+<code class="prettyprint">https://api.clickpost.in/api/v1/updated-order</code> </p>
+
+<p>[earlier it was <code class="prettyprint">https://www.clickpost.in/api/v1/updated-order</code>, which will deprecate by Nov 2020]</p>
 
 <p>where output is json</p>
 
@@ -5409,7 +5417,7 @@ Headers: {'Content-type': 'application/json'}
 <blockquote>
 <p><strong>URL</strong></p>
 </blockquote>
-<pre class="highlight plaintext"><code>https://www.clickpost.in/api/v2/track-order/?username=testuser&amp;key=2e9b19ac-8e1f- 41ac-a35b-4cd23f41ae17&amp;waybill=3515341&amp;cp_id=10
+<pre class="highlight plaintext"><code>https://api.clickpost.in/api/v2/track-order/?username=testuser&amp;key=2e9b19ac-8e1f- 41ac-a35b-4cd23f41ae17&amp;waybill=3515341&amp;cp_id=10
 
 Headers: {'Content-type': 'application/json'}
 </code></pre>
@@ -5546,7 +5554,9 @@ Headers: {'Content-type': 'application/json'}
 <p>The track-order API retrieves the historic statuses and the current status of the package.</p>
 
 <p>The API is a HTTP GET request to:
-<code class="prettyprint">https://www.clickpost.in/api/v2/track-order/</code> </p>
+<code class="prettyprint">https://api.clickpost.in/api/v2/track-order/</code> </p>
+
+<p>[earlier it was <code class="prettyprint">https://www.clickpost.in/api/v2/track-order/</code>, which will deprecate by Nov 2020]</p>
 
 <p>where output is json</p>
 
