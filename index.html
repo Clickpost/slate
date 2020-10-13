@@ -4635,7 +4635,7 @@ Headers: {'Content-type': 'application/json'}
 <tr>
 <td>waybill (required)</td>
 <td>character</td>
-<td>this is/are comma separated waybill numbers for which the status is required</td>
+<td>this is waybill number [AWB Number or LR Number] that you want to register in Clickpost</td>
 </tr>
 <tr>
 <td>cp_id (required)</td>
@@ -4643,9 +4643,9 @@ Headers: {'Content-type': 'application/json'}
 <td>courier_partner_id as specified on page 1 of this documentation</td>
 </tr>
 <tr>
-<td>account_code (optional)</td>
+<td>account_code (required)</td>
 <td>string</td>
-<td>account code in case you have multiple accounts for same courier partner</td>
+<td>account code added in Clickpost dashboard while creating courier partner account</td>
 </tr>
 </tbody></table>
 
@@ -4922,7 +4922,7 @@ Headers: {'Content-type': 'application/json'}
 <tr>
 <td>waybill (required)</td>
 <td>character (100 chars)</td>
-<td>this is/are comma separated waybill numbers for which the status is required</td>
+<td>this is waybill number [AWB Number or LR Number] that you want to register in Clickpost</td>
 </tr>
 <tr>
 <td>courier_partner (required)</td>
@@ -4932,7 +4932,7 @@ Headers: {'Content-type': 'application/json'}
 <tr>
 <td>account_code (required)</td>
 <td>character (100 chars)</td>
-<td>account code in case you have multiple accounts for same courier partner</td>
+<td>account code added in Clickpost dashboard while creating courier partner account</td>
 </tr>
 </tbody></table>
 
