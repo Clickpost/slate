@@ -6133,8 +6133,6 @@ latest_status indicates the latest status for the shipment at the time when the 
 
 <h2 id="webhooks-are-idempotent-in-nature-ensure-that-is-handled-at-your-end"><em>Webhooks are idempotent in nature, ensure that is handled at your end</em></h2>
 
-          <h1 id="track-return-order">Track Return Order</h1>
-
 <h2 id="return-order-placed-webhook">Return Order Placed Webhook</h2>
 
 <blockquote>
@@ -6142,7 +6140,7 @@ latest_status indicates the latest status for the shipment at the time when the 
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
   </span><span class="s2">"Content-Type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"application/json"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"webhook_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"webhook_key_given_during_webhooks_register"</span><span class="w">
+  </span><span class="s2">"webhook_key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"webhook_key_given_during_webhooks_registeration"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <blockquote>
@@ -6193,7 +6191,7 @@ latest_status indicates the latest status for the shipment at the time when the 
         </span><span class="p">}</span><span class="w">
     </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>This webhook is only useful for customers using Clickpost managed returns platform to accept customer returns on their website.</p>
+<p>This webhook is only useful for customers using Clickpost&rsquo;s managed returns platform to accept customer returns on their website.</p>
 
 <h3 id="activating-return-order-placed-webhook">Activating Return order placed webhook:</h3>
 
@@ -7153,89 +7151,6 @@ Headers: {'Content-type': 'application/json'}
 </ol>
 
 <p>Result tag will be present in request only if the meta tag contains <code class="prettyprint">success</code> : true.</p>
-
-          <h1 id="tracking-page-widget">Tracking Page / Widget</h1>
-
-<h3 id="to-integrate-with-your-website">To integrate with your website:</h3>
-
-<ol>
-<li>Place widget script in your webpage.</li>
-<li>Place widget HTML code in your webpage.</li>
-</ol>
-
-<p>Note: It&rsquo;s better to move widget script to as low in the web page as possible.</p>
-
-<p>Tracking Page / Widget is designed to provide exhaustive tracking to end user. </p>
-
-<p>The widget/page has following features:</p>
-
-<ol>
-<li>End to end shipment tracking. Incase you want the tracking page to show Order Placed and Ready to Ship milestone as well, please pass order_date and ship_date in AWB-register API.</li>
-<li>Failed delivery feedback from customer: During a failed delivery by courier partner, customer can enter his input/concern over a form which will be shared with you as a report daily or same can be fetched via API (Customer Feedback API)</li>
-<li>In case you want customer to request a delivery preference any time before an attempt for delivery is made, please contact our team to enable the feature. Feedback of the same will be available as for point 2.</li>
-<li>Design language of the page is customisable as per your website theme. Our team can help you in designing the page.</li>
-</ol>
-
-<p>JS to be included:</p>
-
-<p><code class="prettyprint">&lt;script type=&quot;text/javascript&quot; src=&quot;http://track.clickpost.in/clickpost-widget-1.0.3.js&quot;&gt;&lt;/script&gt;</code></p>
-
-<h2 id="tracking-widget-using-awb-number-and-courier-partner-id">Tracking widget using AWB number and Courier Partner ID</h2>
-
-<h3 id="fields-explanation">Fields Explanation:</h3>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>id</td>
-<td>string</td>
-<td>Your Waybill number</td>
-</tr>
-<tr>
-<td>data-cpId</td>
-<td>string</td>
-<td>Your Courier Partner Id</td>
-</tr>
-</tbody></table>
-
-<p><code class="prettyprint">&lt;div id=&quot;1234567890&quot; class=&quot;tracking-widget&quot; data-cpId=&quot;11&quot;&gt;&lt;/div&gt;</code></p>
-
-<h2 id="tracking-widget-using-reference-number-order-id">Tracking widget using Reference Number (Order ID)</h2>
-
-<h3 id="fields-explanation">Fields Explanation:</h3>
-
-<table><thead>
-<tr>
-<th>Parameter</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>id</td>
-<td>string</td>
-<td>Your order reference number</td>
-</tr>
-<tr>
-<td>data-username</td>
-<td>string</td>
-<td>username provided to you</td>
-</tr>
-<tr>
-<td>data-key</td>
-<td>string</td>
-<td>API Key provided to you</td>
-</tr>
-</tbody></table>
-
-<p><code class="prettyprint">&lt;div id=&quot;1234567890&quot; class=&quot;tracking-widget&quot; data-key=&quot;123-456-7890&quot; data-username=&quot;xyz&quot;&gt;&lt;/div&gt;</code></p>
-
-<p>Note: No need to add more than one script for multiple tracking widgets in a page.</p>
 
           <h1 id="customer-feedback-api">Customer Feedback API</h1>
 
