@@ -5894,6 +5894,81 @@ latest_status indicates the latest status for the shipment at the time when the 
 
 <h3 id="webhook-data-post-on-client-server-for-selected-events">Webhook data POST on Client Server for selected events:</h3>
 
+<blockquote>
+<p><strong>Selected event subscribed webhook: Failed delivery Payload</strong></p>
+</blockquote>
+<pre class="highlight json"><code><span class="w">
+</span><span class="p">{</span><span class="w">
+  </span><span class="s2">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2614010163240"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Customer escalation received"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pending"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FailedDelivery"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lucknow_Aliganj (Uttar Pradesh)"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-05-01T00:55:06Z"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"additional"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+
+    </span><span class="s2">"ndr_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ndr_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Customer unavailable"</span><span class="p">,</span><span class="w">
+
+    </span><span class="s2">"notification_event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+
+    </span><span class="s2">"is_rvp"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"courier_partner_edd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-03-25"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"order_id"</span><span class="p">:</span><span class="s2">"ABC123"</span><span class="p">,</span><span class="w">
+
+    </span><span class="s2">"latest_status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"reference_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WERA-NMS1908MSO2"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Customer escalation received"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pending"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lucknow_Aliganj (Uttar Pradesh)"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"clickpost_status_bucket_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Failed delivery"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FailedDelivery"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-05-01T00:55:06Z"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"clickpost_status_bucket"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre>
+<blockquote>
+<p><strong>Selected event subscribed webhook: Delivered Payload</strong></p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delivered"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12527345"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delivered"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nayagarh_Durgprsd_D (Orissa)"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delivered to consignee"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-05-06T15:01:00Z"</span><span class="p">,</span><span class="w">
+
+    </span><span class="s2">"additional"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+
+        </span><span class="s2">"notification_event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"is_rvp"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"courier_partner_edd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-03-25"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"order_id"</span><span class="p">:</span><span class="s2">"ABC123"</span><span class="p">,</span><span class="w">
+
+        </span><span class="s2">"latest_status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delivered"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"reference_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WERA-NMS1908MSO2"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"clickpost_status_bucket_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delivered"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delivered"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nayagarh_Durgprsd_D (Orissa)"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"clickpost_status_bucket"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delivered to consignee"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-05-06T15:01:00Z"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre>
 <p>In case customer wants to recieve notifications only for certain events, Clickpost provides funtionality for the same.</p>
 
 <p>If customer opts for this service, we add: &ldquo;notification_event_id&rdquo; key in additional object of the payload. This will inform you the current status of shipment.</p>
@@ -6054,84 +6129,9 @@ latest_status indicates the latest status for the shipment at the time when the 
 
 <p>Please see the sample payload on the right.</p>
 
-<blockquote>
-<p><strong>Selected event subscribed webhook: Failed delivery Payload</strong></p>
-</blockquote>
-<pre class="highlight json"><code><span class="w">
-</span><span class="p">{</span><span class="w">
-  </span><span class="s2">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2614010163240"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Customer escalation received"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pending"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FailedDelivery"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lucknow_Aliganj (Uttar Pradesh)"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-05-01T00:55:06Z"</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"additional"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+<p><em>Clickpost recommends that the mapping of NDR be done strictly on ndr_status_code and not on ndr_status_description.</em></p>
 
-    </span><span class="s2">"ndr_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"ndr_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Customer unavailable"</span><span class="p">,</span><span class="w">
-
-    </span><span class="s2">"notification_event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-
-    </span><span class="s2">"is_rvp"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"courier_partner_edd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-03-25"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"order_id"</span><span class="p">:</span><span class="s2">"ABC123"</span><span class="p">,</span><span class="w">
-
-    </span><span class="s2">"latest_status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-      </span><span class="s2">"reference_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WERA-NMS1908MSO2"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Customer escalation received"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pending"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Lucknow_Aliganj (Uttar Pradesh)"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"clickpost_status_bucket_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Failed delivery"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FailedDelivery"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-05-01T00:55:06Z"</span><span class="p">,</span><span class="w">
-      </span><span class="s2">"clickpost_status_bucket"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
-    </span><span class="p">}</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span></code></pre>
-<blockquote>
-<p><strong>Selected event subscribed webhook: Delivered Payload</strong></p>
-</blockquote>
-<pre class="highlight json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delivered"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"waybill"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12527345"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delivered"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nayagarh_Durgprsd_D (Orissa)"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"cp_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delivered to consignee"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-05-06T15:01:00Z"</span><span class="p">,</span><span class="w">
-
-    </span><span class="s2">"additional"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-
-        </span><span class="s2">"notification_event_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"is_rvp"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"courier_partner_edd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-03-25"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"order_id"</span><span class="p">:</span><span class="s2">"ABC123"</span><span class="p">,</span><span class="w">
-
-        </span><span class="s2">"latest_status"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-            </span><span class="s2">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delivered"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"reference_number"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WERA-NMS1908MSO2"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"clickpost_status_bucket_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delivered"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"clickpost_status_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delivered"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"clickpost_status_code"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Nayagarh_Durgprsd_D (Orissa)"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"clickpost_status_bucket"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"remark"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Delivered to consignee"</span><span class="p">,</span><span class="w">
-            </span><span class="s2">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2019-05-06T15:01:00Z"</span><span class="w">
-        </span><span class="p">}</span><span class="w">
-
-    </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-
-</span></code></pre>
-<p><em>Clickpost recommends that the mapping of NDR be done strictly on ndr_status_code and not on ndr_status_description</em></p>
-
-<h2 id="webhooks-are-idempotent-in-nature-ensure-that-is-handled-at-your-end"><em>Webhooks are idempotent in nature, ensure that is handled at your end</em></h2>
+<hr>
 
 <h2 id="return-order-placed-webhook">Return Order Placed Webhook</h2>
 
